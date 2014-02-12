@@ -1,1 +1,0 @@
-function [] = run_beats_greedy_policy(ptr,gp_out)

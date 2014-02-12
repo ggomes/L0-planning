@@ -1,4 +1,4 @@
-
+function [] = extract_simulation_data(ptr,data_file,range)
 
 % Extracting link IDs
 link_id = xlsread(data_file, 'GP_Speeds', sprintf('a%d:f%d', range(1), range(2)));
