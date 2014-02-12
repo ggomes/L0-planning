@@ -1,7 +1,4 @@
-clear
-close all
-
-load 680N_v2_givensr
+function [SplitRatioSet]=compute_5min_splits_from_sim(ptr,gp_out)
 
 % preliminary
 vt_ids = [0 1];
@@ -34,16 +31,13 @@ SplitRatioSet.splitRatioProfile = repmat(srp,1,length(non_trivial_node_ids));
 clear srp
 
 for i=1:length(non_trivial_node_ids)
-    
-    i
-    
+       
     node_id = non_trivial_node_ids(i);
     node_io = ptr.scenario_ptr.get_node_io(node_id);
-    sr_data = load(['sr_' num2str(node_id) '.txt']);
+    sr_data = load([gp_out num2str(node_id) '.txt']);
     time_5sec = sort(unique(sr_data(:,1)));
     numIn = length(node_io.link_in);
     numOut = length(node_io.link_out);
-    numT = length(time_5sec);
 
     SplitRatioSet.splitRatioProfile(i).ATTRIBUTE.id = i;
     SplitRatioSet.splitRatioProfile(i).ATTRIBUTE.node_id = node_id;
@@ -54,10 +48,8 @@ for i=1:length(non_trivial_node_ids)
  
         link_in_ind = node_io.link_in(ii)==link_ids;
 
-  
         for kk=1:numVt
 
-    
             % fin
             fin = ptr.outflow_veh{kk}(:,link_in_ind);
             fin = fin(time_5min_ind);
@@ -66,8 +58,8 @@ for i=1:length(non_trivial_node_ids)
 
                 % fout
                 link_out_ind = node_io.link_out(jj)==link_ids;
-                fout = ptr.inflow_veh{kk}(:,link_out_ind);
-                fout = fout(time_5min_ind);
+%                 fout = ptr.inflow_veh{kk}(:,link_out_ind);
+%                 fout = fout(time_5min_ind);
                 
                 % beta
                 beta = sr_data(sr_data(:,2)==node_io.link_in(ii) & ...
@@ -89,13 +81,10 @@ for i=1:length(non_trivial_node_ids)
             end
         end
     end
-    
-    
-    
-    
+
 end
 
 clear sr_data time_* beta fin fout Fd Fu beta_5min
 
-xml_write('sr_from_sim.xml',SplitRatioSet)
+% xml_write(fivemin_sr_file,SplitRatioSet)
 
