@@ -9,6 +9,7 @@ xlsx_file        = fullfile(cfg_folder,'I680NB-no217_Data.xlsx');
 cfg_starter      = fullfile(cfg_folder,'680N.xml');
 cfg_gp           = fullfile(cfg_folder,'gp.xml');
 cfg_srout        = fullfile(cfg_folder,'srout.xml');
+act_cntrl        = fullfile(cfg_folder,'actuators_and_controllers.xml');
 fr_demand_file   = fullfile(cfg_folder,'fr_demand.xml');
 sr_initial_guess = fullfile(cfg_folder,'sr_initial_guess.xml');
 beatsprop_gp     = fullfile(cfg_folder,'beats_gp.properties');
@@ -41,6 +42,9 @@ ptr.scenario_ptr.scenario.SplitRatioSet = compute_5min_splits_from_sim(ptr,gp_ou
 write_offramp_demand_xml(xlsx_file,fr_demand_file,range)
 
 % 7. Assemble a scenario .................................................
+act_and_ctrl = xml_read(act_cntrl);
+ptr.scenario_ptr.scenario.ControllerSet = act_and_ctrl.ControllerSet;
+ptr.scenario_ptr.scenario.ActuatorSet = act_and_ctrl.ActuatorSet;
 ptr.scenario_ptr.save(cfg_srout)
 
 % 8. Run offramp split ratio computation .................................
