@@ -76,7 +76,7 @@ for i=1:length(non_trivial_node_ids)
                 SplitRatioSet.splitRatioProfile(i).splitratio(c).ATTRIBUTE.link_in = node_io.link_in(ii);
                 SplitRatioSet.splitRatioProfile(i).splitratio(c).ATTRIBUTE.link_out = node_io.link_out(jj);
                 SplitRatioSet.splitRatioProfile(i).splitratio(c).ATTRIBUTE.vehicle_type_id = vt_ids(kk);
-                SplitRatioSet.splitRatioProfile(i).splitratio(c).CONTENT = writecommaformat(beta_5min,'%f');
+                SplitRatioSet.splitRatioProfile(i).splitratio(c).CONTENT = beta_5min;
 
             end
         end

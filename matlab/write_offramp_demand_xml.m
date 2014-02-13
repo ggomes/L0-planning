@@ -4,17 +4,18 @@ fprintf('Generating off-ramp demand config...\n');
 fr_id = xlsread(xlsx_file, 'Off-Ramp_Flows', sprintf('g%d:g%d', range(1), range(2)));
 fr_id = fr_id';
 FRD = xlsread(xlsx_file, 'Off-Ramp_Flows', sprintf('k%d:kl%d', range(1), range(2)));
+has_fr_dem = find(max(FRD,[],2)>0);
 
 dp = generate_mo('demandProfile');
 dp.demand = generate_mo('demand');
 dp.demand.CONTENT = '';
 dp.demand.ATTRIBUTE.vehicle_type_id = 1;     % ignored
-dps = repmat(dp,1,size(FRD,1));
+dps = repmat(dp,1,length(has_fr_dem) );
 
-for i=1:size(FRD,1)
+for i=1:length(has_fr_dem) 
     dps(i).ATTRIBUTE.id = i;
-    dps(i).ATTRIBUTE.link_id_org = fr_id(i);
-    dps(i).demand.CONTENT = writecommaformat(FRD(i,:),'%.2f');
+    dps(i).ATTRIBUTE.link_id_org = fr_id(has_fr_dem(i));
+    dps(i).demand.CONTENT = writecommaformat(FRD(has_fr_dem(i),:),'%.2f');
 end
 
 DemandSet = generate_mo('DemandSet');
