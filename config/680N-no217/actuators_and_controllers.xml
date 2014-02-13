@@ -97,8 +97,7 @@
 	<ControllerSet id="0" project_id="0">
 		<controller dt="5" enabled="true" id="23" name="SR_Generator" type="SR_Generator">
 			<parameters>
-				<parameter name="fr_flow_file" value="C:\\Users\\gomes\\code\\L0\\L0-planning\\config\\680N-no217\\fr_demand_vph.xml"/>
-				<parameter name="out_file"     value="C:\\Users\\gomes\\code\\L0\\L0-planning\\config\\680N-no217\\sr_out.txt"/>
+				<parameter name="fr_flow_file" value=""/>
 			</parameters>
 			<target_actuators>
 				<target_actuator id="1"/>

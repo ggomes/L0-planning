@@ -3,18 +3,21 @@ clear
 close all
 
 root = fileparts(fileparts(mfilename('fullpath')));
+beats_jar = fullfile(root,'beats','beats-0.1-SNAPSHOT.jar');
 cfg_folder = fullfile(root,'config','680N-no217');
+beats_out_folder = fullfile(root,'beats_output');
+cfg_gen_folder = fullfile(cfg_folder,'generated');
 
 xlsx_file        = fullfile(cfg_folder,'I680NB-no217_Data.xlsx');
 cfg_starter      = fullfile(cfg_folder,'680N.xml');
-cfg_gp           = fullfile(cfg_folder,'gp.xml');
-cfg_srout        = fullfile(cfg_folder,'srout.xml');
-act_cntrl        = fullfile(cfg_folder,'actuators_and_controllers.xml');
-fr_demand_file   = fullfile(cfg_folder,'fr_demand.xml');
 sr_initial_guess = fullfile(cfg_folder,'sr_initial_guess.xml');
 beatsprop_gp     = fullfile(cfg_folder,'beats_gp.properties');
 beatsprop_sr_out = fullfile(cfg_folder,'beats_srout.properties');
-gp_out = fullfile(root,'beats_output','sr');
+act_cntrl        = fullfile(cfg_folder,'actuators_and_controllers.xml');
+cfg_gp           = fullfile(cfg_gen_folder,'gp.xml');
+cfg_srout        = fullfile(cfg_gen_folder,'srout.xml');
+fr_demand_file   = fullfile(cfg_gen_folder,'fr_demand.xml');
+gp_out           = fullfile(beats_out_folder,'sr');
 
 range = [2 149];
 hov_prct = 0.2;
@@ -30,8 +33,8 @@ ptr.scenario_ptr.scenario.DemandSet = attach_onramp_demands(xlsx_file,range,hov_
 ptr.scenario_ptr.scenario.SplitRatioSet = xml_read(sr_initial_guess);
 
 % 4. Run greedy policy ...................................................
-ptr.scenario_ptr.save(cfg_gp)
-system(['java -jar ..\\beats\\beats-0.1-SNAPSHOT.jar ' beatsprop_gp])
+ptr.scenario_ptr.save(cfg_gp);
+system(['java -jar ' beats_jar ' ' beatsprop_gp])
 ptr.simulation_done = true;
 ptr.load_simulation_output('..\\beats_output\\gp');
             
@@ -41,15 +44,17 @@ ptr.scenario_ptr.scenario.SplitRatioSet = compute_5min_splits_from_sim(ptr,gp_ou
 % 6. Take fr demands from xls to xml .....................................
 write_offramp_demand_xml(xlsx_file,fr_demand_file,range)
 
-% 7. Assemble a scenario .................................................
+% 7. Load split actuators/controllers .....................................
 act_and_ctrl = xml_read(act_cntrl);
+act_and_ctrl.ControllerSet.controller.parameters.parameter.ATTRIBUTE.value = ...
+    fullfile(cfg_gen_folder,'fr_demand.xml');
 ptr.scenario_ptr.scenario.ControllerSet = act_and_ctrl.ControllerSet;
 ptr.scenario_ptr.scenario.ActuatorSet = act_and_ctrl.ActuatorSet;
-ptr.scenario_ptr.save(cfg_srout)
+ptr.scenario_ptr.save(cfg_srout);
 
 % 8. Run offramp split ratio computation .................................
 ptr.reset_simulation;
-system(['java -jar ..\\beats\\beats-0.1-SNAPSHOT.jar ' beatsprop_sr_out])
+system(['java -jar ' beats_jar ' ' beatsprop_sr_out])
 ptr.simulation_done = true;
 ptr.load_simulation_output('..\\beats_output\\srout');
 
