@@ -1,3 +1,5 @@
-sr_*.txt
-\beats_output
-\beats
+*.mat
+*.asv
+beats_output
+beats
+config/680N-no217/generated

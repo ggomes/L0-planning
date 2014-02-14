@@ -1,5 +1,11 @@
 function [SplitRatioSet]=compute_5min_splits_from_sim(ptr,gp_out)
 
+% check if dt of first is 300, return self
+if(ptr.scenario_ptr.scenario.SplitRatioSet.splitRatioProfile(1).ATTRIBUTE.dt==300)
+    SplitRatioSet = ptr.scenario_ptr.scenario.SplitRatioSet;
+    return;
+end
+
 % preliminary
 vt_ids = [0 1];
 numVt = length(vt_ids);
@@ -16,8 +22,7 @@ end
 non_trivial_node_ids = sort(node_ids(~is_trivial_split));
 
 % cycle through non-trivial nodes
-time_5min_ind = reshape(1:17280,288,60);
-time_5min = (0:300:86100)';
+time_5min_ind = reshape(1:17280,60,288)';
 
 srp = generate_mo('splitRatioProfile');
 srp.ATTRIBUTE.dt = 300;
@@ -26,65 +31,61 @@ SplitRatioSet.ATTRIBUTE.id = 0;
 SplitRatioSet.ATTRIBUTE.project_id = 0;
 SplitRatioSet.splitRatioProfile = repmat(srp,1,length(non_trivial_node_ids));
 
-    sr = generate_mo('splitratio');
-    sr.CONTENT = '';
+sr = generate_mo('splitratio');
+sr.CONTENT = '';
 clear srp
 
 for i=1:length(non_trivial_node_ids)
-       
+    
     node_id = non_trivial_node_ids(i);
     node_io = ptr.scenario_ptr.get_node_io(node_id);
     sr_data = load([gp_out num2str(node_id) '.txt']);
-    time_5sec = sort(unique(sr_data(:,1)));
     numIn = length(node_io.link_in);
     numOut = length(node_io.link_out);
-
+    
     SplitRatioSet.splitRatioProfile(i).ATTRIBUTE.id = i;
     SplitRatioSet.splitRatioProfile(i).ATTRIBUTE.node_id = node_id;
     SplitRatioSet.splitRatioProfile(i).splitratio = repmat(sr,1,numIn*numOut*numVt);
     
     c = 0;
     for ii=1:numIn
- 
+        
         link_in_ind = node_io.link_in(ii)==link_ids;
-
+        
         for kk=1:numVt
-
+            
             % fin
             fin = ptr.outflow_veh{kk}(:,link_in_ind);
             fin = fin(time_5min_ind);
             
             for jj=1:numOut
 
-                % fout
-                link_out_ind = node_io.link_out(jj)==link_ids;
-%                 fout = ptr.inflow_veh{kk}(:,link_out_ind);
-%                 fout = fout(time_5min_ind);
-                
-                % beta
                 beta = sr_data(sr_data(:,2)==node_io.link_in(ii) & ...
-                               sr_data(:,3)==node_io.link_out(jj) & ...
-                               sr_data(:,4)==vt_ids(kk),5);
+                    sr_data(:,3)==node_io.link_out(jj) & ...
+                    sr_data(:,4)==vt_ids(kk),5);
                 beta = beta(1:end-1);
                 beta = beta(time_5min_ind);
+                mean_beta = meanwithnan(beta,2);
                 
                 Fd = sum(beta.*fin,2);
                 Fu = sum(fin,2);
                 beta_5min = Fd./Fu;
+                
+                ind = isnan(beta_5min);
+                beta_5min(ind) = mean_beta(ind);                
+
+                if(any(isnan(beta_5min)))
+                    disp('sdf')
+                end
                 
                 c=c+1;
                 SplitRatioSet.splitRatioProfile(i).splitratio(c).ATTRIBUTE.link_in = node_io.link_in(ii);
                 SplitRatioSet.splitRatioProfile(i).splitratio(c).ATTRIBUTE.link_out = node_io.link_out(jj);
                 SplitRatioSet.splitRatioProfile(i).splitratio(c).ATTRIBUTE.vehicle_type_id = vt_ids(kk);
                 SplitRatioSet.splitRatioProfile(i).splitratio(c).CONTENT = beta_5min;
-
+                
             end
         end
     end
-
+    
 end
-
-clear sr_data time_* beta fin fout Fd Fu beta_5min
-
-% xml_write(fivemin_sr_file,SplitRatioSet)
-
