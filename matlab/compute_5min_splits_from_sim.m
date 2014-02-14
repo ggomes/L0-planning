@@ -1,5 +1,11 @@
 function [SplitRatioSet]=compute_5min_splits_from_sim(ptr,gp_out)
 
+% check if dt of first is 300, return self
+if(ptr.scenario_ptr.scenario.SplitRatioSet.splitRatioProfile(1).ATTRIBUTE.dt==300)
+    SplitRatioSet = ptr.scenario_ptr.scenario.SplitRatioSet;
+    return;
+end
+
 % preliminary
 vt_ids = [0 1];
 numVt = length(vt_ids);
