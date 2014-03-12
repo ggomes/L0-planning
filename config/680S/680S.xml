@@ -4,7 +4,8 @@
       <units>US</units>
    </settings>
    <VehicleTypeSet id="-1" project_id="-1">
-      <vehicleType id="0" name="General" size_factor="1"/>
+      <vehicleType id="1" name="SOV" size_factor="1"/>
+      <vehicleType id="0" name="HOV" size_factor="1"/>
    </VehicleTypeSet>
    <NetworkSet id="0" project_id="0">
       <network id="-1" name="New Network">
