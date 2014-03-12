@@ -1,10 +1,4 @@
-function [SplitRatioSet]=compute_5min_splits_from_sim(ptr,gp_out)
-
-% check if dt of first is 300, return self
-if(ptr.scenario_ptr.scenario.SplitRatioSet.splitRatioProfile(1).ATTRIBUTE.dt==300)
-    SplitRatioSet = ptr.scenario_ptr.scenario.SplitRatioSet;
-    return;
-end
+function [SplitRatioSet]=compute_5min_splits_from_sim(ptr,gp_out,is_5min_gp)
 
 % preliminary
 vt_ids = [0 1];
@@ -64,17 +58,22 @@ for i=1:length(non_trivial_node_ids)
                     sr_data(:,3)==node_io.link_out(jj) & ...
                     sr_data(:,4)==vt_ids(kk),5);
                 beta = beta(1:end-1);
-                beta = beta(time_5min_ind);
-                mean_beta = meanwithnan(beta,2);
                 
-                Fd = sum(beta.*fin,2);
-                Fu = sum(fin,2);
-                beta_5min = Fd./Fu;
-                
-                ind = isnan(beta_5min);
-                beta_5min(ind) = mean_beta(ind);                
-
+                if(~is_5min_gp)
+                    beta = beta(time_5min_ind);
+                    mean_beta = meanwithnan(beta,2);
+                    Fd = sum(beta.*fin,2);
+                    Fu = sum(fin,2);
+                    beta_5min = Fd./Fu;
+                    ind = isnan(beta_5min);
+                    beta_5min(ind) = mean_beta(ind);  
+                else
+                    beta_5min = beta;
+                end
+                       
+                % replace nans with average value
                 if(any(isnan(beta_5min)))
+                    beta_5min(isnan(beta_5min)) = meanwithnan(beta_5min);
                     disp('sdf')
                 end
                 
@@ -89,3 +88,4 @@ for i=1:length(non_trivial_node_ids)
     end
     
 end
+
