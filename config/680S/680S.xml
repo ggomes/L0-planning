@@ -3054,7 +3054,7 @@
                <end node_id="-42"/>
                <link_type id="3" name="On-Ramp"/>
             </link>
-            <link id="-144" lanes="1" length="0.103977272727273" link_name="FR 242">
+            <link id="-144" lanes="2" length="0.103977272727273" link_name="FR 242">
                <begin node_id="-43"/>
                <end node_id="-162"/>
                <link_type id="4" name="Off-Ramp"/>
@@ -3074,7 +3074,7 @@
                <end node_id="-54"/>
                <link_type id="3" name="On-Ramp"/>
             </link>
-            <link id="-153" lanes="3" length="0.131060606060606" link_name="FR 24">
+            <link id="-153" lanes="3.5" length="0.131060606060606" link_name="FR 24">
                <begin node_id="-66"/>
                <end node_id="-169"/>
                <link_type id="4" name="Off-Ramp"/>
@@ -4172,7 +4172,7 @@
          <fundamentalDiagram capacity="1900" congestion_speed="16" free_flow_speed="67" id="21"/>
       </fundamentalDiagramProfile>
       <fundamentalDiagramProfile id="22" link_id="-36">
-         <fundamentalDiagram capacity="1900" congestion_speed="16" free_flow_speed="67" id="22"/>
+         <fundamentalDiagram capacity="1900" congestion_speed="8" free_flow_speed="67" id="22"/>
       </fundamentalDiagramProfile>
       <fundamentalDiagramProfile id="23" link_id="-41">
          <fundamentalDiagram capacity="1900" congestion_speed="16" free_flow_speed="68" id="23"/>
@@ -4199,22 +4199,22 @@
          <fundamentalDiagram capacity="1900" congestion_speed="16" free_flow_speed="67" id="30"/>
       </fundamentalDiagramProfile>
       <fundamentalDiagramProfile id="31" link_id="-54">
-         <fundamentalDiagram capacity="1900" congestion_speed="16" free_flow_speed="67" id="31"/>
+         <fundamentalDiagram capacity="1900" congestion_speed="10" free_flow_speed="67" id="31"/>
       </fundamentalDiagramProfile>
       <fundamentalDiagramProfile id="32" link_id="-55">
-         <fundamentalDiagram capacity="1900" congestion_speed="16" free_flow_speed="67" id="32"/>
+         <fundamentalDiagram capacity="1900" congestion_speed="10" free_flow_speed="67" id="32"/>
       </fundamentalDiagramProfile>
       <fundamentalDiagramProfile id="33" link_id="-57">
-         <fundamentalDiagram capacity="1900" congestion_speed="16" free_flow_speed="67" id="33"/>
+         <fundamentalDiagram capacity="1900" congestion_speed="10" free_flow_speed="67" id="33"/>
       </fundamentalDiagramProfile>
       <fundamentalDiagramProfile id="34" link_id="-58">
-         <fundamentalDiagram capacity="1900" congestion_speed="16" free_flow_speed="67" id="34"/>
+         <fundamentalDiagram capacity="1900" congestion_speed="10" free_flow_speed="67" id="34"/>
       </fundamentalDiagramProfile>
       <fundamentalDiagramProfile id="35" link_id="-59">
-         <fundamentalDiagram capacity="1900" congestion_speed="16" free_flow_speed="67" id="35"/>
+         <fundamentalDiagram capacity="1900" congestion_speed="6" free_flow_speed="67" id="35"/>
       </fundamentalDiagramProfile>
       <fundamentalDiagramProfile id="36" link_id="-60">
-         <fundamentalDiagram capacity="1900" congestion_speed="16" free_flow_speed="67" id="36"/>
+         <fundamentalDiagram capacity="1900" congestion_speed="6" free_flow_speed="65" id="36"/>
       </fundamentalDiagramProfile>
       <fundamentalDiagramProfile id="37" link_id="-61">
          <fundamentalDiagram capacity="1900" congestion_speed="16" free_flow_speed="67" id="37"/>
@@ -4640,10 +4640,10 @@
          <fundamentalDiagram capacity="1900" congestion_speed="16" free_flow_speed="67" id="177"/>
       </fundamentalDiagramProfile>
       <fundamentalDiagramProfile id="178" link_id="-56">
-         <fundamentalDiagram capacity="1900" congestion_speed="16" free_flow_speed="67" id="178"/>
+         <fundamentalDiagram capacity="1900" congestion_speed="10" free_flow_speed="67" id="178"/>
       </fundamentalDiagramProfile>
       <fundamentalDiagramProfile id="179" link_id="-283">
-         <fundamentalDiagram capacity="1900" congestion_speed="16" free_flow_speed="67" id="179"/>
+         <fundamentalDiagram capacity="1900" congestion_speed="10" free_flow_speed="67" id="179"/>
       </fundamentalDiagramProfile>
       <fundamentalDiagramProfile id="180" link_id="-75">
          <fundamentalDiagram capacity="1900" congestion_speed="16" free_flow_speed="67" id="180"/>
