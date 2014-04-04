@@ -98,6 +98,7 @@
 		<controller dt="5" enabled="true" id="23" name="SR_Generator" type="SR_Generator">
 			<parameters>
 				<parameter name="fr_flow_file" value=""/>
+				<parameter name="log_file" value=""/>
 			</parameters>
 			<target_actuators>
 				<target_actuator id="1"/>

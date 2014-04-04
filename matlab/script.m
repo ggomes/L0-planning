@@ -49,11 +49,12 @@ disp(['Done in ' num2str(toc) ' seconds.']);
 disp('7. Load split actuators/controllers');
 tic
 act_and_ctrl = xml_read(act_cntrl);
-act_and_ctrl.ControllerSet.controller.parameters.parameter.ATTRIBUTE.value = ...
-    fullfile(cfg_gen_folder,'fr_demand.xml');
+act_and_ctrl.ControllerSet.controller.parameters.parameter(1).ATTRIBUTE.value = fullfile(cfg_gen_folder,'fr_demand.xml');
+act_and_ctrl.ControllerSet.controller.parameters.parameter(2).ATTRIBUTE.value = sr_cntrl_log;
 ptr.scenario_ptr.scenario.ControllerSet = act_and_ctrl.ControllerSet;
 ptr.scenario_ptr.scenario.ActuatorSet = act_and_ctrl.ActuatorSet;
 ptr.scenario_ptr.save(cfg_srout);
+clear act_and_ctrl
 disp(['Done in ' num2str(toc) ' seconds.']);
 
 % 8. Run offramp split ratio computation .................................
@@ -64,6 +65,10 @@ system(['java -jar ' beats_jar opt_minus_s beatsprop_sr_out]);
 ptr.simulation_done = true;
 ptr.load_simulation_output('..\\beats_output\\srout');
 disp(['Done in ' num2str(toc) ' seconds.']);
+
+% 9. Read computed split ratios, save final config .......................
+ptr.scenario_ptr.scenario.SplitRatioSet.splitRatioProfile = load_computed_splits(sr_cntrl_log);
+ptr.scenario_ptr.save(cfg_final)
 
 % 9. Put the result into Excel spreadsheet ...............................
 disp('9. Put the result into Excel spreadsheet')
