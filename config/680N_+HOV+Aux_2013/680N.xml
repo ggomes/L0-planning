@@ -1235,12 +1235,10 @@
             <node id="-112" in_sync="false">
                <outputs>
                   <output link_id="-89"/>
-                  <output link_id="-2089"/>
                </outputs>
                <inputs>
                   <input link_id="-137"/>
                   <input link_id="-298"/>
-                  <input link_id="-2298"/>
                </inputs>
                <position>
                   <point elevation="0" lat="37.9180269255112" lng="-122.063338273025"/>
@@ -1251,11 +1249,9 @@
                <outputs>
                   <output link_id="-91"/>
                   <output link_id="-242"/>
-                  <output link_id="-2091"/>
                </outputs>
                <inputs>
                   <input link_id="-299"/>
-                  <input link_id="-2299"/>
                </inputs>
                <position>
                   <point elevation="0" lat="37.922404666052" lng="-122.061283787593"/>
@@ -1265,11 +1261,9 @@
             <node id="-115" in_sync="false">
                <outputs>
                   <output link_id="-92"/>
-                  <output link_id="-2092"/>
                </outputs>
                <inputs>
                   <input link_id="-91"/>
-                  <input link_id="-2091"/>
                </inputs>
                <position>
                   <point elevation="0" lat="37.9249673703027" lng="-122.060625893259"/>
@@ -1279,11 +1273,9 @@
             <node id="-116" in_sync="false">
                <outputs>
                   <output link_id="-93"/>
-                  <output link_id="-2093"/>
                </outputs>
                <inputs>
                   <input link_id="-92"/>
-                  <input link_id="-2092"/>
                </inputs>
                <position>
                   <point elevation="0" lat="37.9276854459347" lng="-122.060296638664"/>
@@ -1293,12 +1285,10 @@
             <node id="-117" in_sync="false">
                <outputs>
                   <output link_id="-94"/>
-                  <output link_id="-2094"/>
                </outputs>
                <inputs>
                   <input link_id="-138"/>
                   <input link_id="-300"/>
-                  <input link_id="-2300"/>
                </inputs>
                <position>
                   <point elevation="0" lat="37.9316386181266" lng="-122.060050192005"/>
@@ -1309,12 +1299,10 @@
                <outputs>
                   <output link_id="-95"/>
                   <output link_id="-248"/>
-                  <output link_id="-2095"/>
                </outputs>
                <inputs>
                   <input link_id="-94"/>
                   <input link_id="-139"/>
-                  <input link_id="-2094"/>
                </inputs>
                <position>
                   <point elevation="0" lat="37.9345569309085" lng="-122.060017594457"/>
@@ -1324,11 +1312,9 @@
             <node id="-119" in_sync="false">
                <outputs>
                   <output link_id="-96"/>
-                  <output link_id="-2096"/>
                </outputs>
                <inputs>
                   <input link_id="-95"/>
-                  <input link_id="-2095"/>
                </inputs>
                <position>
                   <point elevation="0" lat="37.9371642831589" lng="-122.060095806632"/>
@@ -1339,11 +1325,9 @@
                <outputs>
                   <output link_id="-268"/>
                   <output link_id="-90"/>
-                  <output link_id="-2090"/>
                </outputs>
                <inputs>
                   <input link_id="-301"/>
-                  <input link_id="-2301"/>
                </inputs>
                <position>
                   <point elevation="0" lat="37.9412074723669" lng="-122.059803313251"/>
@@ -1353,11 +1337,9 @@
             <node id="-122" in_sync="false">
                <outputs>
                   <output link_id="-99"/>
-                  <output link_id="-2099"/>
                </outputs>
                <inputs>
                   <input link_id="-309"/>
-                  <input link_id="-2309"/>
                </inputs>
                <position>
                   <point elevation="0" lat="37.9448029988208" lng="-122.058206530478"/>
@@ -1367,12 +1349,10 @@
             <node id="-123" in_sync="false">
                <outputs>
                   <output link_id="-100"/>
-                  <output link_id="-2100"/>
                </outputs>
                <inputs>
                   <input link_id="-144"/>
                   <input link_id="-302"/>
-                  <input link_id="-2302"/>
                </inputs>
                <position>
                   <point elevation="0" lat="37.9494753711868" lng="-122.056123070962"/>
@@ -1382,11 +1362,9 @@
             <node id="-124" in_sync="false">
                <outputs>
                   <output link_id="-101"/>
-                  <output link_id="-2101"/>
                </outputs>
                <inputs>
                   <input link_id="-100"/>
-                  <input link_id="-2100"/>
                </inputs>
                <position>
                   <point elevation="0" lat="37.9519609874427" lng="-122.055050579189"/>
@@ -1396,11 +1374,9 @@
             <node id="-125" in_sync="false">
                <outputs>
                   <output link_id="-102"/>
-                  <output link_id="-2102"/>
                </outputs>
                <inputs>
                   <input link_id="-101"/>
-                  <input link_id="-2101"/>
                </inputs>
                <position>
                   <point elevation="0" lat="37.9538290595755" lng="-122.054194273463"/>
@@ -1411,11 +1387,9 @@
                <outputs>
                   <output link_id="-103"/>
                   <output link_id="-193"/>
-                  <output link_id="-2103"/>
                </outputs>
                <inputs>
                   <input link_id="-102"/>
-                  <input link_id="-2102"/>
                </inputs>
                <position>
                   <point elevation="0" lat="37.9564871314256" lng="-122.052850717775"/>
@@ -1429,7 +1403,6 @@
                </outputs>
                <inputs>
                   <input link_id="-103"/>
-                  <input link_id="-2103"/>
                </inputs>
                <position>
                   <point elevation="0" lat="37.9593028575843" lng="-122.052506724102"/>
@@ -1937,7 +1910,6 @@
             <node id="-268" in_sync="false">
                <outputs>
                   <output link_id="-298"/>
-                  <output link_id="-2298"/>
                </outputs>
                <inputs>
                   <input link_id="-88"/>
@@ -1951,11 +1923,9 @@
             <node id="-269" in_sync="false">
                <outputs>
                   <output link_id="-299"/>
-                  <output link_id="-2299"/>
                </outputs>
                <inputs>
                   <input link_id="-89"/>
-                  <input link_id="-2089"/>
                </inputs>
                <position>
                   <point elevation="0" lat="37.920235343351" lng="-122.062201177295"/>
@@ -1965,11 +1935,9 @@
             <node id="-270" in_sync="false">
                <outputs>
                   <output link_id="-300"/>
-                  <output link_id="-2300"/>
                </outputs>
                <inputs>
                   <input link_id="-93"/>
-                  <input link_id="-2093"/>
                </inputs>
                <position>
                   <point elevation="0" lat="37.9297385848517" lng="-122.06017515644"/>
@@ -1979,11 +1947,9 @@
             <node id="-271" in_sync="false">
                <outputs>
                   <output link_id="-301"/>
-                  <output link_id="-2301"/>
                </outputs>
                <inputs>
                   <input link_id="-96"/>
-                  <input link_id="-2096"/>
                </inputs>
                <position>
                   <point elevation="0" lat="37.9392366827671" lng="-122.060159701789"/>
@@ -1993,11 +1959,9 @@
             <node id="-272" in_sync="false">
                <outputs>
                   <output link_id="-302"/>
-                  <output link_id="-2302"/>
                </outputs>
                <inputs>
                   <input link_id="-99"/>
-                  <input link_id="-2099"/>
                </inputs>
                <position>
                   <point elevation="0" lat="37.9470349390837" lng="-122.057296129417"/>
@@ -2063,11 +2027,9 @@
             <node id="-278" in_sync="false">
                <outputs>
                   <output link_id="-309"/>
-                  <output link_id="-2309"/>
                </outputs>
                <inputs>
                   <input link_id="-90"/>
-                  <input link_id="-2090"/>
                </inputs>
                <position>
                   <point elevation="0" lat="37.9430597076287" lng="-122.059051621117"/>
@@ -7919,101 +7881,6 @@
                <end node_id="-268"/>
                <link_type id="6" name="HOV"/>
             </link>
-            <link id="-2298" in_sync="true" lane_offset="2" lanes="1" length="0.191856060606061">
-               <begin node_id="-268"/>
-               <end node_id="-112"/>
-               <link_type id="6" name="HOV"/>
-            </link>
-            <link id="-2089" in_sync="true" lane_offset="2" lanes="1" length="0.165151515151515">
-               <begin node_id="-112"/>
-               <end node_id="-269"/>
-               <link_type id="6" name="HOV"/>
-            </link>
-            <link id="-2299" in_sync="true" lane_offset="2" lanes="1" length="0.158522727272727">
-               <begin node_id="-269"/>
-               <end node_id="-114"/>
-               <link_type id="6" name="HOV"/>
-            </link>
-            <link id="-2091" in_sync="true" lane_offset="2" lanes="1" length="0.180681818181818">
-               <begin node_id="-114"/>
-               <end node_id="-115"/>
-               <link_type id="6" name="HOV"/>
-            </link>
-            <link id="-2092" in_sync="true" lane_offset="2" lanes="1" length="0.189583333333333">
-               <begin node_id="-115"/>
-               <end node_id="-116"/>
-               <link_type id="6" name="HOV"/>
-            </link>
-            <link id="-2093" in_sync="true" lane_offset="2" lanes="1" length="0.142045454545455">
-               <begin node_id="-116"/>
-               <end node_id="-270"/>
-               <link_type id="6" name="HOV"/>
-            </link>
-            <link id="-2300" in_sync="true" lane_offset="2" lanes="1" length="0.131628787878788">
-               <begin node_id="-270"/>
-               <end node_id="-117"/>
-               <link_type id="6" name="HOV"/>
-            </link>
-            <link id="-2094" in_sync="true" lane_offset="2" lanes="1" length="0.201893939393939">
-               <begin node_id="-117"/>
-               <end node_id="-118"/>
-               <link_type id="6" name="HOV"/>
-            </link>
-            <link id="-2095" in_sync="true" lane_offset="2" lanes="1" length="0.179924242424242">
-               <begin node_id="-118"/>
-               <end node_id="-119"/>
-               <link_type id="6" name="HOV"/>
-            </link>
-            <link id="-2096" in_sync="true" lane_offset="2" lanes="1" length="0.143181818181818">
-               <begin node_id="-119"/>
-               <end node_id="-271"/>
-               <link_type id="6" name="HOV"/>
-            </link>
-            <link id="-2301" in_sync="true" lane_offset="2" lanes="1" length="0.137878787878788">
-               <begin node_id="-271"/>
-               <end node_id="-120"/>
-               <link_type id="6" name="HOV"/>
-            </link>
-            <link id="-2090" in_sync="true" lane_offset="2" lanes="1" length="0.134090909090909">
-               <begin node_id="-120"/>
-               <end node_id="-278"/>
-               <link_type id="6" name="HOV"/>
-            </link>
-            <link id="-2309" in_sync="true" lane_offset="2" lanes="1" length="0.129545454545455">
-               <begin node_id="-278"/>
-               <end node_id="-122"/>
-               <link_type id="6" name="HOV"/>
-            </link>
-            <link id="-2099" in_sync="true" lane_offset="2" lanes="1" length="0.1625">
-               <begin node_id="-122"/>
-               <end node_id="-272"/>
-               <link_type id="6" name="HOV"/>
-            </link>
-            <link id="-2302" in_sync="true" lane_offset="2" lanes="1" length="0.179734848484849">
-               <begin node_id="-272"/>
-               <end node_id="-123"/>
-               <link_type id="6" name="HOV"/>
-            </link>
-            <link id="-2100" in_sync="true" lane_offset="2" lanes="1" length="0.182007575757576">
-               <begin node_id="-123"/>
-               <end node_id="-124"/>
-               <link_type id="6" name="HOV"/>
-            </link>
-            <link id="-2101" in_sync="true" lane_offset="2" lanes="1" length="0.137878787878788">
-               <begin node_id="-124"/>
-               <end node_id="-125"/>
-               <link_type id="6" name="HOV"/>
-            </link>
-            <link id="-2102" in_sync="true" lane_offset="2" lanes="1" length="0.197348484848485">
-               <begin node_id="-125"/>
-               <end node_id="-126"/>
-               <link_type id="6" name="HOV"/>
-            </link>
-            <link id="-2103" in_sync="true" lane_offset="2" lanes="1" length="0.197727272727273">
-               <begin node_id="-126"/>
-               <end node_id="-127"/>
-               <link_type id="6" name="HOV"/>
-            </link>
             <link id="-2104" in_sync="true" lane_offset="2" lanes="1" length="0.158712121212121">
                <begin node_id="-127"/>
                <end node_id="-128"/>
@@ -8961,63 +8828,6 @@
          <fundamentalDiagram capacity="1800" congestion_speed="19" free_flow_speed="65" id="0"/>
       </fundamentalDiagramProfile>
       <fundamentalDiagramProfile dt="0" id="-2088" link_id="-2088" start_time="0">
-         <fundamentalDiagram capacity="1800" congestion_speed="19" free_flow_speed="65" id="0"/>
-      </fundamentalDiagramProfile>
-      <fundamentalDiagramProfile dt="0" id="-2298" link_id="-2298" start_time="0">
-         <fundamentalDiagram capacity="1800" congestion_speed="19" free_flow_speed="65" id="0"/>
-      </fundamentalDiagramProfile>
-      <fundamentalDiagramProfile dt="0" id="-2089" link_id="-2089" start_time="0">
-         <fundamentalDiagram capacity="1800" congestion_speed="19" free_flow_speed="65" id="0"/>
-      </fundamentalDiagramProfile>
-      <fundamentalDiagramProfile dt="0" id="-2299" link_id="-2299" start_time="0">
-         <fundamentalDiagram capacity="1800" congestion_speed="19" free_flow_speed="65" id="0"/>
-      </fundamentalDiagramProfile>
-      <fundamentalDiagramProfile dt="0" id="-2091" link_id="-2091" start_time="0">
-         <fundamentalDiagram capacity="1800" congestion_speed="19" free_flow_speed="65" id="0"/>
-      </fundamentalDiagramProfile>
-      <fundamentalDiagramProfile dt="0" id="-2092" link_id="-2092" start_time="0">
-         <fundamentalDiagram capacity="1800" congestion_speed="19" free_flow_speed="65" id="0"/>
-      </fundamentalDiagramProfile>
-      <fundamentalDiagramProfile dt="0" id="-2093" link_id="-2093" start_time="0">
-         <fundamentalDiagram capacity="1800" congestion_speed="19" free_flow_speed="65" id="0"/>
-      </fundamentalDiagramProfile>
-      <fundamentalDiagramProfile dt="0" id="-2300" link_id="-2300" start_time="0">
-         <fundamentalDiagram capacity="1800" congestion_speed="19" free_flow_speed="65" id="0"/>
-      </fundamentalDiagramProfile>
-      <fundamentalDiagramProfile dt="0" id="-2094" link_id="-2094" start_time="0">
-         <fundamentalDiagram capacity="1800" congestion_speed="19" free_flow_speed="65" id="0"/>
-      </fundamentalDiagramProfile>
-      <fundamentalDiagramProfile dt="0" id="-2095" link_id="-2095" start_time="0">
-         <fundamentalDiagram capacity="1800" congestion_speed="19" free_flow_speed="65" id="0"/>
-      </fundamentalDiagramProfile>
-      <fundamentalDiagramProfile dt="0" id="-2096" link_id="-2096" start_time="0">
-         <fundamentalDiagram capacity="1800" congestion_speed="19" free_flow_speed="65" id="0"/>
-      </fundamentalDiagramProfile>
-      <fundamentalDiagramProfile dt="0" id="-2301" link_id="-2301" start_time="0">
-         <fundamentalDiagram capacity="1800" congestion_speed="19" free_flow_speed="65" id="0"/>
-      </fundamentalDiagramProfile>
-      <fundamentalDiagramProfile dt="0" id="-2090" link_id="-2090" start_time="0">
-         <fundamentalDiagram capacity="1800" congestion_speed="19" free_flow_speed="65" id="0"/>
-      </fundamentalDiagramProfile>
-      <fundamentalDiagramProfile dt="0" id="-2309" link_id="-2309" start_time="0">
-         <fundamentalDiagram capacity="1800" congestion_speed="19" free_flow_speed="65" id="0"/>
-      </fundamentalDiagramProfile>
-      <fundamentalDiagramProfile dt="0" id="-2099" link_id="-2099" start_time="0">
-         <fundamentalDiagram capacity="1800" congestion_speed="19" free_flow_speed="65" id="0"/>
-      </fundamentalDiagramProfile>
-      <fundamentalDiagramProfile dt="0" id="-2302" link_id="-2302" start_time="0">
-         <fundamentalDiagram capacity="1800" congestion_speed="19" free_flow_speed="65" id="0"/>
-      </fundamentalDiagramProfile>
-      <fundamentalDiagramProfile dt="0" id="-2100" link_id="-2100" start_time="0">
-         <fundamentalDiagram capacity="1800" congestion_speed="19" free_flow_speed="65" id="0"/>
-      </fundamentalDiagramProfile>
-      <fundamentalDiagramProfile dt="0" id="-2101" link_id="-2101" start_time="0">
-         <fundamentalDiagram capacity="1800" congestion_speed="19" free_flow_speed="65" id="0"/>
-      </fundamentalDiagramProfile>
-      <fundamentalDiagramProfile dt="0" id="-2102" link_id="-2102" start_time="0">
-         <fundamentalDiagram capacity="1800" congestion_speed="19" free_flow_speed="65" id="0"/>
-      </fundamentalDiagramProfile>
-      <fundamentalDiagramProfile dt="0" id="-2103" link_id="-2103" start_time="0">
          <fundamentalDiagram capacity="1800" congestion_speed="19" free_flow_speed="65" id="0"/>
       </fundamentalDiagramProfile>
       <fundamentalDiagramProfile dt="0" id="-2104" link_id="-2104" start_time="0">
