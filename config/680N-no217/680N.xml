@@ -787,6 +787,9 @@
       <fundamentalDiagramProfile id="263" link_id="-2066">
          <fundamentalDiagram capacity="1800" congestion_speed="16" free_flow_speed="67" id="0"/>
       </fundamentalDiagramProfile>
+      <fundamentalDiagramProfile id="364" link_id="-2104">
+         <fundamentalDiagram capacity="1800" congestion_speed="10" free_flow_speed="70" id="0"/>
+      </fundamentalDiagramProfile>
       <fundamentalDiagramProfile id="264" link_id="-2105">
          <fundamentalDiagram capacity="1800" congestion_speed="10" free_flow_speed="70" id="0"/>
       </fundamentalDiagramProfile>
@@ -2232,6 +2235,7 @@
                <node_type id="4" name="simple"/>
                <outputs>
                   <output link_id="-104"/>
+                  <output link_id="-2104"/>
                </outputs>
                <inputs>
                   <input link_id="-103"/>
@@ -2249,6 +2253,7 @@
                </outputs>
                <inputs>
                   <input link_id="-104"/>
+                  <input link_id="-2104"/>
                </inputs>
                <position>
                   <point elevation="0" lat="37.9614707376823" lng="-122.053349433924"/>
@@ -3793,6 +3798,11 @@
                <end node_id="-128"/>
                <link_type id="1" name="Freeway"/>
             </link>
+            <link id="-2104" lanes="1" length="0.158712121212121">
+               <begin node_id="-127"/>
+               <end node_id="-128"/>
+               <link_type id="6" name="HOV"/>
+            </link>
             <link id="-105" lanes="3" length="0.172348484848485">
                <begin node_id="-128"/>
                <end node_id="-129"/>
@@ -4048,7 +4058,7 @@
                <end node_id="-202"/>
                <link_type id="4" name="Off-Ramp"/>
             </link>
-            <link id="-216" lanes="1" length="0.220075757575758">
+            <link id="-216" lanes="2" length="0.220075757575758">
                <begin node_id="-101"/>
                <end node_id="-203"/>
                <link_type id="4" name="Off-Ramp"/>
