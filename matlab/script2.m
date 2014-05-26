@@ -24,7 +24,7 @@ tic
 ptr.reset_simulation;
 system(['java -jar ' beats_jar opt_minus_s beatsprop_sr_out]);
 ptr.simulation_done = true;
-ptr.load_simulation_output('..\\beats_output\\srout');
+ptr.load_simulation_output('../beats_output/srout');
 disp(['Done in ' num2str(toc) ' seconds.']);
 
 % 9. Put the result into Excel spreadsheet ...............................

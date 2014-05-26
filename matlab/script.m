@@ -29,7 +29,7 @@ tic
 ptr.scenario_ptr.save(cfg_gp);
 system(['java -jar ' beats_jar opt_minus_s beatsprop_gp]);
 ptr.simulation_done = true;
-ptr.load_simulation_output('..\\beats_output\\gp');
+ptr.load_simulation_output('../beats_output/gp');
 disp(['Done in ' num2str(toc) ' seconds.']);  
 
 % 5. aggregate GP/HOV split ratios to 5min ...............................
@@ -62,7 +62,7 @@ tic
 ptr.reset_simulation;
 system(['java -jar ' beats_jar opt_minus_s beatsprop_sr_out]);
 ptr.simulation_done = true;
-ptr.load_simulation_output('..\\beats_output\\srout');
+ptr.load_simulation_output('../beats_output/srout');
 disp(['Done in ' num2str(toc) ' seconds.']);
 
 % 9. Put the result into Excel spreadsheet ...............................
