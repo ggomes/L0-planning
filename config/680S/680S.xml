@@ -4400,7 +4400,7 @@
          <fundamentalDiagram capacity="1800" congestion_speed="15" free_flow_speed="60" id="97"/>
       </fundamentalDiagramProfile>
       <fundamentalDiagramProfile id="98" link_id="-131">
-         <fundamentalDiagram capacity="1800" congestion_speed="15" free_flow_speed="60" id="98"/>
+         <fundamentalDiagram capacity="1900" congestion_speed="15" free_flow_speed="60" id="98"/>
       </fundamentalDiagramProfile>
       <fundamentalDiagramProfile id="99" link_id="-132">
          <fundamentalDiagram capacity="1800" congestion_speed="15" free_flow_speed="60" id="99"/>
