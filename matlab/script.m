@@ -68,6 +68,6 @@ disp(['Done in ' num2str(toc) ' seconds.']);
 % 9. Put the result into Excel spreadsheet ...............................
 disp('9. Put the result into Excel spreadsheet')
 tic
-[GP_V, GP_F, GP_D, HOV_V, HOV_F, HOV_D, ORD, ORF, FRD, FRF] = extract_simulation_data(ptr,xlsx_file,range);
+[GP_V, GP_F, GP_D, HOV_V, HOV_F, HOV_D, ORD, ORF, FRD, FRF, ORQ] = extract_simulation_data(ptr,xlsx_file,range);
 disp(['Done in ' num2str(toc) ' seconds.']); 
 

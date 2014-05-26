@@ -1,4 +1,4 @@
-function [GP_V, GP_F, GP_D, HOV_V, HOV_F, HOV_D, ORD, ORF, FRD, FRF] = extract_simulation_data(ptr,data_file,range)
+function [GP_V, GP_F, GP_D, HOV_V, HOV_F, HOV_D, ORD, ORF, FRD, FRF, ORQ] = extract_simulation_data(ptr,data_file,range)
 
 % Extracting link data
 link_id = xlsread(data_file, 'GP_Speed', sprintf('a%d:f%d', range(1), range(2)));
@@ -130,6 +130,7 @@ for i = 1:m
   FRF(has_fr(i), :) = inflow;
 end
 
+ORQ = compute_or_queues(ORD-ORF);
 ORF = round(ORF);
 FRF = round(FRF);
 
@@ -147,4 +148,5 @@ xlswrite(data_file, HOV_D, 'HOV_Density', sprintf('i%d:kj%d', range(1), range(2)
 xlswrite(data_file, hov_cd', 'HOV_Density', sprintf('e%d:e%d', range(1), range(2)))
 xlswrite(data_file, ORF, 'On-Ramp_Flow', sprintf('k%d:kl%d', range(1), range(2)))
 xlswrite(data_file, FRF, 'Off-Ramp_Flow', sprintf('k%d:kl%d', range(1), range(2)))
+xlswrite(data_file, ORQ, 'On-Ramp_Queue', sprintf('k%d:kl%d', range(1), range(2)))
 end
