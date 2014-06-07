@@ -4068,7 +4068,7 @@
                <end node_id="-107"/>
                <link_type id="1" name="Freeway"/>
             </link>
-            <link id="-83" lanes="2" length="0.216287878787879">
+            <link id="-83" lanes="5" length="0.216287878787879">
                <begin node_id="-105"/>
                <end node_id="-106"/>
                <link_type id="4" name="Off-Ramp"/>
