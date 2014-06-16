@@ -450,7 +450,6 @@
             <node id="-61" node_name="OR Geary Rd">
                <outputs>
                   <output link_id="-35"/>
-                  <output link_id="-2035"/>
                </outputs>
                <inputs>
                   <input link_id="-34"/>
@@ -469,7 +468,6 @@
                </outputs>
                <inputs>
                   <input link_id="-35"/>
-                  <input link_id="-2035"/>
                </inputs>
                <position>
                   <point elevation="0" lat="37.9200364295563" lng="-122.062545200493"/>
@@ -2649,12 +2647,12 @@
                <end node_id="-60"/>
                <link_type id="1" name="Freeway"/>
             </link>
-            <link id="-34" lanes="5" length="0.239583333333333" link_name="-60 -&gt; -61">
+            <link id="-34" lanes="5.47368421052632" length="0.239583333333333" link_name="-60 -&gt; -61">
                <begin node_id="-60"/>
                <end node_id="-61"/>
                <link_type id="1" name="Freeway"/>
             </link>
-            <link id="-35" lanes="5" length="0.258143939393939" link_name="-61 -&gt; -62">
+            <link id="-35" lanes="6.47368421052632" length="0.258143939393939" link_name="-61 -&gt; -62">
                <begin node_id="-61"/>
                <end node_id="-62"/>
                <link_type id="1" name="Freeway"/>
@@ -3744,11 +3742,6 @@
                <end node_id="-61"/>
                <link_type id="6" name="HOV"/>
             </link>
-            <link id="-2035" lanes="1" length="0.258143939393939" link_name="null">
-               <begin node_id="-61"/>
-               <end node_id="-62"/>
-               <link_type id="6" name="HOV"/>
-            </link>
             <link id="-2053" lanes="1" length="0.18844696969697" link_name="null">
                <begin node_id="-79"/>
                <end node_id="-80"/>
@@ -4821,9 +4814,6 @@
       </fundamentalDiagramProfile>
       <fundamentalDiagramProfile id="238" link_id="-2034">
          <fundamentalDiagram capacity="1800" congestion_speed="16" free_flow_speed="67" id="238"/>
-      </fundamentalDiagramProfile>
-      <fundamentalDiagramProfile id="239" link_id="-2035">
-         <fundamentalDiagram capacity="1800" congestion_speed="16" free_flow_speed="67" id="239"/>
       </fundamentalDiagramProfile>
       <fundamentalDiagramProfile id="240" link_id="-2053">
          <fundamentalDiagram capacity="1800" congestion_speed="16" free_flow_speed="67" id="240"/>
