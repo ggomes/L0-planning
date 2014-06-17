@@ -5,6 +5,7 @@ init_config;
 
 sz = range(2) - 1;
 
+
 or_id = xlsread(xlsx_file, 'On-Ramp_Demand', sprintf('g%d:g%d', range(1), range(2)))';
 ORD = xlsread(xlsx_file, 'On-Ramp_Demand', sprintf('k%d:kl%d', range(1), range(2)));
 ORK = xlsread(xlsx_file, 'On-Ramp_Knobs', sprintf('k%d:kl%d', range(1), range(2)));

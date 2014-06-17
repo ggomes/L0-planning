@@ -45,8 +45,8 @@ end
 
 if 0
 plot([pm(29) pm(29) pm(50) pm(50) pm(29)], [tt(72) tt(108) tt(108) tt(72) tt(72)], 'w');
-plot([pm(69) pm(69) pm(78) pm(78) pm(69)], [tt(79) tt(110) tt(110) tt(79) tt(79)], 'w');
-plot([pm(69) pm(69) pm(78) pm(78) pm(69)], [tt(186) tt(220) tt(220) tt(186) tt(186)], 'w');
+plot([pm(66) pm(66) pm(78) pm(78) pm(66)], [tt(79) tt(110) tt(110) tt(79) tt(79)], 'w');
+plot([pm(66) pm(66) pm(78) pm(78) pm(66)], [tt(186) tt(220) tt(220) tt(186) tt(186)], 'w');
 plot([pm(78) pm(78) pm(83) pm(83) pm(78)], [tt(83) tt(105) tt(105) tt(83) tt(83)], 'w');
 end
 
@@ -81,8 +81,8 @@ end
 
 if 0
 plot([pm(29) pm(29) pm(50) pm(50) pm(29)], [tt(72) tt(108) tt(108) tt(72) tt(72)], 'w');
-plot([pm(69) pm(69) pm(78) pm(78) pm(69)], [tt(79) tt(110) tt(110) tt(79) tt(79)], 'w');
-plot([pm(69) pm(69) pm(78) pm(78) pm(69)], [tt(186) tt(220) tt(220) tt(186) tt(186)], 'w');
+plot([pm(66) pm(66) pm(78) pm(78) pm(66)], [tt(79) tt(110) tt(110) tt(79) tt(79)], 'w');
+plot([pm(66) pm(66) pm(78) pm(78) pm(66)], [tt(186) tt(220) tt(220) tt(186) tt(186)], 'w');
 plot([pm(78) pm(78) pm(83) pm(83) pm(78)], [tt(83) tt(105) tt(105) tt(83) tt(83)], 'w');
 end
 
