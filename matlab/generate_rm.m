@@ -1,4 +1,4 @@
-function [] = generate_alinea(config_file,out_file,up_or_down,gain_value,queue_limit)
+function [] = generate_rm(config_file,out_file,up_or_down,gain_value,queue_limit)
 
 ptr = ScenarioPtr;
 ptr.load(config_file);
@@ -82,23 +82,24 @@ for i=1:num_onramps
 end
 
 %% put into sets ..........................................................
+newptr = ScenarioPtr;
 
-ActuatorSet = struct('ATTRIBUTE',struct('project_id',0,'id',0));
-ActuatorSet.actuator = actuators;
+newptr.scenario.ActuatorSet = struct('ATTRIBUTE',struct('project_id',0,'id',0));
+newptr.scenario.ActuatorSet.actuator = actuators;
 clear actuators
 
-SensorSet = struct('ATTRIBUTE',struct('project_id',0,'id',0));
-SensorSet.sensor = sensors;
+newptr.scenario.SensorSet = struct('ATTRIBUTE',struct('project_id',0,'id',0));
+newptr.scenario.SensorSet.sensor = sensors;
 clear sensors
 
-ControllerSet = struct('ATTRIBUTE',struct('project_id',0,'id',0));
-ControllerSet.controller = controllers;
+newptr.scenario.ControllerSet = struct('ATTRIBUTE',struct('project_id',0,'id',0));
+newptr.scenario.ControllerSet.controller = controllers;
 clear controllers
 
 %% attach to scenario and save ............................................
-ptr.scenario.ActuatorSet = ActuatorSet;
-ptr.scenario.SensorSet = SensorSet;
-ptr.scenario.ControllerSet = ControllerSet;
-ptr.save(out_file);
+% ptr.scenario.ActuatorSet = ActuatorSet;
+% ptr.scenario.SensorSet = SensorSet;
+% ptr.scenario.ControllerSet = ControllerSet;
+newptr.save(out_file);
 
 

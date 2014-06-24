@@ -27,6 +27,11 @@ ptr.simulation_done = true;
 ptr.load_simulation_output('../beats_output/srout');
 disp(['Done in ' num2str(toc) ' seconds.']);
 
+% 8.5 Load and save offramp split ratios to xml (used for rm scenarios) ..
+
+
+
+
 % 9. Put the result into Excel spreadsheet ...............................
 disp('9. Put the result into Excel spreadsheet')
 tic
