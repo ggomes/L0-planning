@@ -3237,7 +3237,7 @@
                <end node_id="-68"/>
                <link_type id="3" name="On-Ramp"/>
             </link>
-            <link id="-256" lanes="4" length="0.19469696969697" link_name="orig -&gt; -1">
+            <link id="-256" lanes="3" length="0.19469696969697" link_name="orig -&gt; -1">
                <begin node_id="-242"/>
                <end node_id="-1"/>
                <link_type id="1" name="Freeway"/>
@@ -3247,17 +3247,17 @@
                <end node_id="-1"/>
                <link_type id="3" name="On-Ramp"/>
             </link>
-            <link id="-258" lanes="4" length="0.188825757575758" link_name="-1 -&gt; -244">
+            <link id="-258" lanes="3" length="0.188825757575758" link_name="-1 -&gt; -244">
                <begin node_id="-1"/>
                <end node_id="-244"/>
                <link_type id="1" name="Freeway"/>
             </link>
-            <link id="-259" lanes="4" length="0.188068181818182" link_name="-244 -&gt; -245">
+            <link id="-259" lanes="3" length="0.188068181818182" link_name="-244 -&gt; -245">
                <begin node_id="-244"/>
                <end node_id="-245"/>
                <link_type id="1" name="Freeway"/>
             </link>
-            <link id="-260" lanes="4" length="0.188636363636364" link_name="-245 -&gt; -246">
+            <link id="-260" lanes="3" length="0.188636363636364" link_name="-245 -&gt; -246">
                <begin node_id="-245"/>
                <end node_id="-246"/>
                <link_type id="1" name="Freeway"/>

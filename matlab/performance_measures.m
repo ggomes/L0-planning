@@ -1,13 +1,13 @@
 
-ORQ(2, :) = zeros(1, 288);
+%ORQ(2, :) = zeros(1, 288);
 
 fprintf('Computing performance measures...\n');
 GP_VMT = compute_vmt(GP_D, GP_V, llen');
 HOV_VMT = compute_vmt(HOV_D, HOV_V, llen');
 GP_VHT = compute_vht(GP_D, llen');
 HOV_VHT = compute_vht(HOV_D, llen');
-GP_Delay = compute_delay(GP_D, GP_V, ffspeeds', llen');
-HOV_Delay = compute_delay(HOV_D, HOV_V, ffspeeds', llen');
+GP_Delay = compute_delay(GP_VMT, GP_VHT, ffspeeds');
+HOV_Delay = compute_delay(HOV_VMT, HOV_VHT, ffspeeds');
 OR_VHT = (1/12)*ORQ;
 Total_VHT = GP_VHT + HOV_VHT + OR_VHT;
 Total_Delay = GP_Delay + HOV_Delay + OR_VHT;
