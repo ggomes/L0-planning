@@ -47,7 +47,7 @@ disp(['Done in ' num2str(toc) ' seconds.']);
 % 7. Load split actuators/controllers .....................................
 disp('7. Load split actuators/controllers');
 tic
-act_and_ctrl = xml_read(act_cntrl);
+act_and_ctrl = xml_read(sr_act_cntrl);
 act_and_ctrl.ControllerSet.controller.parameters.parameter.ATTRIBUTE.value = ...
     fullfile(cfg_gen_folder,'fr_demand.xml');
 ptr.scenario_ptr.scenario.ControllerSet = act_and_ctrl.ControllerSet;
@@ -63,6 +63,44 @@ system(['java -jar ' beats_jar opt_minus_s beatsprop_sr_out]);
 ptr.simulation_done = true;
 ptr.load_simulation_output('../beats_output/srout');
 disp(['Done in ' num2str(toc) ' seconds.']);
+
+save aaa
+
+% 8.5 Load and save offramp split ratios to xml (used for rm scenarios) ..
+link_id_begin_end = ptr.scenario_ptr.link_id_begin_end;
+link_ids = ptr.scenario_ptr.get_link_ids;
+link_types = ptr.scenario_ptr.get_link_types;
+fr_links_ids = link_ids(strcmp(link_types,'Off-Ramp'));
+srps = [];
+for i=1:length(fr_links_ids)
+    
+    begin_node = link_id_begin_end(link_id_begin_end(:,1)==fr_links_ids(i),2);
+    srp = ptr.scenario_ptr.get_split_ratios_for_node_id(begin_node);
+    if(~isempty(srp))
+
+        A = [srp.splitratio.ATTRIBUTE];
+        
+        [~,x]=ismember([A.link_in],link_ids);
+        ind = strcmp(link_types(x),'Freeway') | strcmp(link_types(x),'HOV');
+        ind = ind & [A.link_out]==fr_links_ids(i);
+        
+        if(sum(ind)~=4)
+            error('I was expecting 4.')
+        end
+        
+        xxx = srp.splitratio(ind);
+        
+        for j=1:length(xxx)
+            xxx(1).CONTENT
+
+            xxx(2).ATTRIBUTE
+        
+        end
+        
+        
+    end
+end
+
 
 % 9. Put the result into Excel spreadsheet ...............................
 disp('9. Put the result into Excel spreadsheet')
