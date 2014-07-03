@@ -7,8 +7,8 @@ sr_initial_guess = fullfile(cfg_folder,'680N_sr.xml');
 rm_act_cntrl     = fullfile(cfg_folder,'rm_nooverride_up.xml');
 sr_act_cntrl     = fullfile(cfg_folder,'act_cntrl_sr_generator.xml');
 cfg_scenario     = fullfile(cfg_folder,'680_rm_nooverride_up.xml');
-beatsprop_scenario = fullfile(cfg_folder,'rm.properties');
-
+%beatsprop_scenario = fullfile(cfg_folder,'rm.properties');
+scenario_out     = fullfile(beats_out_folder,'680_rm_nooverride_up');
 
 range = [2 149];  % 680 NB
 
