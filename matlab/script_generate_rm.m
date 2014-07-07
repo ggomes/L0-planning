@@ -28,25 +28,25 @@ X(i).up_or_down         = 'up';
 X(i).alinea_gain_value  = alinea_gain_value;
 X(i).queue_limit        = queue_limit;
             
-% % rm with downstream feedback / no override
-% i = i+1;
-% X(i).folder_base        = fullfile(root,'config','680N-no217');
-% X(i).config_file        = fullfile(X(i).folder_base,'680N.xml');
-% X(i).folder_rm          = fullfile(root,'config','680N_+RM_2013');
-% X(i).out_file           = fullfile(X(i).folder_rm,'rm_nooverride_dn.xml');
-% X(i).up_or_down         = 'down';
-% X(i).alinea_gain_value  = alinea_gain_value;
-% X(i).queue_limit        = inf;
-%             
-% % rm with downstream feedback / with override
-% i = i+1;
-% X(i).folder_base        = fullfile(root,'config','680N-no217');
-% X(i).config_file        = fullfile(X(i).folder_base,'680N.xml');
-% X(i).folder_rm          = fullfile(root,'config','680N_+RM_2013');
-% X(i).out_file           = fullfile(X(i).folder_rm,'rm_override_dn.xml');
-% X(i).up_or_down         = 'down';
-% X(i).alinea_gain_value  = alinea_gain_value;
-% X(i).queue_limit        = queue_limit;
+% rm with downstream feedback / no override
+i = i+1;
+X(i).folder_base        = fullfile(root,'config','680N-no217');
+X(i).config_file        = fullfile(X(i).folder_base,'680N.xml');
+X(i).folder_rm          = fullfile(root,'config','680N_+RM_2013');
+X(i).out_file           = fullfile(X(i).folder_rm,'rm_nooverride_dn.xml');
+X(i).up_or_down         = 'down';
+X(i).alinea_gain_value  = alinea_gain_value;
+X(i).queue_limit        = inf;
+            
+% rm with downstream feedback / with override
+i = i+1;
+X(i).folder_base        = fullfile(root,'config','680N-no217');
+X(i).config_file        = fullfile(X(i).folder_base,'680N.xml');
+X(i).folder_rm          = fullfile(root,'config','680N_+RM_2013');
+X(i).out_file           = fullfile(X(i).folder_rm,'rm_override_dn.xml');
+X(i).up_or_down         = 'down';
+X(i).alinea_gain_value  = alinea_gain_value;
+X(i).queue_limit        = queue_limit;
 
 %% 680 S / base year
 
@@ -70,25 +70,25 @@ X(i).up_or_down         = 'up';
 X(i).alinea_gain_value  = alinea_gain_value;
 X(i).queue_limit        = queue_limit;
             
-% % rm with downstream feedback / no override
-% i = i+1;
-% X(i).folder_base        = fullfile(root,'config','680S');
-% X(i).config_file        = fullfile(X(i).folder_base,'680S.xml');
-% X(i).folder_rm          = fullfile(root,'config','680S_+RM_2013');
-% X(i).out_file           = fullfile(X(i).folder_rm,'rm_nooverride_dn.xml');
-% X(i).up_or_down         = 'down';
-% X(i).alinea_gain_value  = alinea_gain_value;
-% X(i).queue_limit        = inf;
-%             
-% % rm with downstream feedback / with override
-% i = i+1;
-% X(i).folder_base        = fullfile(root,'config','680S');
-% X(i).config_file        = fullfile(X(i).folder_base,'680S.xml');
-% X(i).folder_rm          = fullfile(root,'config','680S_+RM_2013');
-% X(i).out_file           = fullfile(X(i).folder_rm,'rm_override_dn.xml');
-% X(i).up_or_down         = 'down';
-% X(i).alinea_gain_value  = alinea_gain_value;
-% X(i).queue_limit        = queue_limit;
+% rm with downstream feedback / no override
+i = i+1;
+X(i).folder_base        = fullfile(root,'config','680S');
+X(i).config_file        = fullfile(X(i).folder_base,'680S.xml');
+X(i).folder_rm          = fullfile(root,'config','680S_+RM_2013');
+X(i).out_file           = fullfile(X(i).folder_rm,'rm_nooverride_dn.xml');
+X(i).up_or_down         = 'down';
+X(i).alinea_gain_value  = alinea_gain_value;
+X(i).queue_limit        = inf;
+            
+% rm with downstream feedback / with override
+i = i+1;
+X(i).folder_base        = fullfile(root,'config','680S');
+X(i).config_file        = fullfile(X(i).folder_base,'680S.xml');
+X(i).folder_rm          = fullfile(root,'config','680S_+RM_2013');
+X(i).out_file           = fullfile(X(i).folder_rm,'rm_override_dn.xml');
+X(i).up_or_down         = 'down';
+X(i).alinea_gain_value  = alinea_gain_value;
+X(i).queue_limit        = queue_limit;
 
 %% run generate_rm ....................................................
 for i=1:length(X)
