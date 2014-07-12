@@ -3052,7 +3052,7 @@
                <end node_id="-42"/>
                <link_type id="3" name="On-Ramp"/>
             </link>
-            <link id="-144" lanes="2" length="0.103977272727273" link_name="FR 242">
+            <link id="-144" lanes="1" length="0.103977272727273" link_name="FR 242">
                <begin node_id="-43"/>
                <end node_id="-162"/>
                <link_type id="4" name="Off-Ramp"/>
@@ -4402,7 +4402,7 @@
          <fundamentalDiagram capacity="1800" congestion_speed="15" free_flow_speed="60" id="100"/>
       </fundamentalDiagramProfile>
       <fundamentalDiagramProfile id="101" link_id="-144">
-         <fundamentalDiagram capacity="1800" congestion_speed="15" free_flow_speed="60" id="101"/>
+         <fundamentalDiagram capacity="1900" congestion_speed="15" free_flow_speed="60" id="101"/>
       </fundamentalDiagramProfile>
       <fundamentalDiagramProfile id="102" link_id="-145">
          <fundamentalDiagram capacity="1800" congestion_speed="15" free_flow_speed="60" id="102"/>
