@@ -365,7 +365,7 @@
          <fundamentalDiagram capacity="1800" congestion_speed="15" free_flow_speed="60" id="0"/>
       </fundamentalDiagramProfile>
       <fundamentalDiagramProfile id="122" link_id="-147">
-         <fundamentalDiagram capacity="1800" congestion_speed="15" free_flow_speed="60" id="0"/>
+         <fundamentalDiagram capacity="1900" congestion_speed="15" free_flow_speed="60" id="0"/>
       </fundamentalDiagramProfile>
       <fundamentalDiagramProfile id="123" link_id="-150">
          <fundamentalDiagram capacity="1800" congestion_speed="15" free_flow_speed="60" id="0"/>
@@ -6147,7 +6147,7 @@
                <end node_id="-123"/>
                <link_type id="3" name="On-Ramp"/>
             </link>
-            <link id="-147" lanes="2" length="0.165151515151515">
+            <link id="-147" lanes="1" length="0.165151515151515">
                <begin node_id="-12"/>
                <end node_id="-156"/>
                <link_type id="4" name="Off-Ramp"/>
