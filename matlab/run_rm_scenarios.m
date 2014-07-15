@@ -56,6 +56,8 @@ function run_scenario(Y,X)
 root = fileparts(fileparts(mfilename('fullpath')));
 beats_out_folder = fullfile(root,'beats_output');
 
+delete(fullfile(beats_out_folder,'*'))
+
 % load from init file
 range = [];
 run(Y.init_file)
@@ -106,7 +108,11 @@ ptr.run_beats( struct(  'SCENARIO',cfg_srout,...
     'OUTPUT_DT','300',...
     'SPLIT_LOGGER_PREFIX',sr_out,...
     'SPLIT_LOGGER_DT','300') );
-%ptr.plot_performance
+% ptr.plot_performance
+
+% plot
+[GP_V, GP_F, GP_D, HOV_V, HOV_F, HOV_D, ORD, ORF, FRD, FRF, ORQ] = extract_simulation_data(ptr,xlsx_file,range);
+plot_simulation_data
 
 % 9 Load and save offramp split ratios to xml (used for rm scenarios) ..
 link_id_begin_end = ptr.scenario_ptr.link_id_begin_end;
@@ -155,7 +161,11 @@ ptr.run_beats( struct( 'SCENARIO',cfg_srout2,...
     'OUTPUT_PREFIX',sr_out2,...
     'OUTPUT_DT','300',...
     'SPLIT_LOGGER_PREFIX',sr_out2 ) );
-%ptr.plot_performance
+ptr.plot_performance
+
+% plot
+[GP_V, GP_F, GP_D, HOV_V, HOV_F, HOV_D, ORD, ORF, FRD, FRF, ORQ] = extract_simulation_data(ptr,xlsx_file,range);
+plot_simulation_data
 
 % Attach ramp metering actuators and controllers ..................
 act_and_ctrl = xml_read(fullfile(Y.scenario_folder,[X.cntrl_suffix '.xml']));
