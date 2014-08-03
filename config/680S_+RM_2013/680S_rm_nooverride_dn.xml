@@ -6086,6 +6086,7 @@
             <feedback_sensor id="1" usage="mainline"/>
          </feedback_sensors>
       </controller>
+      <!--
       <controller dt="300" enabled="true" id="2" type="IRM_ALINEA">
          <parameters>
             <parameter name="gain" value="22.352"/>
@@ -6097,6 +6098,7 @@
             <feedback_sensor id="2" usage="mainline"/>
          </feedback_sensors>
       </controller>
+      -->
       <controller dt="300" enabled="true" id="3" type="IRM_ALINEA">
          <parameters>
             <parameter name="gain" value="22.352"/>
@@ -6119,6 +6121,7 @@
             <feedback_sensor id="4" usage="mainline"/>
          </feedback_sensors>
       </controller>
+      <!--
       <controller dt="300" enabled="true" id="5" type="IRM_ALINEA">
          <parameters>
             <parameter name="gain" value="22.352"/>
@@ -6130,6 +6133,7 @@
             <feedback_sensor id="5" usage="mainline"/>
          </feedback_sensors>
       </controller>
+      -->
       <controller dt="300" enabled="true" id="6" type="IRM_ALINEA">
          <parameters>
             <parameter name="gain" value="22.352"/>
@@ -6152,6 +6156,7 @@
             <feedback_sensor id="7" usage="mainline"/>
          </feedback_sensors>
       </controller>
+      <!--
       <controller dt="300" enabled="true" id="8" type="IRM_ALINEA">
          <parameters>
             <parameter name="gain" value="22.352"/>
@@ -6163,6 +6168,7 @@
             <feedback_sensor id="8" usage="mainline"/>
          </feedback_sensors>
       </controller>
+      -->
       <controller dt="300" enabled="true" id="9" type="IRM_ALINEA">
          <parameters>
             <parameter name="gain" value="22.352"/>
@@ -6400,10 +6406,12 @@
          <scenarioElement id="-124" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
       </actuator>
+      <!--
       <actuator id="2">
          <scenarioElement id="-131" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
       </actuator>
+      -->
       <actuator id="3">
          <scenarioElement id="-132" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
@@ -6412,10 +6420,12 @@
          <scenarioElement id="-133" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
       </actuator>
+      <!--
       <actuator id="5">
          <scenarioElement id="-145" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
       </actuator>
+      -->
       <actuator id="6">
          <scenarioElement id="-146" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
@@ -6424,10 +6434,12 @@
          <scenarioElement id="-147" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
       </actuator>
+      <!--
       <actuator id="8">
          <scenarioElement id="-154" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
       </actuator>
+      -->
       <actuator id="9">
          <scenarioElement id="-164" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
