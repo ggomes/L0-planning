@@ -8,7 +8,7 @@ pm = pm_dir*link_id(:, 2)'; % postmiles
 llen = link_id(:, 3)'; % link lengths in miles
 ffspeeds = link_id(:, 5)'; % free flow speeds
 
-figure(1);
+figure
 hold on;
 pcolor(pm, tt, ORQ');
 colorbar;
@@ -17,7 +17,7 @@ xlabel('Abs. Postmile');
 ylabel('Time');
 title('On-ramp Queues');
 
-figure(2);
+figure
 hold on;
 pcolor(pm, tt, HOV_F');
 shading flat;
@@ -27,7 +27,7 @@ xlabel('Abs. Postmile');
 ylabel('Time');
 title('HOV Flow');
 
-figure(3);
+figure
 hold on;
 pcolor(pm, tt, -HOV_V');
 shading flat;
@@ -52,7 +52,7 @@ end
 
 
 
-figure(4);
+figure
 hold on;
 pcolor(pm, tt, GP_F');
 shading flat;
@@ -62,7 +62,7 @@ xlabel('Abs. Postmile');
 ylabel('Time');
 title('GP Flow');
 
-figure(5);
+figure
 hold on;
 pcolor(pm, tt, -GP_V');
 shading flat;

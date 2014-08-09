@@ -25,9 +25,7 @@ max_fd_id = max(fd_link_map,1);
 add_hov_links = [];
 add_hov_fds = [];
 for i=1:length(add_hov_fwy_links)
-    
-    i 
-    
+        
     %  create hov link
     new_hov_link_id = max_link_id + i;
     new_hov_link = ptr.get_link_byID(add_hov_fwy_links(i));

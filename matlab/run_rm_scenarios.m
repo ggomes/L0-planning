@@ -46,9 +46,11 @@ ii=ii+1;
 X(ii).Yind = 2;
 X(ii).cntrl_suffix = 'rm_override_dn';
 
-for ii = 1:length(X)
+for ii = [1 5] %length(X)
     run_scenario(Y(X(ii).Yind),X(ii))
 end
+
+disp('done')
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function run_scenario(Y,X)
@@ -108,7 +110,7 @@ ptr.run_beats( struct(  'SCENARIO',cfg_srout,...
     'OUTPUT_DT','300',...
     'SPLIT_LOGGER_PREFIX',sr_out,...
     'SPLIT_LOGGER_DT','300') );
-% ptr.plot_performance
+ptr.plot_performance
 
 % plot
 [GP_V, GP_F, GP_D, HOV_V, HOV_F, HOV_D, ORD, ORF, FRD, FRF, ORQ] = extract_simulation_data(ptr,xlsx_file,range);
@@ -167,20 +169,20 @@ ptr.plot_performance
 [GP_V, GP_F, GP_D, HOV_V, HOV_F, HOV_D, ORD, ORF, FRD, FRF, ORQ] = extract_simulation_data(ptr,xlsx_file,range);
 plot_simulation_data
 
-% Attach ramp metering actuators and controllers ..................
-act_and_ctrl = xml_read(fullfile(Y.scenario_folder,[X.cntrl_suffix '.xml']));
-ptr.scenario_ptr.scenario.ControllerSet = act_and_ctrl.ControllerSet;
-ptr.scenario_ptr.scenario.ActuatorSet = act_and_ctrl.ActuatorSet;
-ptr.scenario_ptr.scenario.SensorSet = act_and_ctrl.SensorSet;
-
-% run scenario ....................................................
-cfg_scenario = fullfile(cfg_gen_folder,['scenario_' X.cntrl_suffix '.xml']);
-scenario_out = fullfile(beats_out_folder,['scenario_' X.cntrl_suffix]);
-ptr.reset_simulation;
-ptr.run_beats( struct(  'SCENARIO',cfg_scenario,...
-    'SIM_DT','5',...
-    'OUTPUT_PREFIX',scenario_out,...
-    'OUTPUT_DT','300') );
+% % Attach ramp metering actuators and controllers ..................
+% act_and_ctrl = xml_read(fullfile(Y.scenario_folder,[X.cntrl_suffix '.xml']));
+% ptr.scenario_ptr.scenario.ControllerSet = act_and_ctrl.ControllerSet;
+% ptr.scenario_ptr.scenario.ActuatorSet = act_and_ctrl.ActuatorSet;
+% ptr.scenario_ptr.scenario.SensorSet = act_and_ctrl.SensorSet;
+% 
+% % run scenario ....................................................
+% cfg_scenario = fullfile(cfg_gen_folder,['scenario_' X.cntrl_suffix '.xml']);
+% scenario_out = fullfile(beats_out_folder,['scenario_' X.cntrl_suffix]);
+% ptr.reset_simulation;
+% ptr.run_beats( struct(  'SCENARIO',cfg_scenario,...
+%     'SIM_DT','5',...
+%     'OUTPUT_PREFIX',scenario_out,...
+%     'OUTPUT_DT','300') );
 %ptr.plot_performance
 
 
