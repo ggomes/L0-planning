@@ -3,10 +3,29 @@ root = fileparts(fileparts(mfilename('fullpath')));
 beats_jar = fullfile(root,'beats','beats-0.1-SNAPSHOT.jar');
 
 % init_680N_2013
+%init_680S_2013
+
+
+init_680N_rm_nooverride_dn_2013
+%init_680S_rm_nooverride_dn_2013
+%init_680N_rm_nooverride_up_2013
+%init_680S_rm_nooverride_up_2013
+%init_680N_rm_override_dn_2013
+%init_680S_rm_override_dn_2013
+%init_680N_rm_override_up_2013
+%init_680S_rm_override_up_2013
+
+
 % init_680N_2013_S1
+%init_680N_2013_S1_0
+
+
 % init_680N_2025
+%init_680S_2025
+
+
 % init_680N_2030
-% init_680S_2013
+%init_680S_2030
 init_680N_2013_rm_nooverride_up
 % init_680N_2013_rm_override_up
 % init_680S_2013_rm_nooverride_up
