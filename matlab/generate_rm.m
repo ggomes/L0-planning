@@ -15,10 +15,18 @@ link_id_begin_end = ptr.get_link_id_begin_end;
 %% create basic structures ................................................
 
 % actuators
-a_actuator = struct( 'ATTRIBUTE',struct('id',nan) , ...
+p_max_queue_vehicles = generate_mo('parameter');
+p_max_queue_vehicles.ATTRIBUTE.name = 'max_queue_vehicles';
+p_max_queue_vehicles.ATTRIBUTE.value = nan;
+p_max_rate = generate_mo('parameter');
+p_max_rate.ATTRIBUTE.name = 'max_rate_in_vphpl';
+p_max_rate.ATTRIBUTE.value = 900;
+a_actuator = struct( ...
+    'ATTRIBUTE',struct('id',nan) , ...
     'scenarioElement', struct('ATTRIBUTE',struct('id',nan,'type','link')) , ...
     'actuator_type', struct('ATTRIBUTE',struct('id',0,'name','ramp_meter')) , ...
-    'queue_override', struct('ATTRIBUTE',struct('strategy','max_rate','max_queue_vehicles',nan)) );
+    'parameters',struct('parameter',[p_max_queue_vehicles p_max_rate]),...
+    'queue_override', struct('ATTRIBUTE',struct('strategy','max_rate')) );
 if(~has_queue_override)
     a_actuator = rmfield(a_actuator,{'queue_override'});
 end
@@ -55,7 +63,7 @@ for i=1:num_onramps
     actuators(i).ATTRIBUTE.id = i;
     actuators(i).scenarioElement.ATTRIBUTE.id = onramp_ids(i);
     if(has_queue_override)
-        actuators(i).queue_override.ATTRIBUTE.max_queue_vehicles = queue_limit;
+        actuators(i).parameters.parameter(1).ATTRIBUTE.value = queue_limit;
     end
     
     % sensors
