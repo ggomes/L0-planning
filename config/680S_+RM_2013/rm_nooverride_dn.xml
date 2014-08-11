@@ -7,6 +7,7 @@
          <parameters>
             <parameter name="max_queue_vehicles" value="NaN"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
          </parameters>
       </actuator>
       <actuator id="2">
@@ -15,6 +16,7 @@
          <parameters>
             <parameter name="max_queue_vehicles" value="NaN"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
          </parameters>
       </actuator>
       <actuator id="3">
@@ -23,6 +25,7 @@
          <parameters>
             <parameter name="max_queue_vehicles" value="NaN"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
          </parameters>
       </actuator>
       <actuator id="4">
@@ -31,6 +34,7 @@
          <parameters>
             <parameter name="max_queue_vehicles" value="NaN"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
          </parameters>
       </actuator>
       <actuator id="5">
@@ -39,6 +43,7 @@
          <parameters>
             <parameter name="max_queue_vehicles" value="NaN"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
          </parameters>
       </actuator>
       <actuator id="6">
@@ -47,6 +52,7 @@
          <parameters>
             <parameter name="max_queue_vehicles" value="NaN"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
          </parameters>
       </actuator>
       <actuator id="7">
@@ -55,6 +61,7 @@
          <parameters>
             <parameter name="max_queue_vehicles" value="NaN"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
          </parameters>
       </actuator>
       <actuator id="8">
@@ -63,6 +70,7 @@
          <parameters>
             <parameter name="max_queue_vehicles" value="NaN"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
          </parameters>
       </actuator>
       <actuator id="9">
@@ -71,6 +79,7 @@
          <parameters>
             <parameter name="max_queue_vehicles" value="NaN"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
          </parameters>
       </actuator>
       <actuator id="10">
@@ -79,6 +88,7 @@
          <parameters>
             <parameter name="max_queue_vehicles" value="NaN"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
          </parameters>
       </actuator>
       <actuator id="11">
@@ -87,6 +97,7 @@
          <parameters>
             <parameter name="max_queue_vehicles" value="NaN"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
          </parameters>
       </actuator>
       <actuator id="12">
@@ -95,6 +106,7 @@
          <parameters>
             <parameter name="max_queue_vehicles" value="NaN"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
          </parameters>
       </actuator>
       <actuator id="13">
@@ -103,6 +115,7 @@
          <parameters>
             <parameter name="max_queue_vehicles" value="NaN"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
          </parameters>
       </actuator>
       <actuator id="14">
@@ -111,6 +124,7 @@
          <parameters>
             <parameter name="max_queue_vehicles" value="NaN"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
          </parameters>
       </actuator>
       <actuator id="15">
@@ -119,6 +133,7 @@
          <parameters>
             <parameter name="max_queue_vehicles" value="NaN"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
          </parameters>
       </actuator>
       <actuator id="16">
@@ -127,6 +142,7 @@
          <parameters>
             <parameter name="max_queue_vehicles" value="NaN"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
          </parameters>
       </actuator>
       <actuator id="17">
@@ -135,6 +151,7 @@
          <parameters>
             <parameter name="max_queue_vehicles" value="NaN"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
          </parameters>
       </actuator>
       <actuator id="18">
@@ -143,6 +160,7 @@
          <parameters>
             <parameter name="max_queue_vehicles" value="NaN"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
          </parameters>
       </actuator>
       <actuator id="19">
@@ -151,6 +169,7 @@
          <parameters>
             <parameter name="max_queue_vehicles" value="NaN"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
          </parameters>
       </actuator>
       <actuator id="20">
@@ -159,6 +178,7 @@
          <parameters>
             <parameter name="max_queue_vehicles" value="NaN"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
          </parameters>
       </actuator>
       <actuator id="21">
@@ -167,6 +187,7 @@
          <parameters>
             <parameter name="max_queue_vehicles" value="NaN"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
          </parameters>
       </actuator>
       <actuator id="22">
@@ -175,6 +196,7 @@
          <parameters>
             <parameter name="max_queue_vehicles" value="NaN"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
          </parameters>
       </actuator>
       <actuator id="23">
@@ -183,6 +205,7 @@
          <parameters>
             <parameter name="max_queue_vehicles" value="NaN"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
          </parameters>
       </actuator>
       <actuator id="24">
@@ -191,6 +214,7 @@
          <parameters>
             <parameter name="max_queue_vehicles" value="NaN"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
          </parameters>
       </actuator>
       <actuator id="25">
@@ -199,6 +223,7 @@
          <parameters>
             <parameter name="max_queue_vehicles" value="NaN"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
          </parameters>
       </actuator>
       <actuator id="26">
@@ -207,6 +232,7 @@
          <parameters>
             <parameter name="max_queue_vehicles" value="NaN"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
          </parameters>
       </actuator>
       <actuator id="27">
@@ -215,6 +241,7 @@
          <parameters>
             <parameter name="max_queue_vehicles" value="NaN"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
          </parameters>
       </actuator>
       <actuator id="28">
@@ -223,6 +250,7 @@
          <parameters>
             <parameter name="max_queue_vehicles" value="NaN"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
          </parameters>
       </actuator>
       <actuator id="29">
@@ -231,6 +259,7 @@
          <parameters>
             <parameter name="max_queue_vehicles" value="NaN"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
          </parameters>
       </actuator>
    </ActuatorSet>
