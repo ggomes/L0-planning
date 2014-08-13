@@ -581,4 +581,31 @@
          </feedback_sensors>
       </controller>
    </ControllerSet>
+   <EventSet id="0" project_id="0">
+      <event enabled="true" id="0" tstamp="0" type="global_control_toggle">
+         <parameters>
+            <parameter name="on_off_switch" value="off"/>
+         </parameters>
+      </event>
+      <event enabled="true" id="1" tstamp="21600" type="global_control_toggle">
+         <parameters>
+            <parameter name="on_off_switch" value="on"/>
+         </parameters>
+      </event>
+      <event enabled="true" id="2" tstamp="32400" type="global_control_toggle">
+         <parameters>
+            <parameter name="on_off_switch" value="off"/>
+         </parameters>
+      </event>
+      <event enabled="true" id="3" tstamp="54000" type="global_control_toggle">
+         <parameters>
+            <parameter name="on_off_switch" value="on"/>
+         </parameters>
+      </event>
+      <event enabled="true" id="4" tstamp="68400" type="global_control_toggle">
+         <parameters>
+            <parameter name="on_off_switch" value="off"/>
+         </parameters>
+      </event>
+   </EventSet>
 </scenario>
