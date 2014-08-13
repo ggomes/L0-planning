@@ -52,8 +52,6 @@ for ii = 1:length(X)
     run_scenario(Y(X(ii).Yind),X(ii))
 end
 
-disp('done')
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function run_scenario(Y,X)
 
