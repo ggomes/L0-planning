@@ -6401,130 +6401,280 @@
          </feedback_sensors>
       </controller>
    </ControllerSet>
-   <ActuatorSet id="0" project_id="0">
+   
+    <ActuatorSet id="0" project_id="0">
       <actuator id="1">
          <scenarioElement id="-124" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="1035"/>
+            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
       </actuator>
       <!--
       <actuator id="2">
          <scenarioElement id="-131" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="1030"/>
+            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
       </actuator>
       -->
       <actuator id="3">
          <scenarioElement id="-132" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="1031"/>
+            <parameter name="max_rate_in_vphpl" value="1500"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
       </actuator>
       <actuator id="4">
          <scenarioElement id="-133" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="1039"/>
+            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
       </actuator>
       <!--
       <actuator id="5">
          <scenarioElement id="-145" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="1030"/>
+            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
       </actuator>
       -->
       <actuator id="6">
          <scenarioElement id="-146" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="1037"/>
+            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
       </actuator>
       <actuator id="7">
          <scenarioElement id="-147" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="1035"/>
+            <parameter name="max_rate_in_vphpl" value="1900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
       </actuator>
       <!--
       <actuator id="8">
          <scenarioElement id="-154" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="1030"/>
+            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
       </actuator>
       -->
       <actuator id="9">
          <scenarioElement id="-164" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="1021"/>
+            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
       </actuator>
       <actuator id="10">
          <scenarioElement id="-165" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="1050"/>
+            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
       </actuator>
       <actuator id="11">
          <scenarioElement id="-176" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="1040"/>
+            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
       </actuator>
       <actuator id="12">
          <scenarioElement id="-180" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="1050"/>
+            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
       </actuator>
       <actuator id="13">
          <scenarioElement id="-181" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="1042"/>
+            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
       </actuator>
       <actuator id="14">
          <scenarioElement id="-187" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="1040"/>
+            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
       </actuator>
       <actuator id="15">
          <scenarioElement id="-193" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="39"/>
+            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
       </actuator>
       <actuator id="16">
          <scenarioElement id="-202" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="1050"/>
+            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
       </actuator>
       <actuator id="17">
          <scenarioElement id="-210" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="1093"/>
+            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
       </actuator>
       <actuator id="18">
          <scenarioElement id="-216" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="1040"/>
+            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
       </actuator>
       <actuator id="19">
          <scenarioElement id="-226" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="1070"/>
+            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
       </actuator>
       <actuator id="20">
          <scenarioElement id="-230" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="1091"/>
+            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
       </actuator>
       <actuator id="21">
          <scenarioElement id="-239" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="1032"/>
+            <parameter name="max_rate_in_vphpl" value="1900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
       </actuator>
       <actuator id="22">
          <scenarioElement id="-245" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="1050"/>
+            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
       </actuator>
       <actuator id="23">
          <scenarioElement id="-246" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="1075"/>
+            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
       </actuator>
       <actuator id="24">
          <scenarioElement id="-247" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="1040"/>
+            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
       </actuator>
       <actuator id="25">
          <scenarioElement id="-255" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="1040"/>
+            <parameter name="max_rate_in_vphpl" value="1900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
       </actuator>
-      <!--<actuator id="26">
+      <actuator id="26">
          <scenarioElement id="-257" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
-      </actuator>-->
+         <parameters>
+            <parameter name="max_queue_vehicles" value="1045"/>
+            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
+      </actuator>
       <actuator id="27">
          <scenarioElement id="-268" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="1040"/>
+            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
       </actuator>
       <actuator id="28">
          <scenarioElement id="-291" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="1035"/>
+            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
       </actuator>
       <actuator id="29">
          <scenarioElement id="-293" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="1070"/>
+            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
       </actuator>
    </ActuatorSet>
+
+
+
+
    <SensorSet id="0" project_id="0">
       <sensor id="1" link_id="-16">
          <sensor_type id="0" name="loop"/>
@@ -6614,4 +6764,34 @@
          <sensor_type id="0" name="loop"/>
       </sensor>
    </SensorSet>
+
+
+    <EventSet id="0" project_id="0">
+      <event enabled="true" id="0" tstamp="0" type="global_control_toggle">
+         <parameters>
+            <parameter name="on_off_switch" value="off"/>
+         </parameters>
+      </event>
+      <event enabled="true" id="1" tstamp="21600" type="global_control_toggle">
+         <parameters>
+            <parameter name="on_off_switch" value="on"/>
+         </parameters>
+      </event>
+      <event enabled="true" id="2" tstamp="32400" type="global_control_toggle">
+         <parameters>
+            <parameter name="on_off_switch" value="off"/>
+         </parameters>
+      </event>
+      <event enabled="true" id="3" tstamp="54000" type="global_control_toggle">
+         <parameters>
+            <parameter name="on_off_switch" value="on"/>
+         </parameters>
+      </event>
+      <event enabled="true" id="4" tstamp="68400" type="global_control_toggle">
+         <parameters>
+            <parameter name="on_off_switch" value="off"/>
+         </parameters>
+      </event>
+   </EventSet>
+
 </scenario>

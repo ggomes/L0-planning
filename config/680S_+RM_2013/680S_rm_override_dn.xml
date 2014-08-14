@@ -6399,159 +6399,309 @@
          </feedback_sensors>
       </controller>
    </ControllerSet>
-   <ActuatorSet id="0" project_id="0">
+
+
+  <ActuatorSet id="0" project_id="0">
       <actuator id="1">
          <scenarioElement id="-124" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
-         <queue_override max_queue_vehicles="35" strategy="max_rate"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="35"/>
+            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
+         <queue_override strategy="max_rate"/>
       </actuator>
       <!--
       <actuator id="2">
          <scenarioElement id="-131" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
-         <queue_override max_queue_vehicles="30" strategy="max_rate"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="30"/>
+            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
+         <queue_override strategy="max_rate"/>
       </actuator>
       -->
       <actuator id="3">
          <scenarioElement id="-132" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
-         <queue_override max_queue_vehicles="31" strategy="max_rate"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="31"/>
+            <parameter name="max_rate_in_vphpl" value="1500"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
+         <queue_override strategy="max_rate"/>
       </actuator>
       <actuator id="4">
          <scenarioElement id="-133" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
-         <queue_override max_queue_vehicles="39" strategy="max_rate"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="39"/>
+            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
+         <queue_override strategy="max_rate"/>
       </actuator>
       <!--
       <actuator id="5">
          <scenarioElement id="-145" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
-         <queue_override max_queue_vehicles="30" strategy="max_rate"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="30"/>
+            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
+         <queue_override strategy="max_rate"/>
       </actuator>
       -->
       <actuator id="6">
          <scenarioElement id="-146" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
-         <queue_override max_queue_vehicles="37" strategy="max_rate"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="37"/>
+            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
+         <queue_override strategy="max_rate"/>
       </actuator>
       <actuator id="7">
          <scenarioElement id="-147" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
-         <queue_override max_queue_vehicles="35" strategy="max_rate"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="35"/>
+            <parameter name="max_rate_in_vphpl" value="1900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
+         <queue_override strategy="max_rate"/>
       </actuator>
       <!--
       <actuator id="8">
          <scenarioElement id="-154" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
-         <queue_override max_queue_vehicles="30" strategy="max_rate"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="30"/>
+            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
+         <queue_override strategy="max_rate"/>
       </actuator>
       -->
       <actuator id="9">
          <scenarioElement id="-164" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
-         <queue_override max_queue_vehicles="21" strategy="max_rate"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="21"/>
+            <parameter name="max_rate_in_vphpl" value="1600"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
+         <queue_override strategy="max_rate"/>
       </actuator>
       <actuator id="10">
          <scenarioElement id="-165" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
-         <queue_override max_queue_vehicles="50" strategy="max_rate"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="50"/>
+            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
+         <queue_override strategy="max_rate"/>
       </actuator>
       <actuator id="11">
          <scenarioElement id="-176" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
-         <queue_override max_queue_vehicles="40" strategy="max_rate"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="40"/>
+            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
+         <queue_override strategy="max_rate"/>
       </actuator>
       <actuator id="12">
          <scenarioElement id="-180" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
-         <queue_override max_queue_vehicles="50" strategy="max_rate"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="50"/>
+            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
+         <queue_override strategy="max_rate"/>
       </actuator>
       <actuator id="13">
          <scenarioElement id="-181" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
-         <queue_override max_queue_vehicles="42" strategy="max_rate"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="42"/>
+            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
+         <queue_override strategy="max_rate"/>
       </actuator>
       <actuator id="14">
          <scenarioElement id="-187" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
-         <queue_override max_queue_vehicles="40" strategy="max_rate"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="40"/>
+            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
+         <queue_override strategy="max_rate"/>
       </actuator>
       <actuator id="15">
          <scenarioElement id="-193" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
-         <queue_override max_queue_vehicles="39" strategy="max_rate"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="39"/>
+            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
+         <queue_override strategy="max_rate"/>
       </actuator>
       <actuator id="16">
          <scenarioElement id="-202" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
-         <queue_override max_queue_vehicles="50" strategy="max_rate"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="50"/>
+            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
+         <queue_override strategy="max_rate"/>
       </actuator>
       <actuator id="17">
          <scenarioElement id="-210" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
-         <queue_override max_queue_vehicles="93" strategy="max_rate"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="93"/>
+            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
+         <queue_override strategy="max_rate"/>
       </actuator>
       <actuator id="18">
          <scenarioElement id="-216" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
-         <queue_override max_queue_vehicles="40" strategy="max_rate"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="40"/>
+            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
+         <queue_override strategy="max_rate"/>
       </actuator>
       <actuator id="19">
          <scenarioElement id="-226" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
-         <queue_override max_queue_vehicles="70" strategy="max_rate"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="70"/>
+            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
+         <queue_override strategy="max_rate"/>
       </actuator>
       <actuator id="20">
          <scenarioElement id="-230" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
-         <queue_override max_queue_vehicles="91" strategy="max_rate"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="91"/>
+            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
+         <queue_override strategy="max_rate"/>
       </actuator>
       <actuator id="21">
          <scenarioElement id="-239" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
-         <queue_override max_queue_vehicles="32" strategy="max_rate"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="32"/>
+            <parameter name="max_rate_in_vphpl" value="1900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
+         <queue_override strategy="max_rate"/>
       </actuator>
       <actuator id="22">
          <scenarioElement id="-245" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
-         <queue_override max_queue_vehicles="50" strategy="max_rate"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="50"/>
+            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
+         <queue_override strategy="max_rate"/>
       </actuator>
       <actuator id="23">
          <scenarioElement id="-246" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
-         <queue_override max_queue_vehicles="75" strategy="max_rate"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="75"/>
+            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
+         <queue_override strategy="max_rate"/>
       </actuator>
       <actuator id="24">
          <scenarioElement id="-247" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
-         <queue_override max_queue_vehicles="40" strategy="max_rate"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="40"/>
+            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
+         <queue_override strategy="max_rate"/>
       </actuator>
       <actuator id="25">
          <scenarioElement id="-255" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
-         <queue_override max_queue_vehicles="40" strategy="max_rate"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="40"/>
+            <parameter name="max_rate_in_vphpl" value="1900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
+         <queue_override strategy="max_rate"/>
       </actuator>
       <actuator id="26">
          <scenarioElement id="-257" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
-         <queue_override max_queue_vehicles="45" strategy="max_rate"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="45"/>
+            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
+         <queue_override strategy="max_rate"/>
       </actuator>
       <actuator id="27">
          <scenarioElement id="-268" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
-         <queue_override max_queue_vehicles="40" strategy="max_rate"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="40"/>
+            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
+         <queue_override strategy="max_rate"/>
       </actuator>
       <actuator id="28">
          <scenarioElement id="-291" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
-         <queue_override max_queue_vehicles="35" strategy="max_rate"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="35"/>
+            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
+         <queue_override strategy="max_rate"/>
       </actuator>
       <actuator id="29">
          <scenarioElement id="-293" type="link"/>
          <actuator_type id="0" name="ramp_meter"/>
-         <queue_override max_queue_vehicles="70" strategy="max_rate"/>
+         <parameters>
+            <parameter name="max_queue_vehicles" value="70"/>
+            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="min_rate_in_vphpl" value="240"/>
+         </parameters>
+         <queue_override strategy="max_rate"/>
       </actuator>
    </ActuatorSet>
+
+
+
    <SensorSet id="0" project_id="0">
       <sensor id="1" link_id="-16">
          <sensor_type id="0" name="loop"/>
@@ -6641,4 +6791,33 @@
          <sensor_type id="0" name="loop"/>
       </sensor>
    </SensorSet>
+
+    <EventSet id="0" project_id="0">
+      <event enabled="true" id="0" tstamp="0" type="global_control_toggle">
+         <parameters>
+            <parameter name="on_off_switch" value="off"/>
+         </parameters>
+      </event>
+      <event enabled="true" id="1" tstamp="21600" type="global_control_toggle">
+         <parameters>
+            <parameter name="on_off_switch" value="on"/>
+         </parameters>
+      </event>
+      <event enabled="true" id="2" tstamp="32400" type="global_control_toggle">
+         <parameters>
+            <parameter name="on_off_switch" value="off"/>
+         </parameters>
+      </event>
+      <event enabled="true" id="3" tstamp="54000" type="global_control_toggle">
+         <parameters>
+            <parameter name="on_off_switch" value="on"/>
+         </parameters>
+      </event>
+      <event enabled="true" id="4" tstamp="68400" type="global_control_toggle">
+         <parameters>
+            <parameter name="on_off_switch" value="off"/>
+         </parameters>
+      </event>
+   </EventSet>
+
 </scenario>
