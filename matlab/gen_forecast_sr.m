@@ -49,4 +49,4 @@ end
 SR = [SR repmat(sr', 1, 11)];
 
 
-gen_sr_xml(gp_id, hov_id, or_id, fr_id, NDOFF(:, 1)', SR);
+gen_sr_xml(gp_id, hov_id, or_id, fr_id, NDOFF(:, 1)', SR, sr_init_file, sr_initial_guess);

@@ -4,6 +4,14 @@ close all
 init_config;
 
 
+% 0. Generate split ratio file [optional] ................................
+if auto_sr
+disp('0. Generating split ratio file')
+tic
+create_sr_set;
+disp(['Done in ' num2str(toc) ' seconds.']);
+end
+
 % 1. Load basic network ..................................................
 disp('1. Load basic network');
 tic
