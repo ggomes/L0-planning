@@ -82,6 +82,13 @@ for i = 1:m
   end
 end
 
+GP_F(1, :) = zeros(1, 288);
+GP_V(1, :) = zeros(1, 288);
+GP_D(1, :) = zeros(1, 288);
+HOV_F(1, :) = zeros(1, 288);
+HOV_V(1, :) = zeros(1, 288);
+HOV_D(1, :) = zeros(1, 288);
+
 GP_V = round(GP_V);
 GP_F = round(GP_F);
 GP_D = round(GP_D);
@@ -114,11 +121,14 @@ GP_F(1, :) = zeros(1, 288);
 fprintf('Extracting simulation data - ramp flows...\n');
 m = size(has_or, 2);
 ORF = ORD;
+ORQ = ORD;
 for i = 1:m
   idx = find(link_id == or_id(has_or(i)));
   outflow = ptr.outflow_veh{1}(:, idx) + ptr.outflow_veh{2}(:, idx);
   outflow = 12*outflow';
   ORF(has_or(i), :) = outflow;
+  den = ptr.density_veh{1}(2:289, idx) + ptr.density_veh{2}(2:289, idx);
+  ORQ(has_or(i), :) = round(den');
 end
 
 m = size(has_fr, 2);
