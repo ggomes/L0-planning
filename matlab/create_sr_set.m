@@ -5,7 +5,10 @@ or_id = xlsread(xlsx_file, 'On-Ramp_Demand', sprintf('g%d:g%d', range(1), range(
 fr_id = xlsread(xlsx_file, 'Off-Ramp_Demand', sprintf('g%d:g%d', range(1), range(2)))';
 SR = xlsread(xlsx_file, 'Off-Ramp_SplitRatios', sprintf('k%d:kl%d', range(1), range(2)));
 FRK = xlsread(xlsx_file, 'Off-Ramp_Knobs', sprintf('k%d:kl%d', range(1), range(2)));
-%SR = SR .* FRK;
+SR = SR .* FRK;
+[m, n] = size(SR);
+SR = min(SR, ones(m, n));
+
 
 NDOFF = csvread(csv_file);
 
