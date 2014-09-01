@@ -18,7 +18,10 @@ ifid = fopen(init_file, 'r');
 fid = fopen(output_file, 'w+');
 
 str = fgetl(ifid);
-while str ~= -1
+while 1
+  if ~ischar(str)
+    break;
+  end
   fprintf(fid, '%s\n', str);
   str = fgetl(ifid);
 end
