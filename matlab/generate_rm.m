@@ -61,6 +61,40 @@ a_controller.target_actuators.target_actuator = struct('ATTRIBUTE',struct('id',n
 controllers = repmat(a_controller,1,num_onramps);
 clear a_controller
 
+% events
+a_event = struct( 'ATTRIBUTE' , struct('id',nan,'tstamp',nan,'enabled','true','type','global_control_toggle') , ...
+                  'parameters', struct('parameter',generate_mo('parameter') ) );
+a_event.parameters.parameter.ATTRIBUTE.name = 'on_off_switch';
+a_event.parameters.parameter.ATTRIBUTE.value = '';
+
+EventSet = struct( 'ATTRIBUTE', struct('id',0,'project_id',0) , ...
+                   'event',repmat(a_event,1,5) );
+               
+% off at midnight
+EventSet.event(1).ATTRIBUTE.id = 0;
+EventSet.event(1).ATTRIBUTE.tstamp = 0;
+EventSet.event(1).parameters.parameter.ATTRIBUTE.value = 'off';  
+
+% on at 6am
+EventSet.event(2).ATTRIBUTE.id = 1;
+EventSet.event(2).ATTRIBUTE.tstamp = 21600;
+EventSet.event(2).parameters.parameter.ATTRIBUTE.value = 'on';  
+
+% off at 9am
+EventSet.event(3).ATTRIBUTE.id = 2;
+EventSet.event(3).ATTRIBUTE.tstamp = 32400;
+EventSet.event(3).parameters.parameter.ATTRIBUTE.value = 'off';  
+
+% on at 3pm
+EventSet.event(4).ATTRIBUTE.id = 3;
+EventSet.event(4).ATTRIBUTE.tstamp = 54000;
+EventSet.event(4).parameters.parameter.ATTRIBUTE.value = 'on';  
+
+% off at 7pm
+EventSet.event(5).ATTRIBUTE.id = 4;
+EventSet.event(5).ATTRIBUTE.tstamp = 68400;
+EventSet.event(5).parameters.parameter.ATTRIBUTE.value = 'off'; 
+
 %% populate ...............................................................
 
 for i=1:num_onramps
@@ -110,10 +144,10 @@ newptr.scenario.ControllerSet = struct('ATTRIBUTE',struct('project_id',0,'id',0)
 newptr.scenario.ControllerSet.controller = controllers;
 clear controllers
 
-%% attach to scenario and save ............................................
-% ptr.scenario.ActuatorSet = ActuatorSet;
-% ptr.scenario.SensorSet = SensorSet;
-% ptr.scenario.ControllerSet = ControllerSet;
+newptr.scenario.EventSet = EventSet;
+clear EventSet
+
+%% save ...................................................................
 newptr.save(out_file);
 
 
