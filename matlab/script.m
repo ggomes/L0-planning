@@ -70,7 +70,7 @@ disp(['Done in ' num2str(toc) ' seconds.']);
 ptr.scenario_ptr.scenario.SplitRatioSet.splitRatioProfile = load_computed_splits(sr_cntrl_log);
 ptr.scenario_ptr.save(cfg_final)
 
-% 9. Put the result into Excel spreadsheet ...............................
+% 10. Put the result into Excel spreadsheet ...............................
 disp('9. Put the result into Excel spreadsheet')
 tic
 [GP_V, GP_F, GP_D, HOV_V, HOV_F, HOV_D, ORD, ORF, FRD, FRF] = extract_simulation_data(ptr,xlsx_file,range);
