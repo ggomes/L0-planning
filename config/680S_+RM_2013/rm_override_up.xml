@@ -8,6 +8,7 @@
             <parameter name="max_queue_vehicles" value="30"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
             <parameter name="min_rate_in_vphpl" value="240"/>
+            <parameter name="cycle_increment_sec" value="0.5"/>
          </parameters>
          <queue_override strategy="max_rate"/>
       </actuator>
@@ -18,6 +19,7 @@
             <parameter name="max_queue_vehicles" value="30"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
             <parameter name="min_rate_in_vphpl" value="240"/>
+            <parameter name="cycle_increment_sec" value="0.5"/>
          </parameters>
          <queue_override strategy="max_rate"/>
       </actuator>
@@ -28,6 +30,7 @@
             <parameter name="max_queue_vehicles" value="30"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
             <parameter name="min_rate_in_vphpl" value="240"/>
+            <parameter name="cycle_increment_sec" value="0.5"/>
          </parameters>
          <queue_override strategy="max_rate"/>
       </actuator>
@@ -38,6 +41,7 @@
             <parameter name="max_queue_vehicles" value="30"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
             <parameter name="min_rate_in_vphpl" value="240"/>
+            <parameter name="cycle_increment_sec" value="0.5"/>
          </parameters>
          <queue_override strategy="max_rate"/>
       </actuator>
@@ -48,6 +52,7 @@
             <parameter name="max_queue_vehicles" value="30"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
             <parameter name="min_rate_in_vphpl" value="240"/>
+            <parameter name="cycle_increment_sec" value="0.5"/>
          </parameters>
          <queue_override strategy="max_rate"/>
       </actuator>
@@ -58,6 +63,7 @@
             <parameter name="max_queue_vehicles" value="30"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
             <parameter name="min_rate_in_vphpl" value="240"/>
+            <parameter name="cycle_increment_sec" value="0.5"/>
          </parameters>
          <queue_override strategy="max_rate"/>
       </actuator>
@@ -68,6 +74,7 @@
             <parameter name="max_queue_vehicles" value="30"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
             <parameter name="min_rate_in_vphpl" value="240"/>
+            <parameter name="cycle_increment_sec" value="0.5"/>
          </parameters>
          <queue_override strategy="max_rate"/>
       </actuator>
@@ -78,6 +85,7 @@
             <parameter name="max_queue_vehicles" value="30"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
             <parameter name="min_rate_in_vphpl" value="240"/>
+            <parameter name="cycle_increment_sec" value="0.5"/>
          </parameters>
          <queue_override strategy="max_rate"/>
       </actuator>
@@ -88,6 +96,7 @@
             <parameter name="max_queue_vehicles" value="30"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
             <parameter name="min_rate_in_vphpl" value="240"/>
+            <parameter name="cycle_increment_sec" value="0.5"/>
          </parameters>
          <queue_override strategy="max_rate"/>
       </actuator>
@@ -98,6 +107,7 @@
             <parameter name="max_queue_vehicles" value="30"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
             <parameter name="min_rate_in_vphpl" value="240"/>
+            <parameter name="cycle_increment_sec" value="0.5"/>
          </parameters>
          <queue_override strategy="max_rate"/>
       </actuator>
@@ -108,6 +118,7 @@
             <parameter name="max_queue_vehicles" value="30"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
             <parameter name="min_rate_in_vphpl" value="240"/>
+            <parameter name="cycle_increment_sec" value="0.5"/>
          </parameters>
          <queue_override strategy="max_rate"/>
       </actuator>
@@ -118,6 +129,7 @@
             <parameter name="max_queue_vehicles" value="30"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
             <parameter name="min_rate_in_vphpl" value="240"/>
+            <parameter name="cycle_increment_sec" value="0.5"/>
          </parameters>
          <queue_override strategy="max_rate"/>
       </actuator>
@@ -128,6 +140,7 @@
             <parameter name="max_queue_vehicles" value="30"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
             <parameter name="min_rate_in_vphpl" value="240"/>
+            <parameter name="cycle_increment_sec" value="0.5"/>
          </parameters>
          <queue_override strategy="max_rate"/>
       </actuator>
@@ -138,6 +151,7 @@
             <parameter name="max_queue_vehicles" value="30"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
             <parameter name="min_rate_in_vphpl" value="240"/>
+            <parameter name="cycle_increment_sec" value="0.5"/>
          </parameters>
          <queue_override strategy="max_rate"/>
       </actuator>
@@ -148,6 +162,7 @@
             <parameter name="max_queue_vehicles" value="30"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
             <parameter name="min_rate_in_vphpl" value="240"/>
+            <parameter name="cycle_increment_sec" value="0.5"/>
          </parameters>
          <queue_override strategy="max_rate"/>
       </actuator>
@@ -158,6 +173,7 @@
             <parameter name="max_queue_vehicles" value="30"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
             <parameter name="min_rate_in_vphpl" value="240"/>
+            <parameter name="cycle_increment_sec" value="0.5"/>
          </parameters>
          <queue_override strategy="max_rate"/>
       </actuator>
@@ -168,6 +184,7 @@
             <parameter name="max_queue_vehicles" value="30"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
             <parameter name="min_rate_in_vphpl" value="240"/>
+            <parameter name="cycle_increment_sec" value="0.5"/>
          </parameters>
          <queue_override strategy="max_rate"/>
       </actuator>
@@ -178,6 +195,7 @@
             <parameter name="max_queue_vehicles" value="30"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
             <parameter name="min_rate_in_vphpl" value="240"/>
+            <parameter name="cycle_increment_sec" value="0.5"/>
          </parameters>
          <queue_override strategy="max_rate"/>
       </actuator>
@@ -188,6 +206,7 @@
             <parameter name="max_queue_vehicles" value="30"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
             <parameter name="min_rate_in_vphpl" value="240"/>
+            <parameter name="cycle_increment_sec" value="0.5"/>
          </parameters>
          <queue_override strategy="max_rate"/>
       </actuator>
@@ -198,6 +217,7 @@
             <parameter name="max_queue_vehicles" value="30"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
             <parameter name="min_rate_in_vphpl" value="240"/>
+            <parameter name="cycle_increment_sec" value="0.5"/>
          </parameters>
          <queue_override strategy="max_rate"/>
       </actuator>
@@ -208,6 +228,7 @@
             <parameter name="max_queue_vehicles" value="30"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
             <parameter name="min_rate_in_vphpl" value="240"/>
+            <parameter name="cycle_increment_sec" value="0.5"/>
          </parameters>
          <queue_override strategy="max_rate"/>
       </actuator>
@@ -218,6 +239,7 @@
             <parameter name="max_queue_vehicles" value="30"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
             <parameter name="min_rate_in_vphpl" value="240"/>
+            <parameter name="cycle_increment_sec" value="0.5"/>
          </parameters>
          <queue_override strategy="max_rate"/>
       </actuator>
@@ -228,6 +250,7 @@
             <parameter name="max_queue_vehicles" value="30"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
             <parameter name="min_rate_in_vphpl" value="240"/>
+            <parameter name="cycle_increment_sec" value="0.5"/>
          </parameters>
          <queue_override strategy="max_rate"/>
       </actuator>
@@ -238,6 +261,7 @@
             <parameter name="max_queue_vehicles" value="30"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
             <parameter name="min_rate_in_vphpl" value="240"/>
+            <parameter name="cycle_increment_sec" value="0.5"/>
          </parameters>
          <queue_override strategy="max_rate"/>
       </actuator>
@@ -248,6 +272,7 @@
             <parameter name="max_queue_vehicles" value="30"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
             <parameter name="min_rate_in_vphpl" value="240"/>
+            <parameter name="cycle_increment_sec" value="0.5"/>
          </parameters>
          <queue_override strategy="max_rate"/>
       </actuator>
@@ -258,6 +283,7 @@
             <parameter name="max_queue_vehicles" value="30"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
             <parameter name="min_rate_in_vphpl" value="240"/>
+            <parameter name="cycle_increment_sec" value="0.5"/>
          </parameters>
          <queue_override strategy="max_rate"/>
       </actuator>
@@ -268,6 +294,7 @@
             <parameter name="max_queue_vehicles" value="30"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
             <parameter name="min_rate_in_vphpl" value="240"/>
+            <parameter name="cycle_increment_sec" value="0.5"/>
          </parameters>
          <queue_override strategy="max_rate"/>
       </actuator>
@@ -278,6 +305,7 @@
             <parameter name="max_queue_vehicles" value="30"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
             <parameter name="min_rate_in_vphpl" value="240"/>
+            <parameter name="cycle_increment_sec" value="0.5"/>
          </parameters>
          <queue_override strategy="max_rate"/>
       </actuator>
@@ -288,6 +316,7 @@
             <parameter name="max_queue_vehicles" value="30"/>
             <parameter name="max_rate_in_vphpl" value="900"/>
             <parameter name="min_rate_in_vphpl" value="240"/>
+            <parameter name="cycle_increment_sec" value="0.5"/>
          </parameters>
          <queue_override strategy="max_rate"/>
       </actuator>
