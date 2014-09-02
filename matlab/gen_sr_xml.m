@@ -1,17 +1,34 @@
-function gen_sr_xml(gp_id, hov_id, or_id, fr_id, node_id, SR)
+function gen_sr_xml(gp_id, hov_id, or_id, fr_id, node_id, SR, init_file, output_file)
 % gp_id - vector of GP link IDs
 % hov_id - vector of HOV link IDs
 % or_id - vector of on-ramp IDs
 % fr_id - vector of off-ramp IDs
 % node_id - vector of node IDs, begin nodes for off-ramp links
 % SR - split ratios
+% init_file - initial part of the split ratio file
+% output_file - file for writing the output
 
 sov_sr_buf = '-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1';
 
 
 sz = size(fr_id, 2);
 
-fid = fopen('sr.xml', 'w+');
+ifid = fopen(init_file, 'r');
+
+fid = fopen(output_file, 'w+');
+
+str = fgetl(ifid);
+while 1
+  if ~ischar(str)
+    break;
+  end
+  fprintf(fid, '%s\n', str);
+  str = fgetl(ifid);
+end
+
+fclose(ifid);
+
+
 
 for i = 1:sz
   if node_id(i) ~= 0 
@@ -54,6 +71,7 @@ for i = 1:sz
   end
 end
 
+fprintf(fid, '</SplitRatioSet>\n');
 fclose(fid);
 
 return;
