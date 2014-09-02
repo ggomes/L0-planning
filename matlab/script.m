@@ -3,7 +3,6 @@ close all
 
 init_config;
 
-
 % 1. Load basic network ..................................................
 disp('1. Load basic network');
 tic
@@ -21,7 +20,7 @@ disp(['Done in ' num2str(toc) ' seconds.']);
 disp('3. Load initial guess at fr splits');
 tic
 ptr.scenario_ptr.scenario.SplitRatioSet = xml_read(sr_initial_guess);
-disp(['Done in ' num2str(toc) ' seconds.']);   
+disp(['Done in ' num2str(toc) ' seconds.']);
 
 % 4. Run greedy policy ...................................................
 disp('4. Run greedy policy');
@@ -29,8 +28,8 @@ tic
 ptr.scenario_ptr.save(cfg_gp);
 system(['java -jar ' beats_jar opt_minus_s beatsprop_gp]);
 ptr.simulation_done = true;
-ptr.load_simulation_output('..\\beats_output\\gp');
-disp(['Done in ' num2str(toc) ' seconds.']);  
+ptr.load_simulation_output('../beats_output/gp');
+disp(['Done in ' num2str(toc) ' seconds.']);
 
 % 5. aggregate GP/HOV split ratios to 5min ...............................
 disp('5. aggregate GP/HOV split ratios to 5min');
@@ -63,7 +62,7 @@ tic
 ptr.reset_simulation;
 system(['java -jar ' beats_jar opt_minus_s beatsprop_sr_out]);
 ptr.simulation_done = true;
-ptr.load_simulation_output('..\\beats_output\\srout');
+ptr.load_simulation_output('../beats_output/srout');
 disp(['Done in ' num2str(toc) ' seconds.']);
 
 % 9. Read computed split ratios, save final config .......................
@@ -73,6 +72,6 @@ ptr.scenario_ptr.save(cfg_final)
 % 10. Put the result into Excel spreadsheet ...............................
 disp('9. Put the result into Excel spreadsheet')
 tic
-[GP_V, GP_F, GP_D, HOV_V, HOV_F, HOV_D, ORD, ORF, FRD, FRF] = extract_simulation_data(ptr,xlsx_file,range);
+[GP_V, GP_F, GP_D, HOV_V, HOV_F, HOV_D, ORD, ORF, FRD, FRF, ORQ] = extract_simulation_data(ptr,xlsx_file,range);
 disp(['Done in ' num2str(toc) ' seconds.']); 
 
