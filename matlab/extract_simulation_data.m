@@ -1,4 +1,4 @@
-function [GP_V, GP_F, GP_D, HOV_V, HOV_F, HOV_D, ORD, ORF, FRD, FRF, ORQ] = extract_simulation_data(ptr,data_file,range)
+function [GP_V, GP_F, GP_D, HOV_V, HOV_F, HOV_D, ORD, ORF, FRD, FRF, ORQ] = extract_simulation_data(ptr,data_file,range,no_ml_queue)
 
 % Extracting link data
 link_id = xlsread(data_file, 'GP_Speed', sprintf('a%d:f%d', range(1), range(2)));
@@ -16,18 +16,19 @@ gp_cd = round(gp_cap ./ ffspeeds);
 hov_cd = round(hov_cap ./ ffspeeds);
 
 
-or_id = xlsread(data_file, 'On-Ramp_Demand', sprintf('g%d:g%d', range(1), range(2)));
+or_id = xlsread(data_file, 'On-Ramp_CollectedFlows', sprintf('g%d:g%d', range(1), range(2)));
 or_id = or_id';
-ORD = xlsread(data_file, 'On-Ramp_Demand', sprintf('k%d:kl%d', range(1), range(2)));
+ORD = xlsread(data_file, 'On-Ramp_CollectedFlows', sprintf('k%d:kl%d', range(1), range(2)));
 ORK = xlsread(data_file, 'On-Ramp_Knobs', sprintf('k%d:kl%d', range(1), range(2)));
-ORD = ORD .* ORK;
+ORGF = xlsread(data_file, 'On-Ramp_GrowthFactors', sprintf('k%d:kl%d', range(1), range(2)));
+ORD = ORD .* ORK .* ORGF;
 has_or = find(max(ORD,[],2)>0);
 has_or = has_or';
 
 
-fr_id = xlsread(data_file, 'Off-Ramp_Demand', sprintf('g%d:g%d', range(1), range(2)));
+fr_id = xlsread(data_file, 'Off-Ramp_CollectedFlows', sprintf('g%d:g%d', range(1), range(2)));
 fr_id = fr_id';
-FRD = xlsread(data_file, 'Off-Ramp_Demand', sprintf('k%d:kl%d', range(1), range(2)));
+FRD = xlsread(data_file, 'Off-Ramp_CollectedFlows', sprintf('k%d:kl%d', range(1), range(2)));
 FRK = xlsread(data_file, 'Off-Ramp_Knobs', sprintf('k%d:kl%d', range(1), range(2)));
 FRD = FRD .* FRK;
 has_fr = find(max(FRD,[],2)>0);
@@ -143,6 +144,10 @@ end
 ORQ = compute_or_queues(ORD-ORF);
 ORF = round(ORF);
 FRF = round(FRF);
+
+if no_ml_queue
+  ORQ(2, :) = zeros(1, 288);
+end
 
 
 % write data to spreadsheet

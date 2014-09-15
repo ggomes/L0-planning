@@ -1,6 +1,4 @@
 
-%ORQ(2, :) = zeros(1, 288);
-
 fprintf('Computing performance measures...\n');
 GP_VMT = compute_vmt(GP_D, GP_V, llen');
 HOV_VMT = compute_vmt(HOV_D, HOV_V, llen');
