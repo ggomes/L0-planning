@@ -10,7 +10,7 @@ llen = xlsread(xlsx_file, 'Configuration', sprintf('e%d:e%d', range(1), range(2)
 sz = range(2) - range(1) + 1;
 
 for i = 2:sz
-  pm(i) = pm(i-1) + llen(i-1); 
+  pm(i) = pm(i-1) + pm_dir*llen(i-1); 
 end
 
 pm = pm';
