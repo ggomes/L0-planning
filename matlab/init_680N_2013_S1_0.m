@@ -1,3 +1,4 @@
+% 680N Scenario 1: Aux lane only
 
 cfg_folder = fullfile(root,'config','680N_Scenario_1_0');
 

@@ -1,3 +1,4 @@
+% 680N Scenario 1: Aux lane + HOT demnd South of 24
 
 cfg_folder       = fullfile(root,'config','680N_S1_2013');
 
