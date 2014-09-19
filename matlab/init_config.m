@@ -5,7 +5,6 @@ beats_jar = fullfile(root,'beats','beats-0.1-SNAPSHOT.jar');
 auto_sr = 0;
 auto_config = 1;
 rm_control = 0;
-q_control = 1;
 no_ml_queue = 1;
 
 
@@ -14,26 +13,16 @@ no_ml_queue = 1;
 %init_680S_2013
 
 
-%init_680N_rm_nooverride_dn_2013
-%init_680S_rm_nooverride_dn_2013
-%init_680N_rm_nooverride_up_2013
-%init_680S_rm_nooverride_up_2013
-%init_680N_rm_override_dn_2013
-%init_680S_rm_override_dn_2013
-%init_680N_rm_override_up_2013
-%init_680S_rm_override_up_2013
+init_680N_rm_override_2013
+%init_680S_rm_override_2013
+%init_680N_rm_nooverride_2013
+%init_680S_rm_nooverride_2013
 
 
-%init_680N_rm_nooverride_2025
-%init_680S_rm_nooverride_2025
-%init_680N_rm_override_2025
-%init_680S_rm_override_2025
-
-
-init_680N_2013_S1
-%init_680S_2013_S1
 %init_680N_2013_S1_0
 %init_680S_2013_S1_0
+%init_680N_2013_S1
+%init_680S_2013_S1
 
 
 %init_680N_2013_S1_RM
@@ -42,6 +31,13 @@ init_680N_2013_S1
 
 %init_680N_2025
 %init_680S_2025
+
+
+%init_680N_rm_override_2025
+%init_680S_rm_override_2025
+%init_680N_rm_nooverride_2025
+%init_680S_rm_nooverride_2025
+
 
 
 %init_680N_2030
