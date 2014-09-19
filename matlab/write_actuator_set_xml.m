@@ -1,8 +1,10 @@
-function write_actuator_set_xml(fid, xlsx_file, range, or_id)
+function metered = write_actuator_set_xml(fid, xlsx_file, range, or_id)
 % fid - file descriptor for the output xml
 % xlsx_file - full path to the configuration spreadsheet
 % range - row range to be read from the spreadsheet
 % or_id - array of on-ramp link IDs
+%
+% metered - array with the number of metered lanes
 
 disp('  F. Generating actuator set...');
 
@@ -31,9 +33,9 @@ for i = 1:sz
       mq = qlimits(i);
     end
     fprintf(fid, '   <parameters>\n');
-    fprintf(fid, '    <parameter name="min_rate_in_vphpl" value="%d">\n', min_rate*ml);
-    fprintf(fid, '    <parameter name="max_rate_in_vphpl" value="%d">\n', max_rate*ml);
-    fprintf(fid, '    <parameter name="max_queue_vehicles" value="%d">\n', mq);
+    fprintf(fid, '    <parameter name="min_rate_in_vphpl" value="%d"/>\n', min_rate*ml);
+    fprintf(fid, '    <parameter name="max_rate_in_vphpl" value="%d"/>\n', max_rate*ml);
+    fprintf(fid, '    <parameter name="max_queue_vehicles" value="%d"/>\n', mq);
     fprintf(fid, '   </parameters>\n');
     fprintf(fid, '  </actuator>\n');
   end

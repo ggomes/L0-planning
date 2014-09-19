@@ -13,7 +13,7 @@ disp('  D. Generating split ratio set...');
 hov_prct = xlsread(xlsx_file, 'Configuration', sprintf('c%d:c%d', range(1), range(2)))';
 SR = xlsread(xlsx_file, 'Off-Ramp_SplitRatios', sprintf('k%d:kl%d', range(1), range(2)));
 FRGF = xlsread(xlsx_file, 'Off-Ramp_GrowthFactors', sprintf('k%d:kl%d', range(1), range(2)));
-SR = SR .* FRGF;
+%SR = SR .* FRGF;
 [m, n] = size(SR);
 SR = min(SR, ones(m, n));
 
