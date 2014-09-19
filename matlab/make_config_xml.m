@@ -19,8 +19,11 @@ write_sr_set_xml(fid, xlsx_file, range, gp_id, hov_id, or_id, fr_id);
 
 
 if rm_control
-; % generate controllers & actuators and events
+  write_sensor_set_xml(fid, xlsx_file, range, gp_id);
 
+  write_actuator_set_xml(fid, xlsx_file, range, or_id);
+  
+  write_rm_controller_set_xml(fid, xlsx_file, range, gp_id, or_id);
 end
 
 
