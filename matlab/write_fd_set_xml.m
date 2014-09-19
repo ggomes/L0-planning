@@ -67,12 +67,12 @@ for i = 1:sz
   end
   if (or_id(i) ~= 0) & (i > 2)
     fprintf(fid, '   <fundamentalDiagramProfile id="%d" link_id="%d">\n', or_id(i), or_id(i));
-    fprintf(fid, '    <fundamentalDiagram id="0" capacity="2000" free_flow_speed="65" congestion_speed="10"/>\n');
+    fprintf(fid, '    <fundamentalDiagram id="0" capacity="1900" free_flow_speed="65" congestion_speed="10"/>\n');
     fprintf(fid, '   </fundamentalDiagramProfile>\n');
   end
   if fr_id(i) ~= 0
     fprintf(fid, '   <fundamentalDiagramProfile id="%d" link_id="%d">\n', fr_id(i), fr_id(i));
-    fprintf(fid, '    <fundamentalDiagram id="0" capacity="2000" free_flow_speed="65" congestion_speed="10"/>\n');
+    fprintf(fid, '    <fundamentalDiagram id="0" capacity="1900" free_flow_speed="65" congestion_speed="10"/>\n');
     fprintf(fid, '   </fundamentalDiagramProfile>\n');
   end
 end
