@@ -12,7 +12,7 @@ sz = range(2) - range(1) + 1;
 
 fprintf(fid, ' <SensorSet id="1" project_id="1">\n');
 for i = 1:sz
-	;
+  fprintf(fid, '  <sensor id="%d" link_id="%d"><sensor_type id="0" name="loop"/></sensor>\n', gp_id(i), gp_id(i));
 end
 
 
