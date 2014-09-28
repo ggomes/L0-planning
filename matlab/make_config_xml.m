@@ -9,21 +9,33 @@ fprintf(fid, '  <vehicleType id="1" name="SOV" size_factor="1"/>\n');
 fprintf(fid, ' </VehicleTypeSet>\n\n');
 
 
-[gp_id, hov_id, or_id, fr_id] = write_network_xml(fid, xlsx_file, range);
+ORS = [];
+if special_onramps
+  ORS = xlsread(xlsx_file, 'On-Ramp_SpecialConfig');
+  ORS = ORS(2:end, :);
+end
 
-write_fd_set_xml(fid, xlsx_file, range, rm_control, gp_id, hov_id, or_id, fr_id);
 
-write_demand_set_xml(fid, xlsx_file, range, or_id);
+[gp_id, hov_id, or_id, fr_id] = write_network_xml(fid, xlsx_file, range, ORS);
+if 1
+fprintf(fid, '</scenario>\n');
+fclose(fid);
+return;
+end
 
-write_sr_set_xml(fid, xlsx_file, range, gp_id, hov_id, or_id, fr_id);
+write_fd_set_xml(fid, xlsx_file, range, rm_control, gp_id, hov_id, or_id, fr_id, ORS);
+
+write_demand_set_xml(fid, xlsx_file, range, or_id, ORS);
+
+write_sr_set_xml(fid, xlsx_file, range, gp_id, hov_id, or_id, fr_id, ORS);
 
 
 if rm_control
   write_sensor_set_xml(fid, xlsx_file, range, gp_id);
 
-  metered = write_actuator_set_xml(fid, xlsx_file, range, or_id);
+  metered = write_actuator_set_xml(fid, xlsx_file, range, or_id, ORS);
   
-  write_rm_controller_set_xml(fid, xlsx_file, range, gp_id, or_id, metered);
+  write_rm_controller_set_xml(fid, xlsx_file, range, gp_id, or_id, metered, ORS);
 
   write_event_set_xml(fid);
 end

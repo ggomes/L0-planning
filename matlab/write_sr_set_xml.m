@@ -1,4 +1,4 @@
-function write_demand_set_xml(fid, xlsx_file, range, gp_id, hov_id, or_id, fr_id)
+function write_demand_set_xml(fid, xlsx_file, range, gp_id, hov_id, or_id, fr_id, ORS)
 % fid - file descriptor for the output xml
 % xlsx_file - full path to the configuration spreadsheet
 % range - row range to be read from the spreadsheet
@@ -6,6 +6,7 @@ function write_demand_set_xml(fid, xlsx_file, range, gp_id, hov_id, or_id, fr_id
 % hov_id - array of HOV link IDs
 % or_id - array of on-ramp link IDs
 % fr_id - array of off-ramp link IDs
+% ORS - configuration table for specially treated on-ramps
 
 disp('  D. Generating split ratio set...');
 

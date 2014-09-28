@@ -1,10 +1,11 @@
-function write_rm_controller_set_xml(fid, xlsx_file, range, gp_id, or_id, metered)
+function write_rm_controller_set_xml(fid, xlsx_file, range, gp_id, or_id, metered, ORS)
 % fid - file descriptor for the output xml
 % xlsx_file - full path to the configuration spreadsheet
 % range - row range to be read from the spreadsheet
 % gp_id - array of GP link IDs
 % or_id - array of on-ramp link IDs
 % metered - array with the number of metered lanes
+% ORS - configuration table for specially treated on-ramps
 
 disp('  G. Generating ramp metering controller set...');
 

@@ -1,8 +1,10 @@
-function write_demand_set_xml(fid, xlsx_file, range, or_id)
+function write_demand_set_xml(fid, xlsx_file, range, or_id, ORS)
+% ORS - configuration table for specially treated on-ramps
 % fid - file descriptor for the output xml
 % xlsx_file - full path to the configuration spreadsheet
 % range - row range to be read from the spreadsheet
 % or_id - array of on-ramp link IDs
+% ORS - configuration table for specially treated on-ramps
 
 disp('  C. Generating demand set...');
 

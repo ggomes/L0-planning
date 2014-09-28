@@ -1,8 +1,9 @@
-function metered = write_actuator_set_xml(fid, xlsx_file, range, or_id)
+function metered = write_actuator_set_xml(fid, xlsx_file, range, or_id, ORS)
 % fid - file descriptor for the output xml
 % xlsx_file - full path to the configuration spreadsheet
 % range - row range to be read from the spreadsheet
 % or_id - array of on-ramp link IDs
+% ORS - configuration table for specially treated on-ramps
 %
 % metered - array with the number of metered lanes
 

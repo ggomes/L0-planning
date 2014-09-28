@@ -1,7 +1,8 @@
-function [gp_id, hov_id, or_id, fr_id] = write_network_xml(fid, xlsx_file, range)
+function [gp_id, hov_id, or_id, fr_id] = write_network_xml(fid, xlsx_file, range, ORS)
 % fid - file descriptor for the output xml
 % xlsx_file - full path to the configuration spreadsheet
 % range - row range to be read from the spreadsheet
+% ORS - configuration table for specially treated on-ramps
 %
 % gp_id - array of GP link IDs
 % hov_id - array of HOV link IDs
@@ -48,8 +49,14 @@ for i = 2:sz
     in_links = [in_links hov_id(i-1)];
   end
   if (or_id(i) ~= 0) & (i > 2)
-    in_links = [in_links or_id(i)];
-    write_node_xml(fid, or_id(i), [], or_id(i)); % on-ramp terminal
+    idx = find(ORS(:, 1) == or_id(i));
+    if isempty(idx)
+      in_links = [in_links or_id(i)];
+      write_node_xml(fid, or_id(i), [], or_id(i)); % on-ramp terminal
+    else
+      idx = idx(1, 1);
+      merge_len 
+    end
   end
   out_links = gp_id(i);
   if hov_id(i) ~= 0

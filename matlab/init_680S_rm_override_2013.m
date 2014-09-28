@@ -12,3 +12,5 @@ rm_control = 1;
 
 pm_dir = -1;
 
+special_onramps = 1;
+
