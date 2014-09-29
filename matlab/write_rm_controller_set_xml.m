@@ -14,11 +14,28 @@ sz = range(2) - range(1) + 1;
 fprintf(fid, ' <ControllerSet id="1" project_id="1">\n');
 for i = 1:sz
   if (or_id(i) ~= 0) & (metered(i) ~= 0)
-    fprintf(fid, '  <controller dt="300" enabled="true" id="%d" type="IRM_ALINEA">\n', or_id(i));
-    fprintf(fid, '   <parameters><parameter name="gain" value="50"/></parameters>\n');
-    fprintf(fid, '   <target_actuators><target_actuator id="%d"/></target_actuators>\n', or_id(i));
-    fprintf(fid, '   <feedback_sensors><feedback_sensor id="%d" usage="mainline"/></feedback_sensors>\n', gp_id(i));
-    fprintf(fid, '  </controller>\n');
+     ors = find_or_struct(ORS, or_id(i));
+    if isempty(ors)
+      fprintf(fid, '  <controller dt="300" enabled="true" id="%d" type="IRM_ALINEA">\n', or_id(i));
+      fprintf(fid, '   <parameters><parameter name="gain" value="50"/></parameters>\n');
+      fprintf(fid, '   <target_actuators><target_actuator id="%d"/></target_actuators>\n', or_id(i));
+      fprintf(fid, '   <feedback_sensors><feedback_sensor id="%d" usage="mainline"/></feedback_sensors>\n', gp_id(i));
+      fprintf(fid, '  </controller>\n');
+    else
+      if isempty(ors.feeders)
+        links = ors.peers;
+      else      
+        links = ors.feeders;
+      end
+      in_count = size(links, 2);
+      for j = 1:in_count
+        fprintf(fid, '  <controller dt="300" enabled="true" id="%d" type="IRM_ALINEA">\n', links(j));
+        fprintf(fid, '   <parameters><parameter name="gain" value="50"/></parameters>\n');
+        fprintf(fid, '   <target_actuators><target_actuator id="%d"/></target_actuators>\n', links(j));
+        fprintf(fid, '   <feedback_sensors><feedback_sensor id="%d" usage="mainline"/></feedback_sensors>\n', gp_id(i));
+        fprintf(fid, '  </controller>\n');
+      end
+    end
   end
 end
 
