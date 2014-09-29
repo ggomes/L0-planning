@@ -1,4 +1,4 @@
-function [GP_V, GP_F, GP_D, HOV_V, HOV_F, HOV_D, ORD, ORF, FRD, FRF, ORQ] = extract_simulation_data(ptr,data_file,range,no_ml_queue)
+function [GP_V, GP_F, GP_D, HOV_V, HOV_F, HOV_D, ORD, ORF, FRD, FRF, ORQ, ORS_updated] = extract_simulation_data(ptr,data_file,range,no_ml_queue,ORS)
 
 % Extracting link data
 link_id = xlsread(data_file, 'GP_Speed', sprintf('a%d:f%d', range(1), range(2)));
@@ -118,18 +118,58 @@ end
 
 GP_V(1, :) = zeros(1, 288);
 GP_F(1, :) = zeros(1, 288);
+m = size(has_or, 2);
 
 fprintf('Extracting simulation data - ramp flows...\n');
-m = size(has_or, 2);
 ORF = ORD;
 ORQ = ORD;
+ORS_updated = [];
 for i = 1:m
-  idx = find(link_id == or_id(has_or(i)));
-  outflow = ptr.outflow_veh{1}(:, idx) + ptr.outflow_veh{2}(:, idx);
-  outflow = 12*outflow';
-  ORF(has_or(i), :) = outflow;
-  den = ptr.density_veh{1}(2:289, idx) + ptr.density_veh{2}(2:289, idx);
-  ORQ(has_or(i), :) = round(den');
+  ors = find_or_struct(ORS, or_id(has_or(i)));
+  if isempty(ors)
+    idx = find(link_id == or_id(has_or(i)));
+    outflow = ptr.outflow_veh{1}(:, idx) + ptr.outflow_veh{2}(:, idx);
+    outflow = 12*outflow';
+    ORF(has_or(i), :) = outflow;
+    den = ptr.density_veh{1}(2:289, idx) + ptr.density_veh{2}(2:289, idx);
+    ORQ(has_or(i), :) = round(den');
+  else
+    if isempty(ors.feeders)
+      links = ors.peers;
+    else      
+      links = ors.feeders;
+    end
+    in_count = size(links, 2);
+    ord = zeros(1, 288);
+    orf = zeros(1, 288);
+    orq = zeros(1, 288);
+    for j = 1:in_count
+      dmnd = ors.data((j-1)*4 + 1, :) .* ors.data((j-1)*4 + 2, :) .* ors.data((j-1)*4 + 3, :) .* ors.data((j-1)*4 + 4, :);
+      dmnd = round(dmnd);
+      ord = ord + dmnd;
+      idx = find(link_id == links(j));
+      outflow = ptr.outflow_veh{1}(:, idx) + ptr.outflow_veh{2}(:, idx);
+      outflow = round(12*outflow');
+      ors.output((j-1)*2 + 1, 1:288) = outflow;
+      orf = orf + outflow;
+      den = ptr.density_veh{1}(2:289, idx) + ptr.density_veh{2}(2:289, idx);
+      den = round(den');
+      den = compute_or_queues(dmnd-outflow);
+      ors.output((j-1)*2 + 2, 1:288) = den;
+      orq = orq + den;
+    end
+    ORS_updated = [ORS_updated ors];
+    ORD(has_or(i), :) = ord;
+    ORQ(has_or(i), :) = orq;
+    if isempty(ors.feeders)
+      ORF(has_or(i), :) = orf;
+    else
+      idx = find(link_id == or_id(has_or(i)));
+      outflow = ptr.outflow_veh{1}(:, idx) + ptr.outflow_veh{2}(:, idx);
+      outflow = 12*outflow';
+      ORF(has_or(i), :) = outflow;
+    end
+  end
 end
 
 m = size(has_fr, 2);
@@ -153,15 +193,22 @@ end
 % write data to spreadsheet
 if 1
 fprintf('Writing data to %s...\n', data_file);
-xlswrite(data_file, GP_V, 'GP_Speed', sprintf('i%d:kj%d', range(1), range(2)))
-xlswrite(data_file, GP_F, 'GP_Flow', sprintf('i%d:kj%d', range(1), range(2)))
-xlswrite(data_file, GP_D, 'GP_Density', sprintf('i%d:kj%d', range(1), range(2)))
-xlswrite(data_file, gp_cd', 'GP_Density', sprintf('e%d:e%d', range(1), range(2)))
-xlswrite(data_file, HOV_V, 'HOV_Speed', sprintf('i%d:kj%d', range(1), range(2)))
-xlswrite(data_file, HOV_F, 'HOV_Flow', sprintf('i%d:kj%d', range(1), range(2)))
-xlswrite(data_file, HOV_D, 'HOV_Density', sprintf('i%d:kj%d', range(1), range(2)))
-xlswrite(data_file, hov_cd', 'HOV_Density', sprintf('e%d:e%d', range(1), range(2)))
-xlswrite(data_file, ORF, 'On-Ramp_Flow', sprintf('k%d:kl%d', range(1), range(2)))
-xlswrite(data_file, FRF, 'Off-Ramp_Flow', sprintf('k%d:kl%d', range(1), range(2)))
-xlswrite(data_file, ORQ, 'On-Ramp_Queue', sprintf('k%d:kl%d', range(1), range(2)))
+xlswrite(data_file, GP_V, 'GP_Speed', sprintf('i%d:kj%d', range(1), range(2)));
+xlswrite(data_file, GP_F, 'GP_Flow', sprintf('i%d:kj%d', range(1), range(2)));
+xlswrite(data_file, GP_D, 'GP_Density', sprintf('i%d:kj%d', range(1), range(2)));
+xlswrite(data_file, gp_cd', 'GP_Density', sprintf('e%d:e%d', range(1), range(2)));
+xlswrite(data_file, HOV_V, 'HOV_Speed', sprintf('i%d:kj%d', range(1), range(2)));
+xlswrite(data_file, HOV_F, 'HOV_Flow', sprintf('i%d:kj%d', range(1), range(2)));
+xlswrite(data_file, HOV_D, 'HOV_Density', sprintf('i%d:kj%d', range(1), range(2)));
+xlswrite(data_file, hov_cd', 'HOV_Density', sprintf('e%d:e%d', range(1), range(2)));
+xlswrite(data_file, ORF, 'On-Ramp_Flow', sprintf('k%d:kl%d', range(1), range(2)));
+xlswrite(data_file, FRF, 'Off-Ramp_Flow', sprintf('k%d:kl%d', range(1), range(2)));
+xlswrite(data_file, ORQ, 'On-Ramp_Queue', sprintf('k%d:kl%d', range(1), range(2)));
+sz = size(ORS_updated, 2);
+cursor = 2;
+for i =  1:sz
+  in_count = size(ORS_updated(i).output, 1);
+  xlswrite(data_file, ORS_updated(i).output, 'On-Ramp_SpecialData', sprintf('e%d:kf%d', cursor, cursor+in_count-1));
+  cursor = cursor + in_count;
+end
 end

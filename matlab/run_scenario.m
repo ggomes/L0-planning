@@ -3,6 +3,7 @@ close all
 
 init_config;
 
+ORS = [];
 
 % 0. Generate configuration file [optional] ................................
 if auto_config
@@ -32,6 +33,6 @@ disp(['Done in ' num2str(toc) ' seconds.']);
 % 5. Put the result into Excel spreadsheet ...............................
 disp('3. Put the result into Excel spreadsheet')
 tic
-[GP_V, GP_F, GP_D, HOV_V, HOV_F, HOV_D, ORD, ORF, FRD, FRF, ORQ] = extract_simulation_data(ptr,xlsx_file,range,no_ml_queue);
+[GP_V, GP_F, GP_D, HOV_V, HOV_F, HOV_D, ORD, ORF, FRD, FRF, ORQ, ORS] = extract_simulation_data(ptr,xlsx_file,range,no_ml_queue,ORS);
 disp(['Done in ' num2str(toc) ' seconds.']); 
 

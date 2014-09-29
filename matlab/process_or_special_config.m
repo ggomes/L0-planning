@@ -31,6 +31,7 @@ function s = process_entry(ORS, b)
 s.id = ORS(1, 1);
 s.idx = b;
 s.data = ORS(:, 11:end);
+s.output = [];
 s.merge_length = min(ORS(find(~isnan(ORS(:, 2))), 2));
 s.merge_lanes = min(ORS(find(~isnan(ORS(:, 3))), 3));
 
