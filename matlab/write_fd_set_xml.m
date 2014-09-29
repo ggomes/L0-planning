@@ -67,9 +67,31 @@ for i = 1:sz
     fprintf(fid, '   </fundamentalDiagramProfile>\n');
   end
   if (or_id(i) ~= 0) & (i > 2)
-    fprintf(fid, '   <fundamentalDiagramProfile id="%d" link_id="%d">\n', or_id(i), or_id(i));
-    fprintf(fid, '    <fundamentalDiagram id="0" capacity="1900" free_flow_speed="65" congestion_speed="10"/>\n');
-    fprintf(fid, '   </fundamentalDiagramProfile>\n');
+    ors = find_or_struct(ORS, or_id(i));
+    if isempty(ors)
+      fprintf(fid, '   <fundamentalDiagramProfile id="%d" link_id="%d">\n', or_id(i), or_id(i));
+      fprintf(fid, '    <fundamentalDiagram id="0" capacity="1900" free_flow_speed="65" congestion_speed="10"/>\n');
+      fprintf(fid, '   </fundamentalDiagramProfile>\n');
+    else
+      if isempty(ors.feeders)
+        in_count = size(ors.peers, 2);
+        for j = 1:in_count
+          fprintf(fid, '   <fundamentalDiagramProfile id="%d" link_id="%d">\n', ors.peers(j), ors.peers(j));
+          fprintf(fid, '    <fundamentalDiagram id="0" capacity="1900" free_flow_speed="65" congestion_speed="10"/>\n');
+          fprintf(fid, '   </fundamentalDiagramProfile>\n');
+        end
+      else
+        in_count = size(ors.feeders, 2);
+        for j = 1:in_count
+          fprintf(fid, '   <fundamentalDiagramProfile id="%d" link_id="%d">\n', ors.feeders(j), ors.feeders(j));
+          fprintf(fid, '    <fundamentalDiagram id="0" capacity="1900" free_flow_speed="65" congestion_speed="10"/>\n');
+          fprintf(fid, '   </fundamentalDiagramProfile>\n');
+        end
+        fprintf(fid, '   <fundamentalDiagramProfile id="%d" link_id="%d">\n', ors.id, ors.id);
+        fprintf(fid, '    <fundamentalDiagram id="0" capacity="1900" free_flow_speed="65" congestion_speed="10"/>\n');
+        fprintf(fid, '   </fundamentalDiagramProfile>\n');
+      end
+    end
   end
   if fr_id(i) ~= 0
     fprintf(fid, '   <fundamentalDiagramProfile id="%d" link_id="%d">\n', fr_id(i), fr_id(i));
