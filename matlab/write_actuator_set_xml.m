@@ -24,21 +24,54 @@ sz = range(2) - range(1) + 1;
 fprintf(fid, ' <ActuatorSet id="1" project_id="1">\n');
 for i = 1:sz
   if (or_id(i) ~= 0) & (metered(i) ~= 0)
-    ml = round(metered(i) / lanes(i));
-    mq = 100000;
-    fprintf(fid, '  <actuator id="%d">\n', or_id(i));
-    fprintf(fid, '   <scenarioElement id="%d" type="link"/>\n', or_id(i));
-    fprintf(fid, '   <actuator_type id="0" name="ramp_meter"/>\n');
-    if qlimits(i) ~= 0
-      fprintf(fid, '   <queue_override strategy="max_rate"/>\n');
-      mq = qlimits(i);
+    ors = find_or_struct(ORS, or_id(i));
+    if isempty(ors)
+      ml = round(metered(i) / lanes(i));
+      mq = 100000;
+      fprintf(fid, '  <actuator id="%d">\n', or_id(i));
+      fprintf(fid, '   <scenarioElement id="%d" type="link"/>\n', or_id(i));
+      fprintf(fid, '   <actuator_type id="0" name="ramp_meter"/>\n');
+      if qlimits(i) ~= 0
+        fprintf(fid, '   <queue_override strategy="max_rate"/>\n');
+        mq = qlimits(i);
+      end
+      fprintf(fid, '   <parameters>\n');
+      fprintf(fid, '    <parameter name="min_rate_in_vphpl" value="%d"/>\n', min_rate*ml);
+      fprintf(fid, '    <parameter name="max_rate_in_vphpl" value="%d"/>\n', max_rate*ml);
+      fprintf(fid, '    <parameter name="max_queue_vehicles" value="%d"/>\n', mq);
+      fprintf(fid, '   </parameters>\n');
+      fprintf(fid, '  </actuator>\n');
+    else
+      if isempty(ors.feeders)
+        links = ors.peers;
+        or_lanes = ors.peer_lanes;
+        or_metered = ors.peer_metered;
+        or_qlim = ors.peer_queue_limit;
+      else      
+        links = ors.feeders;
+        or_lanes = ors.feeder_lanes;
+        or_metered = ors.feeder_metered;
+        or_qlim = ors.feeder_queue_limit;
+      end
+      in_count = size(links, 2);
+      for j = 1:in_count
+        ml = round(or_metered(j) / or_lanes(j));
+        mq = 100000;
+        fprintf(fid, '  <actuator id="%d">\n', links(j));
+        fprintf(fid, '   <scenarioElement id="%d" type="link"/>\n', links(j));
+        fprintf(fid, '   <actuator_type id="0" name="ramp_meter"/>\n');
+        if or_qlim(j) ~= 0
+          fprintf(fid, '   <queue_override strategy="max_rate"/>\n');
+          mq = or_qlim(j);
+        end
+        fprintf(fid, '   <parameters>\n');
+        fprintf(fid, '    <parameter name="min_rate_in_vphpl" value="%d"/>\n', min_rate*ml);
+        fprintf(fid, '    <parameter name="max_rate_in_vphpl" value="%d"/>\n', max_rate*ml);
+        fprintf(fid, '    <parameter name="max_queue_vehicles" value="%d"/>\n', mq);
+        fprintf(fid, '   </parameters>\n');
+        fprintf(fid, '  </actuator>\n');
+      end
     end
-    fprintf(fid, '   <parameters>\n');
-    fprintf(fid, '    <parameter name="min_rate_in_vphpl" value="%d"/>\n', min_rate*ml);
-    fprintf(fid, '    <parameter name="max_rate_in_vphpl" value="%d"/>\n', max_rate*ml);
-    fprintf(fid, '    <parameter name="max_queue_vehicles" value="%d"/>\n', mq);
-    fprintf(fid, '   </parameters>\n');
-    fprintf(fid, '  </actuator>\n');
   end
 end
 
