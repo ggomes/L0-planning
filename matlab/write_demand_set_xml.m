@@ -22,7 +22,22 @@ fprintf(fid, ' <DemandSet id="1" name="onramps" project_id="1">\n');
 
 for i = 1:sz
   if or_id(i) ~= 0
-    write_demand_profile_xml(fid, or_id(i), ORD(i, :), hov_prct(i));
+    ors = find_or_struct(ORS, or_id(i));
+    if isempty(ors)
+      write_demand_profile_xml(fid, or_id(i), ORD(i, :), hov_prct(i));
+    else      
+      if isempty(ors.feeders)
+        links = ors.peers;
+      else      
+        links = ors.feeders;
+      end
+      in_count = size(links, 2);
+      for j = 1:in_count
+        idx = (j - 1) * 4 + 1;
+        ord = ors.data(idx, :) .* ors.data(idx + 1, :) .* ors.data(idx + 2, :) .* ors.data(idx + 3, :);
+        write_demand_profile_xml(fid, links(j), ord, hov_prct(i));
+      end
+    end
   end
 end
 
