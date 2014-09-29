@@ -49,13 +49,25 @@ for i = 2:sz
     in_links = [in_links hov_id(i-1)];
   end
   if (or_id(i) ~= 0) & (i > 2)
-    idx = find(ORS(:, 1) == or_id(i));
-    if isempty(idx)
+    ors = find_or_struct(ORS, or_id(i));
+    if isempty(ors)
       in_links = [in_links or_id(i)];
       write_node_xml(fid, or_id(i), [], or_id(i)); % on-ramp terminal
     else
-      idx = idx(1, 1);
-      merge_len 
+      if isempty(ors.feeders)
+        in_links = [in_links ors.peers];
+        in_count = size(ors.peers, 2); 
+        for j = 1:in_count
+          write_node_xml(fid, ors.peers(j), [], ors.peers(j)); % on-ramp terminal
+        end
+      else
+        in_links = [in_links or_id(i)];
+        in_count = size(ors.feeders, 2); 
+        for j = 1:in_count
+          write_node_xml(fid, ors.feeders(j), [], ors.feeders(j)); % on-ramp terminal
+        end
+        write_node_xml(fid, ors.id, ors.feeders, ors.id); % internal node
+      end
     end
   end
   out_links = gp_id(i);
@@ -80,7 +92,23 @@ for i = 1:(sz-1)
     write_link_xml(fid, hov_id(i), '<link_type id="6" name="HOV"/>', hov_lanes(i), llen(i), gp_id(i), gp_id(i+1));
   end
   if (or_id(i) ~= 0) & (i > 2)
-    write_link_xml(fid, or_id(i), '<link_type id="3" name="On-Ramp"/>', or_lanes(i), 0.2, or_id(i), gp_id(i));
+    ors = find_or_struct(ORS, or_id(i));
+    if isempty(ors)
+      write_link_xml(fid, or_id(i), '<link_type id="3" name="On-Ramp"/>', or_lanes(i), 0.2, or_id(i), gp_id(i));
+    else
+      if isempty(ors.feeders)
+        in_count = size(ors.peers, 2); 
+        for j = 1:in_count
+          write_link_xml(fid, ors.peers(j), '<link_type id="3" name="On-Ramp"/>', ors.peer_lanes(j), 0.2, ors.peers(j), gp_id(i));
+        end
+      else
+        in_count = size(ors.feeders, 2); 
+        for j = 1:in_count
+          write_link_xml(fid, ors.feeders(j), '<link_type id="3" name="On-Ramp"/>', ors.feeder_lanes(j), 0.2, ors.feeders(j), ors.id);
+        end
+        write_link_xml(fid, ors.id, '<link_type id="3" name="On-Ramp"/>', ors.merge_lanes, ors.merge_length, ors.id, gp_id(i)); % merge link
+      end
+    end
   end
   if fr_id(i) ~= 0
     write_link_xml(fid, fr_id(i), '<link_type id="4" name="Off-Ramp"/>', fr_lanes(i), 0.2, gp_id(i), fr_id(i));

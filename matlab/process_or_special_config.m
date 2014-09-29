@@ -34,7 +34,7 @@ s.data = ORS(:, 11:end);
 s.merge_length = min(ORS(find(~isnan(ORS(:, 2))), 2));
 s.merge_lanes = min(ORS(find(~isnan(ORS(:, 3))), 3));
 
-if s.merge_length
+if ~s.merge_length
   s.peers = ORS(find(~isnan(ORS(:, 4))), 4)';
   s.peer_lanes = ORS(find(~isnan(ORS(:, 5))), 5)';
   s.peer_metered = ORS(find(~isnan(ORS(:, 6))), 6)';
