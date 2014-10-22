@@ -5,7 +5,7 @@ cfg_folder = fullfile(root,'config','680S_Scenario_1_0_2025');
 xlsx_file        = fullfile(cfg_folder,'I680SB_2025_S1_AuxLane.xlsx');
 cfg_starter      = fullfile(cfg_folder,'680S_generated.xml');
 
-range = [2 147];  % 680 SB
+range = [2 146];  % 680 SB
 
 pm_dir = -1;
 

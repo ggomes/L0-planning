@@ -8,13 +8,15 @@ init_config;
 
 sz = range(2) - 1;
 
+gf2 = 0;
+
 fprintf('Reading on- and off-ramp demand data, knobs and growth factors from %s...\n', xlsx_file);
 
 or_id = xlsread(xlsx_file, 'On-Ramp_CollectedFlows', sprintf('g%d:g%d', range(1), range(2)))';
 ORD = xlsread(xlsx_file, 'On-Ramp_CollectedFlows', sprintf('k%d:kl%d', range(1), range(2)));
 ORK = xlsread(xlsx_file, 'On-Ramp_Knobs', sprintf('k%d:kl%d', range(1), range(2)));
 ORGF = xlsread(xlsx_file, 'On-Ramp_GrowthFactors', sprintf('k%d:kl%d', range(1), range(2)));
-if 1
+if gf2
   ORGF2 = xlsread(xlsx_file, 'On-Ramp_GrowthFactors_2', sprintf('k%d:kl%d', range(1), range(2)));
   ORGF = ORGF .* ORGF2;
 end
@@ -25,7 +27,7 @@ fr_id = xlsread(xlsx_file, 'Off-Ramp_CollectedFlows', sprintf('g%d:g%d', range(1
 FRD = xlsread(xlsx_file, 'Off-Ramp_CollectedFlows', sprintf('k%d:kl%d', range(1), range(2)));
 FRK = xlsread(xlsx_file, 'Off-Ramp_Knobs', sprintf('k%d:kl%d', range(1), range(2)));
 FRGF = xlsread(xlsx_file, 'Off-Ramp_GrowthFactors', sprintf('k%d:kl%d', range(1), range(2)));
-if 1
+if gf2
   FRGF2 = xlsread(xlsx_file, 'Off-Ramp_GrowthFactors_2', sprintf('k%d:kl%d', range(1), range(2)));
   FRGF = FRGF .* FRGF2;
 end
