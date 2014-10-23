@@ -9,12 +9,18 @@ no_ml_queue = 1;
 special_onramps = 0;
 
 
+orgf2 = 0;
+orgf3 = 0;
+orgf4 = 0;
+
+
+
 %init_680N_2013
 %init_680S_2013
 
 
 %init_680N_rm_override_2013
-init_680S_rm_override_2013
+%init_680S_rm_override_2013
 %init_680N_rm_nooverride_2013
 %init_680S_rm_nooverride_2013
 
@@ -25,8 +31,8 @@ init_680S_rm_override_2013
 %init_680S_2013_S1
 
 
-%init_680N_2013_S1_RM
-%init_680S_2013_S1_RM
+%init_680N_2013_S2a
+init_680S_2013_S2a
 
 
 

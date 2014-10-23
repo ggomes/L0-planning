@@ -1,4 +1,4 @@
-function [GP_V, GP_F, GP_D, HOV_V, HOV_F, HOV_D, ORD, ORF, FRD, FRF, ORQ, ORS_updated] = extract_simulation_data(ptr,data_file,range,no_ml_queue,ORS)
+function [GP_V, GP_F, GP_D, HOV_V, HOV_F, HOV_D, ORD, ORF, FRD, FRF, ORQ, ORS_updated] = extract_simulation_data(ptr,data_file,range,no_ml_queue,ORS,orgf2,orgf3,orgf4)
 
 % Extracting link data
 link_id = xlsread(data_file, 'GP_Speed', sprintf('a%d:f%d', range(1), range(2)));
@@ -21,6 +21,18 @@ or_id = or_id';
 ORD = xlsread(data_file, 'On-Ramp_CollectedFlows', sprintf('k%d:kl%d', range(1), range(2)));
 ORK = xlsread(data_file, 'On-Ramp_Knobs', sprintf('k%d:kl%d', range(1), range(2)));
 ORGF = xlsread(data_file, 'On-Ramp_GrowthFactors', sprintf('k%d:kl%d', range(1), range(2)));
+if orgf2 | orgf3 | orgf4
+  ORGF2 = xlsread(data_file, 'On-Ramp_GrowthFactors_2', sprintf('k%d:kl%d', range(1), range(2)));
+  if orgf3 | orgf4
+    ORGF3 = xlsread(data_file, 'On-Ramp_GrowthFactors_3', sprintf('k%d:kl%d', range(1), range(2)));
+    if orgf4
+      ORGF4 = xlsread(data_file, 'On-Ramp_GrowthFactors_4', sprintf('k%d:kl%d', range(1), range(2)));
+      ORGF3 = ORGF3 .* ORGF4;
+    end
+    ORGF2 = ORGF2 .* ORGF3;
+  end
+  ORGF = ORGF .* ORGF2;
+end
 ORD = ORD .* ORK .* ORGF;
 has_or = find(max(ORD,[],2)>0);
 has_or = has_or';
@@ -144,7 +156,29 @@ for i = 1:m
     orf = zeros(1, 288);
     orq = zeros(1, 288);
     for j = 1:in_count
-      dmnd = ors.data((j-1)*4 + 1, :) .* ors.data((j-1)*4 + 2, :) .* ors.data((j-1)*4 + 3, :) .* ors.data((j-1)*4 + 4, :);
+      sz2 = 4;
+      if orgf4
+        sz2 = 6;
+      elseif orgf3
+        sz2 = 5;
+      end
+      % Demand for special onramps:
+      % +1 - collected flows
+      % +2 - knobs
+      % +3 - growth factors
+      % +4 - growth factors 2
+      % +5 - growth factors 3
+      % +6 - growth factors 4
+      dmnd = ors.data((j-1)*sz2 + 1, :) .* ors.data((j-1)*4 + 2, :) .* ors.data((j-1)*4 + 3, :);
+      if orgf2 | orgf3 | orgf4
+        dmnd = dmnd .* ors.data((j-1)*sz2 + 4, :);
+        if orgf3 | orgf4
+          dmnd = dmnd .* ors.data((j-1)*sz2 + 5, :);
+          if orgf4
+            dmnd = dmnd .* ors.data((j-1)*sz2 + 6, :);
+          end
+        end
+      end
       dmnd = round(dmnd);
       ord = ord + dmnd;
       idx = find(link_id == links(j));

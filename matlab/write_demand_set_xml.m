@@ -1,10 +1,11 @@
-function write_demand_set_xml(fid, xlsx_file, range, or_id, ORS)
+function write_demand_set_xml(fid, xlsx_file, range, or_id, ORS, orgf2, orgf3, orgf4)
 % ORS - configuration table for specially treated on-ramps
 % fid - file descriptor for the output xml
 % xlsx_file - full path to the configuration spreadsheet
 % range - row range to be read from the spreadsheet
 % or_id - array of on-ramp link IDs
 % ORS - configuration table for specially treated on-ramps
+% orgf2-4 - flags indicating that On-Ramp_GrowthFactors2,3,4 should be considered
 
 disp('  C. Generating demand set...');
 
@@ -13,6 +14,18 @@ hov_prct = xlsread(xlsx_file, 'Configuration', sprintf('c%d:c%d', range(1), rang
 ORD = xlsread(xlsx_file, 'On-Ramp_CollectedFlows', sprintf('k%d:kl%d', range(1), range(2)));
 ORK = xlsread(xlsx_file, 'On-Ramp_Knobs', sprintf('k%d:kl%d', range(1), range(2)));
 ORGF = xlsread(xlsx_file, 'On-Ramp_GrowthFactors', sprintf('k%d:kl%d', range(1), range(2)));
+if orgf2 | orgf3 | orgf4
+  ORGF2 = xlsread(xlsx_file, 'On-Ramp_GrowthFactors_2', sprintf('k%d:kl%d', range(1), range(2)));
+  if orgf3 | orgf4
+    ORGF3 = xlsread(xlsx_file, 'On-Ramp_GrowthFactors_3', sprintf('k%d:kl%d', range(1), range(2)));
+    if orgf4
+      ORGF4 = xlsread(xlsx_file, 'On-Ramp_GrowthFactors_4', sprintf('k%d:kl%d', range(1), range(2)));
+      ORGF3 = ORGF3 .* ORGF4;
+    end
+    ORGF2 = ORGF2 .* ORGF3;
+  end
+  ORGF = ORGF .* ORGF2;
+end
 ORD = ORD .* ORK .* ORGF;
 
 
@@ -33,8 +46,29 @@ for i = 1:sz
       end
       in_count = size(links, 2);
       for j = 1:in_count
-        idx = (j - 1) * 4 + 1;
-        ord = ors.data(idx, :) .* ors.data(idx + 1, :) .* ors.data(idx + 2, :) .* ors.data(idx + 3, :);
+        sz2 = 4;
+        if orgf4
+          sz2 = 6;
+        elseif orgf3
+          sz2 = 5;
+        end
+        idx = (j - 1) * sz2 + 1;
+	% blank - demand
+	% +1 - knobs
+	% +2 - growth factors
+	% +3 - growth factors 2
+	% +4 - growth factors 3
+	% +5 - growth factors 4
+        ord = ors.data(idx, :) .* ors.data(idx + 1, :) .* ors.data(idx + 2, :);
+        if orgf2 | orgf3 | orgf4
+          ord = ord .* ors.data(idx + 3, :);
+          if orgf3 | orgf4
+            ord = ord .* ors.data(idx + 4, :);
+            if orgf4
+              ord = ord .* ors.data(idx + 5, :);
+            end
+          end
+        end
         write_demand_profile_xml(fid, links(j), ord, hov_prct(i));
       end
     end

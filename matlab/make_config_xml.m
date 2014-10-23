@@ -20,7 +20,7 @@ end
 
 write_fd_set_xml(fid, xlsx_file, range, rm_control, gp_id, hov_id, or_id, fr_id, ORS);
 
-write_demand_set_xml(fid, xlsx_file, range, or_id, ORS);
+write_demand_set_xml(fid, xlsx_file, range, or_id, ORS, orgf2, orgf3, orgf4);
 
 write_sr_set_xml(fid, xlsx_file, range, gp_id, hov_id, or_id, fr_id, ORS);
 
