@@ -9,7 +9,7 @@ range = [2 149];  % 680 NB
 
 pm_dir = 1;
 
-orgf2 = 1;
+orgf2 = 0;
 
 rm_control = 1;
 
