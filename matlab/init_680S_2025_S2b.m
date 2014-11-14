@@ -14,3 +14,7 @@ no_ml_queue = 1;
 orgf2 = 1;
 
 rm_control = 1;
+
+special_onramps = 1;
+
+hot_offramps = 1;

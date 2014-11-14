@@ -7,6 +7,7 @@ auto_config = 1;
 rm_control = 0;
 no_ml_queue = 1;
 special_onramps = 0;
+hot_offramps = 0;
 
 
 orgf2 = 0;
@@ -31,6 +32,9 @@ orgf4 = 0;
 %init_680N_2013_S2a
 %init_680S_2013_S2a
 
+%init_680N_2013_S2b
+init_680S_2013_S2b
+
 
 
 
@@ -45,7 +49,10 @@ orgf4 = 0;
 %init_680S_2025_S1
 
 %init_680N_2025_S2a
-init_680S_2025_S2a
+%init_680S_2025_S2a
+
+%init_680N_2025_S2b
+%init_680S_2025_S2b
 
 %init_680N_rm_override_2025
 %init_680S_rm_override_2025
