@@ -41,8 +41,10 @@ for i = 1:sz
     else      
       if isempty(ors.feeders)
         links = ors.peers;
+        lhov = ors.peer_hov_portion;
       else      
         links = ors.feeders;
+        lhov = ors.feeder_hov_portion;
       end
       in_count = size(links, 2);
       for j = 1:in_count
@@ -69,7 +71,7 @@ for i = 1:sz
             end
           end
         end
-        write_demand_profile_xml(fid, links(j), ord, hov_prct(i));
+        write_demand_profile_xml(fid, links(j), ord, lhov(j));
       end
     end
   end

@@ -30,28 +30,40 @@ function s = process_entry(ORS, b)
 
 s.id = ORS(1, 1);
 s.idx = b;
-s.data = ORS(:, 11:end);
+s.data = ORS(:, 14:end);
 s.output = [];
 s.merge_length = min(ORS(find(~isnan(ORS(:, 2))), 2));
 s.merge_lanes = min(ORS(find(~isnan(ORS(:, 3))), 3));
 
 if ~s.merge_length
   s.peers = ORS(find(~isnan(ORS(:, 4))), 4)';
-  s.peer_lanes = ORS(find(~isnan(ORS(:, 5))), 5)';
-  s.peer_metered = ORS(find(~isnan(ORS(:, 6))), 6)';
-  s.peer_queue_limit = ORS(find(~isnan(ORS(:, 7))), 7)';
+  s.peer_hov_portion = ORS(find(~isnan(ORS(:, 5))), 5)';
+  s.peer_lanes = ORS(find(~isnan(ORS(:, 6))), 6)';
+  s.peer_metered = ORS(find(~isnan(ORS(:, 7))), 7)';
+  s.peer_min_rate = ORS(find(~isnan(ORS(:, 8))), 8)';
+  s.peer_max_rate = ORS(find(~isnan(ORS(:, 9))), 9)';
+  s.peer_queue_limit = ORS(find(~isnan(ORS(:, 10))), 10)';
   s.feeders = [];
+  s.feeder_hov_portion = [];
   s.feeder_lanes = [];
   s.feeder_metered = [];
+  s.feeder_min_rate = [];
+  s.feeder_max_rate = [];
   s.feeder_queue_limit = [];
 else
   s.feeders = ORS(find(~isnan(ORS(:, 4))), 4)';
-  s.feeder_lanes = ORS(find(~isnan(ORS(:, 5))), 5)';
-  s.feeder_metered = ORS(find(~isnan(ORS(:, 6))), 6)';
-  s.feeder_queue_limit = ORS(find(~isnan(ORS(:, 7))), 7)';
+  s.feeder_hov_portion = ORS(find(~isnan(ORS(:, 5))), 5)';
+  s.feeder_lanes = ORS(find(~isnan(ORS(:, 6))), 6)';
+  s.feeder_metered = ORS(find(~isnan(ORS(:, 7))), 7)';
+  s.feeder_min_rate = ORS(find(~isnan(ORS(:, 8))), 8)';
+  s.feeder_max_rate = ORS(find(~isnan(ORS(:, 9))), 9)';
+  s.feeder_queue_limit = ORS(find(~isnan(ORS(:, 10))), 10)';
   s.peers = [];
+  s.peer_hov_portion = [];
   s.peer_lanes = [];
   s.peer_metered = [];
+  s.peer_min_rate = [];
+  s.peer_max_rate = [];
   s.peer_queue_limit = [];
 end
 

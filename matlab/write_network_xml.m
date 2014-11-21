@@ -17,14 +17,14 @@ aux_const = 0.47368421052632;
 gp_id = xlsread(xlsx_file, 'Configuration', sprintf('a%d:a%d', range(1), range(2)))';
 hov_id = xlsread(xlsx_file, 'Configuration', sprintf('b%d:b%d', range(1), range(2)))';
 or_id = xlsread(xlsx_file, 'Configuration', sprintf('o%d:o%d', range(1), range(2)))';
-fr_id = xlsread(xlsx_file, 'Configuration', sprintf('t%d:t%d', range(1), range(2)))';
+fr_id = xlsread(xlsx_file, 'Configuration', sprintf('v%d:v%d', range(1), range(2)))';
 
 % Lanes
 aux_lanes = xlsread(xlsx_file, 'Configuration', sprintf('h%d:h%d', range(1), range(2)))';
 gp_lanes = xlsread(xlsx_file, 'Configuration', sprintf('i%d:i%d', range(1), range(2)))';
 hov_lanes = xlsread(xlsx_file, 'Configuration', sprintf('j%d:j%d', range(1), range(2)))';
 or_lanes = xlsread(xlsx_file, 'Configuration', sprintf('p%d:p%d', range(1), range(2)))';
-fr_lanes = xlsread(xlsx_file, 'Configuration', sprintf('u%d:u%d', range(1), range(2)))';
+fr_lanes = xlsread(xlsx_file, 'Configuration', sprintf('w%d:w%d', range(1), range(2)))';
 
 % Length
 llen = xlsread(xlsx_file, 'Configuration', sprintf('e%d:e%d', range(1), range(2)))';
