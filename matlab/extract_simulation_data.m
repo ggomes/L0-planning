@@ -110,8 +110,18 @@ HOV_F = round(HOV_F);
 HOV_D = round(HOV_D);
 
 %%% HACK begin %%%
+
+GP_V(end, :) = GP_V(end-1, :);
+HOV_V(end, :) = HOV_V(end-1, :);
+
 for i = 1:m
   for j = 1:288
+    if abs(ffspeeds(i) - GP_V(i, j)) < 2
+      GP_V(i, j) = ffspeeds(i);
+    end
+    if abs(ffspeeds(i) - HOV_V(i, j)) < 2
+      HOV_V(i, j) = ffspeeds(i);
+    end
     if GP_D(i, j) < 1
       GP_V(i, j) = ffspeeds(i);
     end
