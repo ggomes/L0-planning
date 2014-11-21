@@ -33,7 +33,7 @@ orgf4 = 0;
 %init_680S_2013_S2a
 
 %init_680N_2013_S2b
-init_680S_2013_S2b
+%init_680S_2013_S2b
 
 
 
@@ -51,7 +51,7 @@ init_680S_2013_S2b
 %init_680N_2025_S2a
 %init_680S_2025_S2a
 
-%init_680N_2025_S2b
+init_680N_2025_S2b
 %init_680S_2025_S2b
 
 %init_680N_rm_override_2025
