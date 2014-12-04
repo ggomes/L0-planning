@@ -16,3 +16,8 @@ orgf2 = 1;
 rm_control = 1;
 
 special_onramps = 1;
+
+
+% On-ramp -130 (Crow Canyon WB)
+% Lanes = 18
+% Queue limit = 4
