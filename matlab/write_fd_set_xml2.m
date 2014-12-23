@@ -28,8 +28,8 @@ for i = 1:sz
     fprintf(fid, '    <fundamentalDiagram id="0" capacity="%d" free_flow_speed="%d" congestion_speed="%d"/>\n', gp_cap(i), V(i), W(i));
   else
     if gp_id(i) == -70 % ad-hoc incident
-      %stop_time = 190;
-      stop_time = 184;
+      stop_time = 202;
+      %stop_time = 196;
       fprintf(fid, '   <fundamentalDiagramProfile id="%d" link_id="%d" dt="300" start_time="0">\n', gp_id(i), gp_id(i));
       for j = 1:72
         fprintf(fid, '    <fundamentalDiagram id="0" capacity="%d" free_flow_speed="%d" congestion_speed="%d"/>\n', gp_cap(i), V(i), W(i));
@@ -40,10 +40,13 @@ for i = 1:sz
       for j = 109:180
         fprintf(fid, '    <fundamentalDiagram id="0" capacity="%d" free_flow_speed="%d" congestion_speed="%d"/>\n', gp_cap(i), V(i), W(i));
       end
-      for j = 181:stop_time % 16:00 - 16:45
+      for j = 181:192
+        fprintf(fid, '    <fundamentalDiagram id="0" capacity="%d" free_flow_speed="%d" congestion_speed="%d"/>\n', gp_cap(i)+add_cap, V(i), W(i));
+      end
+      for j = 193:stop_time % 16:00 - 16:45
         fprintf(fid, '    <fundamentalDiagram id="0" capacity="%d" free_flow_speed="%d" congestion_speed="%d"/>\n', 1400, 30, W(i));
       end
-      for j = (stop_time + 1):128 % 16:45 - 19:00
+      for j = (stop_time + 1):228 % 16:45 - 19:00
         fprintf(fid, '    <fundamentalDiagram id="0" capacity="%d" free_flow_speed="%d" congestion_speed="%d"/>\n', gp_cap(i)+add_cap, V(i), W(i));
       end
       for j = 229:288
