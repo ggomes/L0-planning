@@ -116,6 +116,9 @@ for i = 1:(sz-1)
 end
 % Last link
 write_link_xml(fid, gp_id(sz), '<link_type id="1" name="Freeway"/>', gp_lanes(sz) + aux_const*aux_lanes(i), llen(i), gp_id(sz), last_node_id);
+if or_id(sz) ~= 0
+  write_link_xml(fid, or_id(sz), '<link_type id="3" name="On-Ramp"/>', or_lanes(sz), 0.2, or_id(sz), gp_id(sz));
+end
 fprintf(fid, '   </LinkList>\n');
 
 fprintf(fid, '  </network>\n');
