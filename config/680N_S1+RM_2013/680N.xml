@@ -220,8 +220,14 @@
       <fundamentalDiagramProfile id="73" link_id="-86">
          <fundamentalDiagram capacity="1950" congestion_speed="6" free_flow_speed="69" id="0"/>
       </fundamentalDiagramProfile>
+      <fundamentalDiagramProfile id="73" link_id="-2086">
+         <fundamentalDiagram capacity="1850" congestion_speed="6" free_flow_speed="69" id="0"/>
+      </fundamentalDiagramProfile>
       <fundamentalDiagramProfile id="74" link_id="-87">
          <fundamentalDiagram capacity="1950" congestion_speed="6" free_flow_speed="69" id="0"/>
+      </fundamentalDiagramProfile>
+      <fundamentalDiagramProfile id="74" link_id="-2087">
+         <fundamentalDiagram capacity="1850" congestion_speed="6" free_flow_speed="69" id="0"/>
       </fundamentalDiagramProfile>
       <fundamentalDiagramProfile id="75" link_id="-91">
          <fundamentalDiagram capacity="1950" congestion_speed="6" free_flow_speed="69" id="0"/>
@@ -516,6 +522,9 @@
       </fundamentalDiagramProfile>
       <fundamentalDiagramProfile id="173" link_id="-88">
          <fundamentalDiagram capacity="1950" congestion_speed="6" free_flow_speed="69" id="0"/>
+      </fundamentalDiagramProfile>
+      <fundamentalDiagramProfile id="173" link_id="-2088">
+         <fundamentalDiagram capacity="1850" congestion_speed="6" free_flow_speed="69" id="0"/>
       </fundamentalDiagramProfile>
       <fundamentalDiagramProfile id="174" link_id="-298">
          <fundamentalDiagram capacity="1950" congestion_speed="6" free_flow_speed="69" id="0"/>
@@ -2094,6 +2103,7 @@
                <node_type id="4" name="simple"/>
                <outputs>
                   <output link_id="-86"/>
+                  <output link_id="-2086"/>
                </outputs>
                <inputs>
                   <input link_id="-85"/>
@@ -2106,9 +2116,11 @@
                <node_type id="4" name="simple"/>
                <outputs>
                   <output link_id="-87"/>
+                  <output link_id="-2087"/>
                </outputs>
                <inputs>
                   <input link_id="-86"/>
+                  <input link_id="-2086"/>
                </inputs>
                <position>
                   <point elevation="0" lat="37.9109341099754" lng="-122.067533621684"/>
@@ -2119,9 +2131,11 @@
                <outputs>
                   <output link_id="-232"/>
                   <output link_id="-88"/>
+                  <output link_id="-2088"/>
                </outputs>
                <inputs>
                   <input link_id="-87"/>
+                  <input link_id="-2087"/>
                </inputs>
                <position>
                   <point elevation="0" lat="37.9131800359162" lng="-122.06678796236"/>
@@ -2833,6 +2847,7 @@
                </outputs>
                <inputs>
                   <input link_id="-88"/>
+                  <input link_id="-2088"/>
                </inputs>
                <position>
                   <point elevation="0" lat="37.9158186255712" lng="-122.065468818946"/>
@@ -3846,10 +3861,20 @@
                <end node_id="-110"/>
                <link_type id="1" name="Freeway"/>
             </link>
+            <link id="-2086" lanes="1" length="0.18219696969697">
+               <begin node_id="-109"/>
+               <end node_id="-110"/>
+               <link_type id="6" name="HOV"/>
+            </link>
             <link id="-87" lanes="5.47368421052632" length="0.160606060606061">
                <begin node_id="-110"/>
                <end node_id="-111"/>
                <link_type id="1" name="Freeway"/>
+            </link>
+            <link id="-2087" lanes="1" length="0.160606060606061">
+               <begin node_id="-110"/>
+               <end node_id="-111"/>
+               <link_type id="6" name="HOV"/>
             </link>
             <link id="-91" lanes="5" length="0.180681818181818">
                <begin node_id="-114"/>
@@ -4345,6 +4370,11 @@
                <begin node_id="-111"/>
                <end node_id="-268"/>
                <link_type id="1" name="Freeway"/>
+            </link>
+            <link id="-2088" lanes="1" length="0.197537878787879">
+               <begin node_id="-111"/>
+               <end node_id="-268"/>
+               <link_type id="6" name="HOV"/>
             </link>
             <link id="-298" lanes="5" length="0.191856060606061">
                <begin node_id="-268"/>
@@ -5030,6 +5060,11 @@
 
 
 
+
+
+
+   
+
       
    <ControllerSet id="0" project_id="0">
       <controller dt="300" enabled="true" id="1" type="IRM_ALINEA">
@@ -5564,7 +5599,7 @@
          <actuator_type id="0" name="ramp_meter"/>
          <parameters>
             <parameter name="max_queue_vehicles" value="26"/>
-            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="max_rate_in_vphpl" value="1800"/>
             <parameter name="min_rate_in_vphpl" value="240"/>
          </parameters>
          <queue_override strategy="max_rate"/>

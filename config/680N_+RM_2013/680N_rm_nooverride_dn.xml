@@ -6312,7 +6312,7 @@
          <actuator_type id="0" name="ramp_meter"/>
          <parameters>
             <parameter name="max_queue_vehicles" value="1026"/>
-            <parameter name="max_rate_in_vphpl" value="900"/>
+            <parameter name="max_rate_in_vphpl" value="1800"/>
             <parameter name="min_rate_in_vphpl" value="240"/>
          </parameters>
       </actuator>

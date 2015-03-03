@@ -1,9 +1,9 @@
 function [] = write_offramp_demand_xml(xlsx_file,fr_demand_file,range)
 
 fprintf('Generating off-ramp demand config...\n');
-fr_id = xlsread(xlsx_file, 'Off-Ramp_Demand', sprintf('g%d:g%d', range(1), range(2)));
+fr_id = xlsread(xlsx_file, 'Off-Ramp_CollectedFlows', sprintf('g%d:g%d', range(1), range(2)));
 fr_id = fr_id';
-FRD = xlsread(xlsx_file, 'Off-Ramp_Demand', sprintf('k%d:kl%d', range(1), range(2)));
+FRD = xlsread(xlsx_file, 'Off-Ramp_CollectedFlows', sprintf('k%d:kl%d', range(1), range(2)));
 FRK = xlsread(xlsx_file, 'Off-Ramp_Knobs', sprintf('k%d:kl%d', range(1), range(2)));
 FRD = FRD .* FRK;
 has_fr_dem = find(max(FRD,[],2)>0);
