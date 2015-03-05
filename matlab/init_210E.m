@@ -10,7 +10,7 @@ range = [2 135];  % 210 EB
 
 pm_dir = 1;
 
-sr_control = 1;
+%sr_control = 1;
 
 hov_prct=0.15;
 
