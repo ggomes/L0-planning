@@ -94,8 +94,13 @@ plot([pm(66) pm(66) pm(78) pm(78) pm(66)], [tt(186) tt(220) tt(220) tt(186) tt(1
 plot([pm(78) pm(78) pm(83) pm(83) pm(78)], [tt(83) tt(105) tt(105) tt(83) tt(83)], 'w');
 end
 
-if 1
+if 0
 plot([pm(52) pm(52) pm(122) pm(122) pm(52)], [tt(185) tt(231) tt(231) tt(185) tt(185)], 'w');
 end
 
+if 1
+plot([pm(2) pm(2) pm(32) pm(32) pm(2)], [tt(72) tt(96) tt(96) tt(72) tt(72)], 'w');
+plot([pm(42) pm(42) pm(73) pm(73) pm(42)], [tt(78) tt(114) tt(114) tt(78) tt(78)], 'w');
+plot([pm(74) pm(74) pm(111) pm(111) pm(74)], [tt(90) tt(114) tt(114) tt(90) tt(90)], 'w');
+end
 

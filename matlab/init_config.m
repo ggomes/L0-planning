@@ -16,7 +16,8 @@ orgf3 = 0;
 orgf4 = 0;
 
 
-init_210E
+%init_210E
+init_210W
 
 %init_680N_2013
 %init_680S_2013
