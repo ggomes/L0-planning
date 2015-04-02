@@ -23,7 +23,7 @@ xlabel('Abs. Postmile');
 ylabel('Time');
 title('On-ramp Queues');
 
-if 0
+if 1
 figure(2);
 hold on;
 pcolor(pm, tt, HOV_F');

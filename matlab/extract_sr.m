@@ -25,9 +25,6 @@ idx = find(D(4, :) == vt);
 D = D(:, idx);
 fr_sr = fr_sr(idx);
 
-fr_sr = fr_sr(2:end)
-[gp_id fr_id size(fr_sr)]
-
 return;
 
 
