@@ -9,6 +9,7 @@ sr_control = 0;
 no_ml_queue = 1;
 special_onramps = 0;
 hot_offramps = 0;
+hot_buffer = 0;
 
 
 orgf2 = 0;
@@ -17,7 +18,8 @@ orgf4 = 0;
 
 
 %init_210E
-init_210W
+init_210E_HOT
+%init_210W
 
 %init_680N_2013
 %init_680S_2013

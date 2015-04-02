@@ -33,11 +33,13 @@ disp('3. Run simulation');
 tic
 if sr_control
   system(['java -jar ' beats_jar opt_minus_s beatsprop_sr_out]);
+  ptr.simulation_done = true;
+  ptr.load_simulation_output('../beats_output/srout');
 else
   system(['java -jar ' beats_jar opt_minus_s beatsprop_gp]);
+  ptr.simulation_done = true;
+  ptr.load_simulation_output('../beats_output/gp');
 end
-ptr.simulation_done = true;
-ptr.load_simulation_output('../beats_output/srout');
 disp(['Done in ' num2str(toc) ' seconds.']);  
 
 % 4. Put the result into Excel spreadsheet ...............................
@@ -46,7 +48,7 @@ tic
 [GP_V, GP_F, GP_D, HOV_V, HOV_F, HOV_D, ORD, ORF, FRD, FRF, ORQ, ORS] = extract_simulation_data(ptr,xlsx_file,range,no_ml_queue,ORS,orgf2,orgf3,orgf4);
 disp(['Done in ' num2str(toc) ' seconds.']); 
 
-if ~sr_control
+if ~sr_control | 0
   return;
 end
 

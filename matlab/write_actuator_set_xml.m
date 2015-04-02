@@ -26,6 +26,9 @@ for i = 1:sz
     ors = find_or_struct(ORS, or_id(i));
     if isempty(ors)
       ml = round(metered(i) / lanes(i));
+      if ml < 1
+        ml = metered(i);
+      end
       mq = 100000;
       fprintf(fid, '  <actuator id="%d">\n', or_id(i));
       fprintf(fid, '   <scenarioElement id="%d" type="link"/>\n', or_id(i));

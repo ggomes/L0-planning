@@ -1,4 +1,4 @@
-function write_demand_set_xml(fid, xlsx_file, range, gp_id, hov_id, or_id, fr_id, ORS, hot_offramps)
+function write_sr_set_xml2(fid, xlsx_file, range, gp_id, hov_id, or_id, fr_id, ORS, hot_offramps)
 % fid - file descriptor for the output xml
 % xlsx_file - full path to the configuration spreadsheet
 % range - row range to be read from the spreadsheet
@@ -11,7 +11,6 @@ function write_demand_set_xml(fid, xlsx_file, range, gp_id, hov_id, or_id, fr_id
 disp('  D. Generating split ratio set...');
 
 % Link IDs
-hov_prct = xlsread(xlsx_file, 'Configuration', sprintf('c%d:c%d', range(1), range(2)))';
 nodes = xlsread(xlsx_file, 'Configuration', sprintf('y%d:y%d', range(1), range(2)))';
 SR = xlsread(xlsx_file, 'Off-Ramp_SplitRatios', sprintf('k%d:kl%d', range(1), range(2)));
 HSR = SR;

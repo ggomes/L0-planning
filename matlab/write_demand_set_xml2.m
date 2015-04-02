@@ -13,8 +13,7 @@ disp('  C. Generating demand set...');
 hov_prct = xlsread(xlsx_file, 'Configuration', sprintf('c%d:c%d', range(1), range(2)))';
 ORD = xlsread(xlsx_file, 'On-Ramp_CollectedFlows', sprintf('k%d:kl%d', range(1), range(2)));
 ORK = xlsread(xlsx_file, 'On-Ramp_Knobs', sprintf('k%d:kl%d', range(1), range(2)));
-%ORH = xlsread(xlsx_file, 'HOV_Knobs', sprintf('k%d:kl%d', range(1), range(2)));
-ORH = [];
+ORH = xlsread(xlsx_file, 'HOV_Portion', sprintf('k%d:kl%d', range(1), range(2)));
 ORGF = xlsread(xlsx_file, 'On-Ramp_GrowthFactors', sprintf('k%d:kl%d', range(1), range(2)));
 if orgf2 | orgf3 | orgf4
   ORGF2 = xlsread(xlsx_file, 'On-Ramp_GrowthFactors_2', sprintf('k%d:kl%d', range(1), range(2)));
@@ -39,7 +38,8 @@ for i = 1:sz
   if or_id(i) ~= 0
     ors = find_or_struct(ORS, or_id(i));
     if isempty(ors)
-      write_demand_profile_xml(fid, or_id(i), ORD(i, :), hov_prct(i));
+      %write_demand_profile_xml(fid, or_id(i), ORD(i, :), hov_prct(i));
+      write_demand_profile_xml(fid, or_id(i), ORD(i, :), ORH(i, :));
     else      
       if isempty(ors.feeders)
         links = ors.peers;
@@ -94,7 +94,7 @@ function write_demand_profile_xml(fid, or_id, demand, hov_prct)
 % hov_prct - HOV portion of total demand
 
 sz = size(demand, 2);
-hov_d = hov_prct * demand;
+hov_d = hov_prct .* demand;
 gp_d = demand - hov_d;
 
 fprintf(fid, '   <demandProfile id="%d" link_id_org="%d" dt="300" start_time="0">\n', or_id, or_id);
