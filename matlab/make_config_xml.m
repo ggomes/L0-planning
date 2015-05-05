@@ -26,7 +26,11 @@ write_demand_set_xml2(fid, xlsx_file, range, or_id, ORS, orgf2, orgf3, orgf4);
 write_sr_set_xml(fid, xlsx_file, range, gp_id, hov_id, or_id, fr_id, ORS, hot_offramps, hot_buffer);
 
 
-if sr_control
+if sr_control && exist('hov_control','var') && hov_control
+  a_id = write_actuator_set_xml2(fid, xlsx_file, [gp_id -gate_start_links], [fr_id, gate_start_links]);
+  
+  write_hov_sr_controller_set_xml(fid, fr_demand_file, hov_demand_file, a_id, nnz(fr_id));
+elseif sr_control
   %write_sensor_set_xml(fid, xlsx_file, range, gp_id);
 
   a_id = write_actuator_set_xml2(fid, xlsx_file, gp_id, fr_id);
@@ -35,7 +39,6 @@ if sr_control
 
   %write_event_set_xml(fid);
 end
-
 
 fprintf(fid, '</scenario>\n');
 fclose(fid);
