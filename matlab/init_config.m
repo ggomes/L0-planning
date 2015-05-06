@@ -1,6 +1,6 @@
 
 root = fileparts(fileparts(mfilename('fullpath')));
-beats_jar = fullfile(root,'beats','beats-0.1-SNAPSHOT.jar');
+beats_jar = fullfile(root,'beats','beats-0.1-SNAPSHOT-jar-with-dependencies.jar');
 
 auto_sr = 0;
 auto_config = 1;
