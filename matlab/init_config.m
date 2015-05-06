@@ -93,6 +93,7 @@ act_cntrl        = fullfile(cfg_folder,'actuators_and_controllers.xml');
 cfg_gp           = fullfile(cfg_gen_folder,'gp.xml');
 cfg_srout        = fullfile(cfg_gen_folder,'srout.xml');
 fr_demand_file   = fullfile(cfg_gen_folder,'fr_demand.xml');
+hov_demand_file   = fullfile(cfg_gen_folder,'hov_demand.xml');
 gp_out           = fullfile(beats_out_folder,'sr');
 ppt_report_file  = fullfile(cfg_gen_folder,'compare_fr_flows');
 
