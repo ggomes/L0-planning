@@ -6,6 +6,7 @@ auto_sr = 0;
 auto_config = 1;
 rm_control = 0;
 sr_control = 0;
+hov_control = 0;
 no_ml_queue = 1;
 special_onramps = 0;
 hot_offramps = 0;
