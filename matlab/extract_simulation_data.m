@@ -129,7 +129,7 @@ for i = 1:m
       if HOV_D(i, j) < 1
         HOV_V(i, j) = ffspeeds(i);
       end
-      if (HOV_D(i, j) < hov_cd(i)) && (HOV_D(i+1, j) < hov_cd(i+1))
+      if (i == m) | ((HOV_D(i, j) < hov_cd(i)) && (HOV_D(i+1, j) < hov_cd(i+1)))
         HOV_V(i, j) = ffspeeds(i);
       end
     end

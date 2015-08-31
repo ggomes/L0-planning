@@ -1,4 +1,4 @@
-function write_demand_set_xml(fid, xlsx_file, range, gp_id, hov_id, or_id, fr_id, ORS, hot_offramps)
+function write_sr_set_xml2(fid, xlsx_file, range, gp_id, hov_id, or_id, fr_id, ORS, hot_offramps)
 % fid - file descriptor for the output xml
 % xlsx_file - full path to the configuration spreadsheet
 % range - row range to be read from the spreadsheet
@@ -11,7 +11,7 @@ function write_demand_set_xml(fid, xlsx_file, range, gp_id, hov_id, or_id, fr_id
 disp('  D. Generating split ratio set...');
 
 % Link IDs
-hov_prct = xlsread(xlsx_file, 'Configuration', sprintf('c%d:c%d', range(1), range(2)))';
+nodes = xlsread(xlsx_file, 'Configuration', sprintf('y%d:y%d', range(1), range(2)))';
 SR = xlsread(xlsx_file, 'Off-Ramp_SplitRatios', sprintf('k%d:kl%d', range(1), range(2)));
 HSR = SR;
 
@@ -31,7 +31,7 @@ fprintf(fid, ' <SplitRatioSet id="1" project_id="1">\n');
 
 for i = 2:sz
   if (hov_id(i) ~= 0) | (fr_id(i) ~= 0)
-    write_sr_profile_xml(fid, gp_id(i-1:i), hov_id(i-1:i), or_id(i), fr_id(i), SR(i, :), HSR(i, :), ORS);
+    write_sr_profile_xml(fid, nodes(i-1), gp_id(i-1:i), hov_id(i-1:i), or_id(i), fr_id(i), SR(i, :), HSR(i, :), ORS);
   end
 end
 
@@ -43,7 +43,7 @@ return;
 
 
 
-function write_sr_profile_xml(fid, gp_id, hov_id, or_id, fr_id, srp, hsrp, ORS)
+function write_sr_profile_xml(fid, nd_id, gp_id, hov_id, or_id, fr_id, srp, hsrp, ORS)
 % fid - file descriptor for the output xml
 % gp_id - previous and current GP link IDs
 % hov_id - previous and current HOV link IDs
@@ -64,6 +64,7 @@ sov_sr_buf = '-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
 
 
 fprintf(fid, '   <splitRatioProfile id="%d" node_id="%d" dt="300" start_time="0">\n', gp_id(2), gp_id(2));
+%fprintf(fid, '   <splitRatioProfile id="%d" node_id="%d" dt="300" start_time="0">\n', nd_id, nd_id);
 
 fprintf(fid, '    <splitratio vehicle_type_id="0" link_in="%d" link_out="%d">-1</splitratio>\n', gp_id(1), gp_id(2));
 fprintf(fid, '    <splitratio vehicle_type_id="1" link_in="%d" link_out="%d">-1</splitratio>\n', gp_id(1), gp_id(2));

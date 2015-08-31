@@ -31,6 +31,7 @@ llen = xlsread(xlsx_file, 'Configuration', sprintf('e%d:e%d', range(1), range(2)
 
 sz = range(2) - range(1) + 1;
 last_node_id = 10000 + gp_id(sz);
+last_node_id2 = -10000 - hov_id(sz);
 
 fprintf(fid, ' <NetworkSet id="1" project_id="1">\n');
 fprintf(fid, '  <network id="1" name="Auto-generated network">\n');
@@ -82,6 +83,9 @@ for i = 2:sz
 end
 % Last terminal node
 write_node_xml(fid, last_node_id, gp_id(sz), []);
+if hov_id(sz) ~= 0
+  write_node_xml(fid, last_node_id2, hov_id(sz), []);
+end
 fprintf(fid, '   </NodeList>\n');
 
 % Link list
@@ -116,6 +120,9 @@ for i = 1:(sz-1)
 end
 % Last link
 write_link_xml(fid, gp_id(sz), '<link_type id="1" name="Freeway"/>', gp_lanes(sz) + aux_const*aux_lanes(i), llen(i), gp_id(sz), last_node_id);
+if hov_id(sz) ~= 0
+  write_link_xml(fid, hov_id(sz), '<link_type id="6" name="HOV"/>', hov_lanes(sz), llen(i), gp_id(sz), last_node_id2);
+end
 if or_id(sz) ~= 0
   write_link_xml(fid, or_id(sz), '<link_type id="3" name="On-Ramp"/>', or_lanes(sz), 0.2, or_id(sz), gp_id(sz));
 end

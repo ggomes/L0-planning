@@ -3,9 +3,9 @@ function [DemandSet] = attach_onramp_demands(xlsx_file,range,hov_prct)
 sov_prct = 1-hov_prct;
 
 fprintf('Generating on-ramp demand config...\n');
-or_id = xlsread(xlsx_file, 'On-Ramp_Demand', sprintf('g%d:g%d', range(1), range(2)));
+or_id = xlsread(xlsx_file, 'On-Ramp_CollectedFlows', sprintf('g%d:g%d', range(1), range(2)));
 or_id = or_id';
-ORD = xlsread(xlsx_file, 'On-Ramp_Demand', sprintf('k%d:kl%d', range(1), range(2)));
+ORD = xlsread(xlsx_file, 'On-Ramp_CollectedFlows', sprintf('k%d:kl%d', range(1), range(2)));
 ORK = xlsread(xlsx_file, 'On-Ramp_Knobs', sprintf('k%d:kl%d', range(1), range(2)));
 ORD = ORD .* ORK;
 has_or_dem = find(max(ORD,[],2)>0);
