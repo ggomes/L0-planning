@@ -32,7 +32,7 @@ for i = 1:sz
     GHSR_i = [GHSR_i; zeros(1, 288)];
   end
 end
-GHSR = GHSR - GHSR_i;
+%GHSR = GHSR - GHSR_i;
 
 % write data to spreadsheet
 if 1

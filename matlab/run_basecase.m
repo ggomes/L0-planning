@@ -17,7 +17,7 @@ disp(['Done in ' num2str(toc) ' seconds.']);
 % 1. Generate XML off-ramp demand file [optional] ........................
 disp('1. Generate XML off-ramp demand file')
 tic
-write_offramp_demand_xml(xlsx_file, fr_demand_file, range);
+write_offramp_demand_xml(xlsx_file, fr_demand_file, hov_demand_file, range);
 disp(['Done in ' num2str(toc) ' seconds.']);
 end
 
@@ -55,5 +55,5 @@ end
 % 5. Record split ratios ...............................
 disp('5. Record split ratios')
 tic
-collect_sr(xlsx_file, range, gp_out, gp_id, fr_id);
+collect_sr(xlsx_file, range, gp_out, gp_id, hov_id, fr_id, hot_buffer);
 disp(['Done in ' num2str(toc) ' seconds.']); 
