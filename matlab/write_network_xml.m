@@ -18,6 +18,7 @@ gp_id = xlsread(xlsx_file, 'Configuration', sprintf('a%d:a%d', range(1), range(2
 hov_id = xlsread(xlsx_file, 'Configuration', sprintf('b%d:b%d', range(1), range(2)))';
 or_id = xlsread(xlsx_file, 'Configuration', sprintf('o%d:o%d', range(1), range(2)))';
 fr_id = xlsread(xlsx_file, 'Configuration', sprintf('v%d:v%d', range(1), range(2)))';
+nodes = xlsread(xlsx_file, 'Configuration', sprintf('y%d:y%d', range(1), range(2)))';
 
 % Lanes
 aux_lanes = xlsread(xlsx_file, 'Configuration', sprintf('h%d:h%d', range(1), range(2)))';
@@ -79,7 +80,8 @@ for i = 2:sz
     out_links = [out_links fr_id(i)];
     write_node_xml(fid, fr_id(i), fr_id(i), []); % off-ramp terminal
   end
-  write_node_xml(fid, gp_id(i), in_links, out_links); % internal node
+  %write_node_xml(fid, gp_id(i), in_links, out_links); % internal node
+  write_node_xml(fid, nodes(i-1), in_links, out_links); % internal node
 end
 % Last terminal node
 write_node_xml(fid, last_node_id, gp_id(sz), []);
@@ -91,14 +93,26 @@ fprintf(fid, '   </NodeList>\n');
 % Link list
 fprintf(fid, '   <LinkList>\n');
 for i = 1:(sz-1)
-  write_link_xml(fid, gp_id(i), '<link_type id="1" name="Freeway"/>', gp_lanes(i) + aux_const*aux_lanes(i), llen(i), gp_id(i), gp_id(i+1));
-  if hov_id(i) ~= 0
-    write_link_xml(fid, hov_id(i), '<link_type id="6" name="HOV"/>', hov_lanes(i), llen(i), gp_id(i), gp_id(i+1));
+  %write_link_xml(fid, gp_id(i), '<link_type id="1" name="Freeway"/>', gp_lanes(i) + aux_const*aux_lanes(i), llen(i), gp_id(i), gp_id(i+1));
+  %if hov_id(i) ~= 0
+  %  write_link_xml(fid, hov_id(i), '<link_type id="6" name="HOV"/>', hov_lanes(i), llen(i), gp_id(i), gp_id(i+1));
+  %end
+  if i==1
+    write_link_xml(fid, gp_id(i), '<link_type id="1" name="Freeway"/>', gp_lanes(i) + aux_const*aux_lanes(i), llen(i), gp_id(i), nodes(i));
+    if hov_id(i) ~= 0
+      write_link_xml(fid, hov_id(i), '<link_type id="6" name="HOV"/>', hov_lanes(i), llen(i), gp_id(i), nodes(i));
+    end
+  else
+    write_link_xml(fid, gp_id(i), '<link_type id="1" name="Freeway"/>', gp_lanes(i) + aux_const*aux_lanes(i), llen(i), nodes(i-1), nodes(i));
+    if hov_id(i) ~= 0
+      write_link_xml(fid, hov_id(i), '<link_type id="6" name="HOV"/>', hov_lanes(i), llen(i), nodes(i-1), nodes(i));
+    end
   end
   if (or_id(i) ~= 0) & (i > 2)
     ors = find_or_struct(ORS, or_id(i));
     if isempty(ors)
-      write_link_xml(fid, or_id(i), '<link_type id="3" name="On-Ramp"/>', or_lanes(i), 0.2, or_id(i), gp_id(i));
+      %write_link_xml(fid, or_id(i), '<link_type id="3" name="On-Ramp"/>', or_lanes(i), 0.2, or_id(i), gp_id(i));
+      write_link_xml(fid, or_id(i), '<link_type id="3" name="On-Ramp"/>', or_lanes(i), 0.2, or_id(i), nodes(i-1));
     else
       if isempty(ors.feeders)
         in_count = size(ors.peers, 2); 
@@ -115,13 +129,18 @@ for i = 1:(sz-1)
     end
   end
   if fr_id(i) ~= 0
-    write_link_xml(fid, fr_id(i), '<link_type id="4" name="Off-Ramp"/>', fr_lanes(i), 0.2, gp_id(i), fr_id(i));
+    %write_link_xml(fid, fr_id(i), '<link_type id="4" name="Off-Ramp"/>', fr_lanes(i), 0.2, gp_id(i), fr_id(i));
+    write_link_xml(fid, fr_id(i), '<link_type id="4" name="Off-Ramp"/>', fr_lanes(i), 0.2, nodes(i-1), fr_id(i));
   end
 end
 % Last link
-write_link_xml(fid, gp_id(sz), '<link_type id="1" name="Freeway"/>', gp_lanes(sz) + aux_const*aux_lanes(i), llen(i), gp_id(sz), last_node_id);
+%write_link_xml(fid, gp_id(sz), '<link_type id="1" name="Freeway"/>', gp_lanes(sz) + aux_const*aux_lanes(i), llen(i), gp_id(sz), last_node_id);
+%if hov_id(sz) ~= 0
+%  write_link_xml(fid, hov_id(sz), '<link_type id="6" name="HOV"/>', hov_lanes(sz), llen(i), gp_id(sz), last_node_id2);
+%end
+write_link_xml(fid, gp_id(sz), '<link_type id="1" name="Freeway"/>', gp_lanes(sz) + aux_const*aux_lanes(i), llen(i), nodes(sz-1), last_node_id);
 if hov_id(sz) ~= 0
-  write_link_xml(fid, hov_id(sz), '<link_type id="6" name="HOV"/>', hov_lanes(sz), llen(i), gp_id(sz), last_node_id2);
+  write_link_xml(fid, hov_id(sz), '<link_type id="6" name="HOV"/>', hov_lanes(sz), llen(i), nodes(sz-1), last_node_id2);
 end
 if or_id(sz) ~= 0
   write_link_xml(fid, or_id(sz), '<link_type id="3" name="On-Ramp"/>', or_lanes(sz), 0.2, or_id(sz), gp_id(sz));
