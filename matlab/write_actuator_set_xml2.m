@@ -1,4 +1,4 @@
-function a_id = write_actuator_set_xml2(fid, xlsx_file, gp_id, fr_id)
+function a_id = write_actuator_set_xml2(fid, xlsx_file, range, gp_id, fr_id)
 % fid - file descriptor for the output xml
 % xlsx_file - full path to the configuration spreadsheet
 % range - row range to be read from the spreadsheet
@@ -12,6 +12,7 @@ disp('  F. Generating actuator set...');
 
 
 sz = size(gp_id, 2);
+nodes = xlsread(xlsx_file, 'Configuration', sprintf('y%d:y%d', range(1), range(2)))';
 
 fprintf(fid, ' <ActuatorSet id="1" project_id="1">\n');
 
@@ -20,7 +21,8 @@ a_id = [];
 for i = 1:sz
   if fr_id(i) ~= 0
     fprintf(fid, '  <actuator id="%d">\n', fr_id(i));
-    fprintf(fid, '   <scenarioElement id="%d" type="node"/>\n', gp_id(i));
+    %fprintf(fid, '   <scenarioElement id="%d" type="node"/>\n', gp_id(i));
+    fprintf(fid, '   <scenarioElement id="%d" type="node"/>\n', nodes(i-1));
     fprintf(fid, '   <actuator_type id="0" name="cms"/>\n');
     fprintf(fid, '  </actuator>\n');
     a_id = [a_id fr_id(i)];

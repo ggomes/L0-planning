@@ -7,6 +7,8 @@ GHSR_i = zeros(1, 288);
 
 sz = size(gp_id, 2);
 
+nodes = xlsread(data_file, 'Configuration', sprintf('y%d:y%d', range(1), range(2)))';
+
 
 HGSR = zeros(sz, 288);
 hot_gates = zeros(1, sz);
@@ -18,8 +20,10 @@ end
 
 for i = 1:sz
   if fr_id(i) ~= 0
-    SR = [SR; extract_sr(gp_out, gp_id(i), fr_id(i), gp_id(i-1), 1)];
-    HSR = [HSR; extract_sr(gp_out, gp_id(i), fr_id(i), gp_id(i-1), 0)];
+    %SR = [SR; extract_sr(gp_out, gp_id(i), fr_id(i), gp_id(i-1), 1)];
+    %HSR = [HSR; extract_sr(gp_out, gp_id(i), fr_id(i), gp_id(i-1), 0)];
+    SR = [SR; extract_sr(gp_out, nodes(i-1), fr_id(i), gp_id(i-1), 1)];
+    HSR = [HSR; extract_sr(gp_out, nodes(i-1), fr_id(i), gp_id(i-1), 0)];
   else
     SR = [SR; zeros(1, 288)];
     HSR = [HSR; zeros(1, 288)];
