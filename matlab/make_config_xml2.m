@@ -29,7 +29,7 @@ write_sr_set_xml2(fid, xlsx_file, range, gp_id, hov_id, or_id, fr_id, ORS, hot_o
 if sr_control
   %write_sensor_set_xml(fid, xlsx_file, range, gp_id);
 
-  a_id = write_actuator_set_xml2(fid, xlsx_file, gp_id, fr_id);
+  a_id = write_actuator_set_xml2(fid, xlsx_file, range,gp_id, fr_id);
   
   write_sr_controller_set_xml(fid, fr_demand_file, a_id);
 
