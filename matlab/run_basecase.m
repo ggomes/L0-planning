@@ -3,9 +3,10 @@ close all
 
 init_config;
 
+here = fileparts(mfilename('fullpath'));
+root = fileparts(here);
+
 ORS = [];
-
-
 
 if auto_config
 % 0. Generate configuration file [optional] ................................
@@ -32,13 +33,22 @@ disp(['Done in ' num2str(toc) ' seconds.']);
 disp('3. Run simulation');
 tic
 if sr_control
-  system(['java -jar ' beats_jar opt_minus_s beatsprop_sr_out]);
-  ptr.simulation_done = true;
-  ptr.load_simulation_output('../beats_output/srout');
+    ptr.run_beats(struct( ...
+        'SCENARIO',cfg_starter,...
+        'SIM_DT',5,...
+        'OUTPUT_PREFIX',fullfile(beats_out_folder,'srout'),...
+        'RUN_MODE','fw_fr_split_output',...
+        'OUTPUT_DT',300,...
+        'SPLIT_LOGGER_PREFIX',fullfile(beats_out_folder,'sr'),...
+        'SPLIT_LOGGER_DT',300,...
+        'JAR',beats_jar));
 else
-  system(['java -jar ' beats_jar opt_minus_s beatsprop_gp]);
-  ptr.simulation_done = true;
-  ptr.load_simulation_output('../beats_output/gp');
+    ptr.run_beats(struct( ...
+        'SCENARIO',cfg_starter,...
+        'SIM_DT',5,...
+        'OUTPUT_PREFIX',fullfile(beats_out_folder,'gp'),...
+        'OUTPUT_DT',300,...
+        'JAR',beats_jar));
 end
 disp(['Done in ' num2str(toc) ' seconds.']);  
 
@@ -57,3 +67,8 @@ disp('5. Record split ratios')
 tic
 collect_sr(xlsx_file, range, gp_out, gp_id, hov_id, fr_id, hot_buffer);
 disp(['Done in ' num2str(toc) ' seconds.']); 
+
+plot_simulation_data
+
+beep,beep,beep
+
