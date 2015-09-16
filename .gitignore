@@ -1,3 +1,5 @@
+config/210E/210_generated.xml
+config/210E/generated/
 *.mat
 *.asv
 beats_output
