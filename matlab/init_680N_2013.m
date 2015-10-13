@@ -9,5 +9,7 @@ range = [2 149];  % 680 NB
 
 hov_prct = 0.15;
 
+sr_control = 1;
+
 pm_dir = 1;
 

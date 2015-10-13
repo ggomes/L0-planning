@@ -18,11 +18,11 @@ orgf3 = 0;
 orgf4 = 0;
 
 
-init_210E
+%init_210E
 %init_210E_HOT
 %init_210W
 
-%init_680N_2013
+init_680N_2013
 %init_680S_2013
 
 %init_680N_rm_override_2013
@@ -89,6 +89,7 @@ beats_out_folder = fullfile(root,'beats_output');
 cfg_gen_folder = fullfile(cfg_folder,'generated');
 
 beatsprop_gp     = fullfile(cfg_folder,'beats_gp_5min.properties');
+beatsprop_gp0     = fullfile(cfg_folder,'beats_gp_5min_0.properties');
 beatsprop_sr_out = fullfile(cfg_folder,'beats_srout.properties');
 act_cntrl        = fullfile(cfg_folder,'actuators_and_controllers.xml');
 cfg_gp           = fullfile(cfg_gen_folder,'gp.xml');

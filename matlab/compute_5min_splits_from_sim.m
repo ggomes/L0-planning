@@ -16,7 +16,8 @@ end
 non_trivial_node_ids = sort(node_ids(~is_trivial_split));
 
 % cycle through non-trivial nodes
-time_5min_ind = reshape(1:17280,60,288)';
+%time_5min_ind = reshape(1:17280,60,288)';
+time_5min_ind = (1:288)';
 
 srp = generate_mo('splitRatioProfile');
 srp.ATTRIBUTE.dt = 300;
