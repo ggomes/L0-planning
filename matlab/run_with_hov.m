@@ -11,7 +11,7 @@ if auto_config
 % 0. Generate configuration file [optional] ................................
 disp('0. Generate XML configuration file')
 tic
-make_config_xml;
+make_config_xml2;
 disp(['Done in ' num2str(toc) ' seconds.']);
 
 % 1. Generate XML off-ramp demand file [optional] ........................
@@ -32,6 +32,17 @@ disp(['Done in ' num2str(toc) ' seconds.']);
 disp('3. Run simulation');
 tic
 if sr_control
+  %%%%%%%%%%%%% double run %%%%%%%%%%%%%%
+  disp('  A. Run with nominal split ratios');
+  system(['java -jar ' beats_jar opt_minus_s beatsprop_gp]);
+  ptr.simulation_done = true;
+  ptr.load_simulation_output('../beats_output/gp');
+
+  disp('  B. Aggregate GP/HOV split ratios to 5min');
+  is_5min_gp = 1;
+  ptr.scenario_ptr.scenario.SplitRatioSet = compute_5min_splits_from_sim(ptr, gp_out, is_5min_gp);
+
+  disp('  C. Run with off-ramp flows');
   system(['java -jar ' beats_jar opt_minus_s beatsprop_sr_out]);
   ptr.simulation_done = true;
   ptr.load_simulation_output('../beats_output/srout');

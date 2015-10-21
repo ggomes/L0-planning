@@ -81,7 +81,7 @@ ylabel('Time');
 title('GP Speed');
 grid on;
 
-if 0
+if 1
 plot([pm(26) pm(26) pm(33) pm(33) pm(26)], [tt(192) tt(228) tt(228) tt(192) tt(192)], 'w');
 plot([pm(43) pm(43) pm(58) pm(58) pm(43)], [tt(192) tt(228) tt(228) tt(192) tt(192)], 'w');
 plot([pm(71) pm(71) pm(97) pm(97) pm(71)], [tt(180) tt(216) tt(216) tt(180) tt(180)], 'w');
@@ -94,7 +94,7 @@ plot([pm(66) pm(66) pm(78) pm(78) pm(66)], [tt(186) tt(220) tt(220) tt(186) tt(1
 plot([pm(78) pm(78) pm(83) pm(83) pm(78)], [tt(83) tt(105) tt(105) tt(83) tt(83)], 'w');
 end
 
-if 1
+if 0
 plot([pm(52) pm(52) pm(122) pm(122) pm(52)], [tt(185) tt(231) tt(231) tt(185) tt(185)], 'w');
 end
 
